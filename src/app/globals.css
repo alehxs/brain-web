@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+/* ===============================
+   Global BRAIN Center Color System
+   =============================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --midnight-blue: #071724;
+  --deep-teal: #006D77;
+  --luminous-mint: #83C5BE;
+  --light-slate: #EDF6F9;
+  --slate-gray: #3A506B;
+
+  --background: var(--light-slate);
+  --foreground: var(--midnight-blue);
+
+  --accent-primary: var(--deep-teal);
+  --accent-secondary: var(--luminous-mint);
+
+  --font-sans: var(--font-geist-sans, 'Montserrat', sans-serif);
+  --font-serif: 'Merriweather', serif;
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--midnight-blue);
+    --foreground: var(--light-slate);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background 0.3s ease, color 0.3s ease;
 }
