@@ -17,10 +17,12 @@
   --accent-primary: var(--deep-teal);
   --accent-secondary: var(--luminous-mint);
 
-  --font-sans: var(--font-geist-sans, 'Montserrat', sans-serif);
-  --font-serif: 'Merriweather', serif;
-  --font-mono: var(--font-geist-mono, monospace);
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-merriweather), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --header-height: 120px; 
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -45,3 +47,23 @@ body {
   font-family: var(--font-sans);
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Typography polish */
+html { scroll-behavior: smooth; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em; /* subtle authority */
+}
+
+/* Tighter headings, relaxed body for readability */
+.h1, h1 { line-height: 1.1; }
+.h2, h2 { line-height: 1.15; }
+.h3, h3 { line-height: 1.2; }
+
+p { line-height: 1.65; }

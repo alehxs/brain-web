@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "BRAIN Center - Building Reliable Advances and Innovations in Neurotechnology",
+  title: "The BRAIN Center - Building Reliable Advances and Innovations in Neurotechnology",
   description: "An NSF-funded IUCRC advancing neurotechnology research and innovation.",
   icons: {
     icon: [

@@ -1,5 +1,5 @@
+// BrainVideo.tsx
 "use client";
-
 import React from "react";
 
 interface BrainVideoProps {
@@ -8,17 +8,16 @@ interface BrainVideoProps {
 
 const BrainVideo: React.FC<BrainVideoProps> = ({ overlayOpacity = 0.6 }) => {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 w-full h-full overflow-hidden">
       {/* Background video */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="w-full h-full object-cover"
         src="/videos/brain-animation.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
-
       {/* Dark overlay for readability */}
       <div
         className="absolute inset-0"
