@@ -29,7 +29,7 @@ export default function RootLayout({
       <head />
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased">
         <Header />
-        <main id="main" className="mx-auto max-w-7xl px-4">
+        <main id="main" className="w-full">
           {children}
         </main>
         <Footer />
