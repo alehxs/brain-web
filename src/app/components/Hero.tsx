@@ -2,13 +2,13 @@ import BrainVideo from "./BrainVideo";
 
 export default function Hero() {
   return (
-    <section className="relative w-screen h-[calc(100vh-var(--header-height,120px))] text-white overflow-hidden -mx-4 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <section className="relative h-[calc(100vh-var(--header-height,120px))] w-full overflow-hidden text-white md:left-1/2 md:right-1/2 md:-mx-[50vw] md:w-screen">
       {/* Background video layer */}
       <BrainVideo overlayOpacity={0.6} />
-      
+
       {/* Foreground content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <div className="max-w-5xl text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6">
+        <div className="mx-auto max-w-5xl text-center">
           <h1 className="text-4xl md:text-7xl font-bold tracking-tight">
             Building Reliable Advances and Innovations in Neurotechnology
           </h1>

@@ -29,11 +29,10 @@ function CloseIcon({ className = "w-6 h-6" }: { className?: string }) {
 
 // nav model (fill hrefs as you create pages)
 const NAV = [
-  { label: "Home", href: "/" },
   {
     label: "About",
     items: [
-      { label: "Mission", href: "/about" },
+      { label: "Media", href: "/media" },
       { label: "Leadership", href: "/about/leadership" },
       { label: "Sites & Universities", href: "/about/universities" },
     ],
@@ -75,6 +74,8 @@ const NAV = [
   },
   { label: "IAB 2025", href: "/iab-2025" },
   { label: "Events", href: "/events" },
+  { label: "Donate", href: "/donate"}
+
 ];
 
 export default function Header() {
@@ -109,7 +110,7 @@ export default function Header() {
           <div className="flex w-full items-center justify-center py-4 lg:justify-center">
             <div className="relative flex w-full items-center justify-center lg:justify-center">
               {/* Logo group */}
-              <div className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--luminous-mint)] rounded">
                 <Image
                   src="/brain-center.png"
                   alt="BRAIN — Building Reliable Advances and Innovations in Neurotechnology"
@@ -119,7 +120,7 @@ export default function Header() {
                 />
                 <span className="h-20 w-[1px] bg-white mx-4" aria-hidden="true" />
                 <Image src="/nsf-logo.png" alt="NSF" width={85} height={200} />
-              </div>
+              </Link>
 
               {/* Mobile burger on right only for small screens */}
               <button
