@@ -5,12 +5,12 @@ const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Research", href: "/research" },
-  { label: "Impact", href: "/impacts" },
+  { label: "Impacts", href: "/impacts" },
   { label: "Organization", href: "/organization" },
-  { label: "Workforce Development", href: "/workforce" },
+  { label: "Workforce", href: "/workforce" },
   { label: "Membership", href: "/membership" },
-  { label: "REU SITE UH–FDA", href: "/reu" },
-  { label: "Join", href: "/join" },
+  { label: "News", href: "/news" },
+  { label: "Events", href: "/events" },
 ];
 
 export default function Footer() {

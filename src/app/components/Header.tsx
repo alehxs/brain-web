@@ -27,55 +27,100 @@ function CloseIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
+// Reusable logo group (single size since we no longer compact on scroll)
+function LogoGroup() {
+  return (
+    <Link
+      href="/"
+      className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--luminous-mint)] rounded"
+    >
+      <Image
+        src="/brain-center.png"
+        alt="BRAIN — Building Reliable Advances and Innovations in Neurotechnology"
+        width={320}
+        height={64}
+        priority
+        className="h-auto"
+      />
+      <span className="bg-white mx-4 w-px h-20" aria-hidden="true" />
+      <Image
+        src="/nsf-logo.png"
+        alt="NSF"
+        width={92}
+        height={200}
+        className="h-auto"
+      />
+    </Link>
+  );
+}
+
 // nav model (fill hrefs as you create pages)
 const NAV = [
   {
     label: "About",
     items: [
       { label: "Media", href: "/media" },
-      { label: "Leadership", href: "/about/leadership" },
-      { label: "Sites & Universities", href: "/about/universities" },
+      { label: "NSF IUCRC", href: "/about/iucrc" },
+      { label: "Uniqueness", href: "/about/uniqueness" },
+      { label: "Intellectual Property", href: "/about/intellectual-property" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
     label: "Research",
     items: [
-      { label: "Focus Areas", href: "/research" },
-      { label: "Publications", href: "/research/publications" },
+      { label: "Thrusts", href: "/research/thrusts" },
+      { label: "Current Projects", href: "/research/current-projects" },
+      { label: "Past Projects", href: "/research/past-projects" },
+      { label: "Facilities", href: "/research/facilities" },
     ],
   },
   {
     label: "Impacts",
     items: [
-      { label: "Industry Partnerships", href: "/impacts/industry" },
-      { label: "Workforce & Students", href: "/impacts/workforce" },
+      { label: "Making an Impact", href: "/impacts/making-an-impact" },
+      { label: "Economic Impact", href: "/impacts/economic-impact" },
+      { label: "Broader Impacts", href: "/impacts/broader-impacts" },
+      { label: "Academic Assessments", href: "/impacts/academic-assessments" },
+      { label: "Publications", href: "/publications" },
     ],
   },
   {
     label: "Organization",
     items: [
-      { label: "Advisory Board", href: "/organization/iab" },
-      { label: "Bylaws", href: "/organization/bylaws" },
+      { label: "Leadership", href: "/organization/leadership" },
+      { label: "BRAIN Sites", href: "/organization/sites" },
+      { label: "Industry Members", href: "/organization/industry-members" },
+      { label: "Industry Advisory Board (IAB)", href: "/organization/iab" },
+      { label: "Faculty", href: "/faculty" },
+      { label: "Students", href: "/organization/students" },
+      { label: "Careers", href: "/organization/Careers" },
     ],
   },
   {
-    label: "Workforce Development",
+    label: "Workforce",
     items: [
-      { label: "Programs", href: "/workforce" },
-      { label: "Student Opportunities", href: "/workforce/students" },
+      { label: "Information", href: "/workforce/information" },
+      { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
+      { label: "REU Regulatory Science", href: "https://reu.egr.uh.edu/regulatory-science" },
+      { label: "REU Supplement", href: "/workforce/supplement" },
+      { label: "BRAIN Student Network", href: "/brain-student-network" },
+      { label: "NSAP (Post-Bacc)", href: "/workforce/nsap" },
+      { label: "REM (Research Mentoring)", href: "/workforce/rem" },
+      { label: "Training", href: "/workforce/training" },
     ],
   },
   {
     label: "Membership",
     items: [
-      { label: "How to Join", href: "/membership" },
-      { label: "Benefits", href: "/membership/benefits" },
+      { label: "Innovation Catalysts", href: "/membership/catalysts" },
+      { label: "Benefits", href: "/benefits" },
+      { label: "Join", href: "/join" },
     ],
   },
-  { label: "IAB 2025", href: "/iab-2025" },
+  { label: "News", href: "/news" },
   { label: "Events", href: "/events" },
-  { label: "Donate", href: "/donate"}
-
+  { label: "IAB", href: "/iab" },
 ];
 
 export default function Header() {
@@ -103,31 +148,19 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 text-white">
-      {/* Top brand bar */}
+    <header className="relative z-50 text-white">
+      {/* Top brand bar (static at page top; not sticky) */}
       <div className="bg-[var(--midnight-blue)]">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex w-full items-center justify-center py-4 lg:justify-center">
-            <div className="relative flex w-full items-center justify-center lg:justify-center">
-              {/* Logo group */}
-              <Link href="/" className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--luminous-mint)] rounded">
-                <Image
-                  src="/brain-center.png"
-                  alt="BRAIN — Building Reliable Advances and Innovations in Neurotechnology"
-                  width={300}
-                  height={60}
-                  priority
-                />
-                <span className="h-20 w-[1px] bg-white mx-4" aria-hidden="true" />
-                <Image src="/nsf-logo.png" alt="NSF" width={85} height={200} />
-              </Link>
-
-              {/* Mobile burger on right only for small screens */}
+          <div className="flex w-full items-center justify-center py-6">
+            <div className="relative flex w-full items-center justify-center">
+              <LogoGroup />
+              {/* Mobile burger on the right */}
               <button
                 className="absolute right-0 top-1/2 -translate-y-1/2 lg:hidden rounded-md border border-white/20 p-2 text-white"
                 aria-expanded={mobileOpen}
                 aria-controls="primary-nav"
-                aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 onClick={() => setMobileOpen((v) => !v)}
               >
                 {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -137,7 +170,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Bottom nav bar (same color as top brand bar) */}
+      {/* Bottom nav bar (static) */}
       <div className="bg-[var(--midnight-blue)]">
         <nav
           id="primary-nav"
@@ -146,7 +179,7 @@ export default function Header() {
           onMouseLeave={() => setOpenMenu(null)}
         >
           {/* Desktop nav */}
-          <ul className="hidden items-center gap-8 px-2 py-2 text-md font-medium tracking-normal lg:flex">
+          <ul className="hidden lg:flex items-center justify-center gap-8 px-2 py-2 text-md font-medium tracking-normal mx-auto">
             {NAV.map((item) => (
               <li key={item.label} className="relative">
                 {"items" in item && item.items ? (
@@ -163,7 +196,6 @@ export default function Header() {
                       <ChevronDown className={`w-4 h-4 transition-transform ${openMenu === item.label ? "rotate-180" : ""}`} />
                     </button>
 
-                    {}
                     <div
                       className={`absolute left-0 mt-2 min-w-[15rem] rounded-md border border-white/10 bg-[color-mix(in_srgb,var(--midnight-blue)_90%,var(--deep-teal)_10%)] p-2 shadow-lg transition ${
                         openMenu === item.label ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
@@ -171,17 +203,19 @@ export default function Header() {
                       onMouseEnter={() => setOpenMenu(item.label)}
                     >
                       <ul className="grid gap-1">
-                        {item.items.map((sub) => (
-                          <li key={sub.label}>
-                            <Link
-                              className="block rounded px-3 py-2 text-white/90 hover:bg-white/10 hover:text-[var(--luminous-mint)]"
-                              href={sub.href}
-                              onClick={() => setOpenMenu(null)}
-                            >
-                              {sub.label}
-                            </Link>
-                          </li>
-                        ))}
+                        {item.items
+                          .filter((sub) => sub.label && sub.href)
+                          .map((sub, idx) => (
+                            <li key={`${sub.href}-${idx}`}>
+                              <Link
+                                className="block rounded px-3 py-2 text-white/90 hover:bg-white/10 hover:text-[var(--luminous-mint)]"
+                                href={sub.href}
+                                onClick={() => setOpenMenu(null)}
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          ))}
                       </ul>
                     </div>
                   </>
@@ -210,22 +244,24 @@ export default function Header() {
                           <ChevronDown className="w-4 h-4 transition group-open:rotate-180" />
                         </summary>
                         <ul className="mt-1 space-y-1 pl-3">
-                          {item.items.map((sub) => (
-                            <li key={sub.label}>
-                              <Link
-                                className="block rounded px-2 py-2 text-white/80 font-semibold hover:bg-white/10 hover:text-[var(--luminous-mint)]"
-                                href={sub.href}
-                                onClick={() => setMobileOpen(false)}
-                              >
-                                {sub.label}
-                              </Link>
-                            </li>
-                          ))}
+                          {item.items
+                            .filter((sub) => sub.label && sub.href)
+                            .map((sub, idx) => (
+                              <li key={`${sub.href}-${idx}`}>
+                                <Link
+                                  className="block rounded px-2 py-2 text-white/80 font-semibold hover:bg-white/10 hover:text-[var(--luminous-mint)]"
+                                  href={sub.href}
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {sub.label}
+                                </Link>
+                              </li>
+                            ))}
                         </ul>
                       </details>
                     ) : (
                       <Link
-                        className="block rounded px-2 py-2 text-white/90 font-semibold hover:text-[var(--luminous-mint)] hover:bg-white/10"
+                        className="block rounded px-2 py-2 text-white/90 font-semibold hover:bg-white/10"
                         href={(item as any).href}
                         onClick={() => setMobileOpen(false)}
                       >
