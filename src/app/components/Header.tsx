@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+// helper: detect external URLs
+function isExternal(href: string) {
+  return /^https?:\/\//i.test(href);
+}
+
 // icons
 function ChevronDown({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -104,9 +109,9 @@ const NAV = [
       { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
       { label: "REU Regulatory Science", href: "https://reu.egr.uh.edu/regulatory-science" },
       { label: "REU Supplement", href: "/workforce/supplement" },
-      { label: "BRAIN Student Network", href: "/brain-student-network" },
-      { label: "NSAP (Post-Bacc)", href: "/workforce/nsap" },
-      { label: "REM (Research Mentoring)", href: "/workforce/rem" },
+      { label: "BRAIN Student Network", href: "/workforce/brain-student-network" },
+      { label: "NSAP (Post-Bacc)", href: "https://www.egr.uh.edu/nsap/about" },
+      { label: "REM (Research Mentoring)", href: "https://reu.egr.uh.edu/rem" },
       { label: "Training", href: "/workforce/training" },
     ],
   },
@@ -114,7 +119,7 @@ const NAV = [
     label: "Membership",
     items: [
       { label: "Innovation Catalysts", href: "/membership/catalysts" },
-      { label: "Benefits", href: "/benefits" },
+      { label: "Benefits", href: "/membership/benefits" },
       { label: "Join", href: "/join" },
     ],
   },
@@ -210,6 +215,8 @@ export default function Header() {
                               <Link
                                 className="block rounded px-3 py-2 text-white/90 hover:bg-white/10 hover:text-[var(--luminous-mint)]"
                                 href={sub.href}
+                                target={isExternal(sub.href) ? "_blank" : undefined}
+                                rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                                 onClick={() => setOpenMenu(null)}
                               >
                                 {sub.label}
@@ -223,6 +230,8 @@ export default function Header() {
                   <Link
                     className="rounded px-1 py-1 text-white font-semibold hover:text-[var(--luminous-mint)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-secondary)]"
                     href={(item as any).href}
+                    target={isExternal((item as any).href) ? "_blank" : undefined}
+                    rel={isExternal((item as any).href) ? "noopener noreferrer" : undefined}
                   >
                     {item.label}
                   </Link>
@@ -251,6 +260,8 @@ export default function Header() {
                                 <Link
                                   className="block rounded px-2 py-2 text-white/80 font-semibold hover:bg-white/10 hover:text-[var(--luminous-mint)]"
                                   href={sub.href}
+                                  target={isExternal(sub.href) ? "_blank" : undefined}
+                                  rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                                   onClick={() => setMobileOpen(false)}
                                 >
                                   {sub.label}
@@ -263,6 +274,8 @@ export default function Header() {
                       <Link
                         className="block rounded px-2 py-2 text-white/90 font-semibold hover:bg-white/10"
                         href={(item as any).href}
+                        target={isExternal((item as any).href) ? "_blank" : undefined}
+                        rel={isExternal((item as any).href) ? "noopener noreferrer" : undefined}
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label}
