@@ -60,7 +60,28 @@ function LogoGroup() {
 }
 
 // nav model (fill hrefs as you create pages)
-const NAV = [
+type NavSubItem = {
+  label: string;
+  href: string;
+};
+
+type NavGroup = {
+  label: string;
+  items: NavSubItem[];
+};
+
+type NavSingle = {
+  label: string;
+  href: string;
+};
+
+type NavItem = NavGroup | NavSingle;
+
+function isNavGroup(item: NavItem): item is NavGroup {
+  return "items" in item;
+}
+
+const NAV: NavItem[] = [
   {
     label: "About",
     items: [
@@ -126,6 +147,7 @@ const NAV = [
   { label: "News", href: "/news" },
   { label: "Events", href: "/events" },
   { label: "IAB", href: "/iab" },
+  { label: "Donate", href: "/donate" },
 ];
 
 export default function Header() {
@@ -157,7 +179,7 @@ export default function Header() {
       {/* Top brand bar (static at page top; not sticky) */}
       <div className="bg-[var(--midnight-blue)]">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex w-full items-center justify-center py-6">
+          <div className="flex w-full items-center justify-center py-4">
             <div className="relative flex w-full items-center justify-center">
               <LogoGroup />
               {/* Mobile burger on the right */}
@@ -187,7 +209,7 @@ export default function Header() {
           <ul className="hidden lg:flex items-center justify-center gap-8 px-2 py-2 text-md font-medium tracking-normal mx-auto">
             {NAV.map((item) => (
               <li key={item.label} className="relative">
-                {"items" in item && item.items ? (
+                {isNavGroup(item) ? (
                   <>
                     <button
                       className="flex items-center gap-1 rounded px-1 py-1 text-white font-semibold hover:text-[var(--luminous-mint)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-secondary)]"
@@ -229,9 +251,9 @@ export default function Header() {
                 ) : (
                   <Link
                     className="rounded px-1 py-1 text-white font-semibold hover:text-[var(--luminous-mint)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-secondary)]"
-                    href={(item as any).href}
-                    target={isExternal((item as any).href) ? "_blank" : undefined}
-                    rel={isExternal((item as any).href) ? "noopener noreferrer" : undefined}
+                    href={item.href}
+                    target={isExternal(item.href) ? "_blank" : undefined}
+                    rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                   >
                     {item.label}
                   </Link>
@@ -246,7 +268,7 @@ export default function Header() {
               <ul className="space-y-2 px-4 py-4 text-base bg-[color-mix(in_srgb,var(--midnight-blue)_95%,var(--deep-teal)_5%)]">
                 {NAV.map((item) => (
                   <li key={item.label}>
-                    {"items" in item && item.items ? (
+                    {isNavGroup(item) ? (
                       <details className="group">
                         <summary className="flex cursor-pointer list-none items-center justify-between rounded px-2 py-2 text-white/90 hover:bg-white/10 font-semibold">
                           <span>{item.label}</span>
@@ -273,9 +295,9 @@ export default function Header() {
                     ) : (
                       <Link
                         className="block rounded px-2 py-2 text-white/90 font-semibold hover:bg-white/10"
-                        href={(item as any).href}
-                        target={isExternal((item as any).href) ? "_blank" : undefined}
-                        rel={isExternal((item as any).href) ? "noopener noreferrer" : undefined}
+                        href={item.href}
+                        target={isExternal(item.href) ? "_blank" : undefined}
+                        rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label}
