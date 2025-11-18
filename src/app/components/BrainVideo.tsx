@@ -12,7 +12,7 @@ const BrainVideo: React.FC<BrainVideoProps> = ({ overlayOpacity = 0.6 }) => {
       {/* Background video */}
       <video
         className="w-full h-full object-cover"
-        src="/videos/brain-animation.mp4"
+        src="/videos/soft-exo-1280x720.mp4"
         autoPlay
         loop
         muted

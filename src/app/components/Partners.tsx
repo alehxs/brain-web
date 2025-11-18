@@ -15,14 +15,14 @@ export default function Partners() {
               name="University of Houston"
             />
             <Logo
-              src="/partners/git.png"
-              alt="Georgia Institute of Technology"
-              name="Georgia Tech"
-            />
-            <Logo
               src="/partners/asu.png"
               alt="Arizona State University"
               name="Arizona State University"
+            />
+            <Logo
+              src="/partners/git.png"
+              alt="Georgia Institute of Technology"
+              name="Georgia Tech"
             />
             <Logo
               src="/partners/wvu.png"
