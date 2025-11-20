@@ -1,91 +1,88 @@
 import Image from "next/image";
+
 export default function Partners() {
   return (
-    <section className="relative bg-[var(--background-light,white)] w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-10">
+    <section className="relative bg-white w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12">
       <div className="mx-auto max-w-7xl px-6 text-center">
-        {/* ---- Brain Sites ---- */}
-        <div className="mt-8">
-          <h3 className="text-2xl md:text-5xl font-semibold text-[var(--deep-teal)] mb-8">
-            BRAIN Sites
-          </h3>
-          <div className="flex flex-wrap gap-x-24 justify-center max-w-6xl mx-auto">
-            <Logo
-              src="/partners/uh.png"
-              alt="University of Houston"
-              name="University of Houston"
-            />
-            <Logo
-              src="/partners/asu.png"
-              alt="Arizona State University"
-              name="Arizona State University"
-            />
-            <Logo
-              src="/partners/git.png"
-              alt="Georgia Institute of Technology"
-              name="Georgia Tech"
-            />
-            <Logo
-              src="/partners/wvu.png"
-              alt="West Virginia University"
-              name="West Virginia University"
-            />
-            <Logo
-              src="/partners/umbc.png"
-              alt="University of Maryland, Baltimore County"
-              name="UMBC"
-            />
+        <div className="space-y-10">
+          {/* BRAIN Sites */}
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+              BRAIN Sites
+            </h3>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 max-w-5xl mx-auto">
+              <Logo
+                src="/partners/uh.png"
+                alt="University of Houston"
+              />
+              <Logo
+                src="/partners/asu.png"
+                alt="Arizona State University"
+              />
+              <Logo
+                src="/partners/git.png"
+                alt="Georgia Institute of Technology"
+              />
+              <Logo
+                src="/partners/wvu.png"
+                alt="West Virginia University"
+              />
+              <Logo
+                src="/partners/umbc.png"
+                alt="University of Maryland, Baltimore County"
+              />
+            </div>
           </div>
-        </div>
-        {/* ---- External Collaborating Sites ---- */}
-        <div className="mt-14">
-          <h3 className="text-2xl md:text-5xl font-semibold text-[var(--deep-teal)] mb-8">
-            External Collaborating Sites
-          </h3>
-          <div className="flex flex-wrap gap-x-24 justify-center max-w-6xl mx-auto">
-            <Logo
-              src="/partners/neu.png"
-              alt="Northeastern University"
-              name="Northeastern University"
-            />
-            <Logo
-              src="/partners/uab.svg"
-              alt="University of Alabama at Birmingham"
-              name="UAB"
-            />
+
+          {/* External Collaborating Sites */}
+          <div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-5">
+              External Collaborating Sites
+            </h3>
+            <div className="flex flex-wrap gap-8 justify-center max-w-3xl mx-auto">
+              <Logo
+                src="/partners/neu.png"
+                alt="Northeastern University"
+              />
+              <Logo
+                src="/partners/uab.svg"
+                alt="University of Alabama at Birmingham"
+              />
+            </div>
           </div>
-        </div>
-        {/* ---- International Affiliate Sites ---- */}
-        <div className="mt-14">
-          <h3 className="text-2xl md:text-5xl font-semibold text-[var(--deep-teal)] mb-8">
-            International Affiliate Sites
-          </h3>
-          <div className="flex flex-wrap gap-x-24 justify-center max-w-6xl mx-auto">
-            <Logo
-              src="/partners/umh.png"
-              alt="Miguel Hernández University of Elche"
-              name="Miguel Hernández University of Elche"
-            />
-            <Logo
-              src="/partners/tec.png"
-              alt="Tecnológico de Monterrey"
-              name="Tec de Monterrey"
-            />
+
+          {/* International Affiliate Sites */}
+          <div>
+            <h3 className="text-xl font-semibold text-slate-900 mb-5">
+              International Affiliate Sites
+            </h3>
+            <div className="flex flex-wrap gap-8 justify-center max-w-3xl mx-auto">
+              <Logo
+                src="/partners/umh.png"
+                alt="Miguel Hernández University of Elche"
+              />
+              <Logo
+                src="/partners/tec.png"
+                alt="Tecnológico de Monterrey"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
-function Logo({ src, alt, name }: { src: string; alt: string; name: string }) {
+
+function Logo({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="flex items-center justify-center">
-      <div className="w-80 h-44 flex items-center justify-center">
+      <div className="relative w-40 h-20">
         <Image
           src={src}
           alt={alt}
-          width={320}
-          height={176}
+          fill
           className="object-contain"
+          sizes="160px"
         />
       </div>
     </div>
