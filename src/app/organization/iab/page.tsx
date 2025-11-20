@@ -49,14 +49,14 @@ export default function IABPage() {
               key={member.name}
               className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="grid gap-6 md:grid-cols-[280px_1fr] lg:gap-8">
-                <div className="relative aspect-[4/5] w-full bg-slate-100 md:aspect-auto md:h-full">
+              <div className="grid gap-6 md:grid-cols-[320px_1fr] lg:gap-8">
+                <div className="relative w-full bg-slate-100 md:h-full" style={{ aspectRatio: '4/5' }}>
                   <Image
                     src={member.imageSrc}
                     alt={member.name}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 280px"
+                    className="object-cover object-center"
+                    sizes="320px"
                   />
                 </div>
 
