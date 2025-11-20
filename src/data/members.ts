@@ -35,6 +35,14 @@ export const members: MemberOrg[] = [
     alt: "Indus Instruments logo",
   },
   {
+    id: "ferguson",
+    name: "Ferguson Control Systems",
+    logoSrc: "/logos/members/ferguson-control-systems.png",
+    website: "https://fcs-embedded.com/",
+    tier: "full",
+    alt: "Ferguson Control Systems logo",
+  },
+  {
     id: "brainwave-science",
     name: "Brainwave Science",
     logoSrc: "/logos/members/brainwave-science.png",
@@ -68,20 +76,20 @@ export const members: MemberOrg[] = [
     alt: "Brain Products logo",
   },
   {
-    id: "ferguson",
-    name: "Ferguson Control Systems",
-    logoSrc: "/logos/members/ferguson-control-systems.png",
-    website: "https://fcs-embedded.com/",
-    tier: "associate",
-    alt: "Ferguson Control Systems logo",
-  },
-  {
     id: "md-anderson",
     name: "MD Anderson Cancer Center",
     logoSrc: "/logos/members/md-anderson.svg",
     website: "https://www.mdanderson.org/",
     tier: "associate",
     alt: "MD Anderson Cancer Center logo",
+  },
+  {
+    id: "cognixion",
+    name: "Cognixion",
+    logoSrc: "/logos/members/cognixion.png",
+    website: "https://www.cognixion.com/",
+    tier: "associate",
+    alt: "Cognixion logo",
   },
   {
     id: "seniors-rising",

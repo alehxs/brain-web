@@ -1,92 +1,98 @@
-import type { ThrustColumn, LabRow } from "@/app/components/thrusts/ResearchThrustMatrix";
+// src/data/thrusts.ts
 
-export const baseThrustColumns: ThrustColumn[] = [
-  { id: "big-data", label: "Big Data", colorClass: "bg-blue-500" },
-  {
-    id: "neuromodulation",
-    label: "Neuromodulation",
-    colorClass: "bg-orange-500",
-  },
-  {
-    id: "neurorehab",
-    label: "Neurorehabilitation & Assistive Devices",
-    colorClass: "bg-green-500",
-  },
-  {
-    id: "neural-activity",
-    label: "Neural Activity Measurement",
-    colorClass: "bg-purple-600",
-  },
-  { id: "clinical-trials", label: "Clinical Trials", colorClass: "bg-red-600" },
-  {
-    id: "device-development",
-    label: "Device Development",
-    colorClass: "bg-slate-300",
-  },
-  {
-    id: "interop",
-    label: "Device Interoperability",
-    colorClass: "bg-slate-500",
-  },
-  {
-    id: "reg-science",
-    label: "Regulatory Science",
-    colorClass: "bg-yellow-400",
-  },
-  {
-    id: "sports",
-    label: "Neurotechnologies for Sports",
-    colorClass: "bg-cyan-400",
-  },
-  {
-    id: "smart-factories",
-    label: "Neurotechnologies for Smart Factories",
-    colorClass: "bg-pink-400",
-  },
-  {
-    id: "art",
-    label: "Neurotechnologies for Art",
-    colorClass: "bg-fuchsia-500",
-  },
-  {
-    id: "ethical-ai",
-    label: "Ethical & Trustworthy Artificial Intelligence",
-    colorClass: "bg-amber-800",
-  },
-];
+export type ResearchThrust = {
+  slug: string;
+  title: string;
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+};
 
-export const uhLabs: LabRow[] = [
+export const researchThrusts: ResearchThrust[] = [
   {
-    name: "Biomedical Imaging",
-    thrustIds: ["big-data", "neural-activity"],
+    slug: "big-data",
+    title: "Big Data",
+    href: "/research/thrusts/big-data",
+    imageSrc: "/images/thrusts/big-data.png",
+    imageAlt: "Visualization representing big data in neurotechnology research.",
   },
   {
-    name: "Center for Neuromotor and Biomechanics Research (CNBR)",
-    thrustIds: ["big-data", "neuromodulation", "neurorehab", "neural-activity"],
+    slug: "clinical-trial",
+    title: "Clinical Trial",
+    href: "/research/thrusts/clinical-trial",
+    imageSrc: "/images/thrusts/clinical-trial.jpg",
+    imageAlt: "Clinical neurotechnology trial in progress.",
   },
   {
-    name: "Noninvasive BMI Systems",
-    thrustIds: ["big-data", "neurorehab", "neural-activity", "clinical-trials"],
-  },
-  // …add the rest of the UH labs here following the same pattern
-];
-
-export const asuLabs: LabRow[] = [
-  {
-    name: "BioElectrical Systems & Technology (BEST)",
-    thrustIds: [],
+    slug: "device-development",
+    title: "Device Development",
+    href: "/research/thrusts/device-development",
+    imageSrc: "/images/thrusts/device-development.jpg",
+    imageAlt: "Neurotechnology device development in a lab setting.",
   },
   {
-    name: "Neural Microsystem",
-    thrustIds: ["neural-activity", "device-development"],
+    slug: "device-interoperability",
+    title: "Device Interoperability",
+    href: "/research/thrusts/device-interoperability",
+    imageSrc: "/images/thrusts/device-interoperability.png",
+    imageAlt: "Connected neurotechnology devices demonstrating interoperability.",
   },
-  // …fill in from the ASU matrix
-];
-
-export const umhLabs: LabRow[] = [
   {
-    name: "Brain-Machine Interface Systems",
-    thrustIds: ["big-data", "neurorehab", "neural-activity"],
+    slug: "neuromodulation",
+    title: "Neuromodulation",
+    href: "/research/thrusts/neuromodulation",
+    imageSrc: "/images/thrusts/neuromodulation.jpg",
+    imageAlt: "Representation of neuromodulation techniques.",
   },
-  // …fill in from the UMH matrix
+  {
+    slug: "neural-activity-measurement",
+    title: "Neural Activity Measurement",
+    href: "/research/thrusts/neural-activity-measurement",
+    imageSrc: "/images/thrusts/neural-activity-measurement.jpg",
+    imageAlt: "Visualization of neural activity measurement.",
+  },
+  {
+    slug: "neurorehabilitation-and-assistive-devices",
+    title: "Neurorehabilitation And Assistive Devices",
+    href: "/research/thrusts/neurorehabilitation-and-assistive-devices",
+    imageSrc:
+      "/images/thrusts/neurorehab-and-assistive-devices.jpg",
+    imageAlt: "Assistive devices used in neurorehabilitation.",
+  },
+  {
+    slug: "regulatory-science",
+    title: "Regulatory Science",
+    href: "/research/thrusts/regulatory-science",
+    imageSrc: "/images/thrusts/regulatory-science.jpg",
+    imageAlt: "Conceptual illustration of regulatory science for neurotechnology.",
+  },
+  {
+    slug: "neurotechnologies-for-sports",
+    title: "Neurotechnologies for Sports",
+    href: "/research/thrusts/neurotechnologies-for-sports",
+    imageSrc: "/images/thrusts/neurotechnologies-for-sports.jpg",
+    imageAlt: "Athlete using neurotechnology in a sports context.",
+  },
+  {
+    slug: "neurotechnologies-for-smart-factories",
+    title: "Neurotechnologies for Smart Factories",
+    href: "/research/thrusts/neurotechnologies-for-smart-factories",
+    imageSrc: "/images/thrusts/neurotechnologies-for-smart-factories.jpg",
+    imageAlt: "Smart factory environment with neurotechnology integration.",
+  },
+  {
+    slug: "neurotechnologies-for-art",
+    title: "Neurotechnologies for Art",
+    href: "/research/thrusts/neurotechnologies-for-art",
+    imageSrc: "/images/thrusts/neurotechnologies-for-art.jpg",
+    imageAlt: "Artistic performance involving neurotechnology.",
+  },
+  {
+    slug: "ethical-trustworthy-artificial-intelligence",
+    title: "Ethical & Trustworthy Artificial Intelligence",
+    href: "/research/thrusts/ethical-trustworthy-artificial-intelligence",
+    imageSrc:
+      "/images/thrusts/ethical-ai.png",
+    imageAlt: "Abstract representation of ethical, trustworthy AI.",
+  },
 ];
