@@ -4,7 +4,7 @@ import NewsGrid, {
 } from "../components/news/NewsGrid";
 import { sortedNewsItems } from "@/data/news";
 
-const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n, index) => ({
+const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
   id: n.slug,
   title: n.title,
   dateLabel: n.dateLabel,

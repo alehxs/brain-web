@@ -10,7 +10,7 @@ export type MediaCardProps = {
   href?: string;
   external?: boolean;
   as?: ElementType;
-  aspectRatio?: "16/9" | "4/3" | "1/1" | "5/6";
+  aspectRatio?: "16/9" | "4/3" | "1/1" | "4/5";
 };
 
 export function MediaCard({
@@ -20,7 +20,7 @@ export function MediaCard({
   href,
   external,
   as = "article",
-  aspectRatio = "5/6",
+  aspectRatio = "4/5",
 }: MediaCardProps) {
   return (
     <Card as={as} href={href} external={external} className="h-full">

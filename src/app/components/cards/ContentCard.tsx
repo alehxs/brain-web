@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Card from "./primitives/Card";
 import type { ContentCardProps } from "./types";
 
@@ -8,7 +9,13 @@ export default function ContentCard({
     <Card href={href} external={external}>
       {imageSrc && (
         <Card.Media ratio="16/9">
-          <img src={imageSrc} alt={imageAlt} className="h-full w-full object-cover" />
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </Card.Media>
       )}
       <Card.Body>

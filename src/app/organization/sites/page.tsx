@@ -15,10 +15,6 @@ import { sites } from "@/data/sites"; // Importing shared data
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 const usGeoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
-// Helper to shorten category names for the small UI card
-const formatCategory = (cat: string) => {
-  return cat.replace(" Site", "").toUpperCase();
-};
 
 const MapSection = () => {
   const [hoveredSite, setHoveredSite] = useState<string | null>(null);

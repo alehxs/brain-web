@@ -16,7 +16,7 @@ export default function CatalystsPage() {
             Catalysts of Technological Development & Innovation
           </h1>
           <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
-            In the NSF IUCRC model, member organizations are more than sponsors—they're{" "}
+            In the NSF IUCRC model, member organizations are more than sponsors—they&apos;re{" "}
             <span className="font-semibold">catalysts</span>. By partnering with our academic sites,
             members help shape research roadmaps, accelerate translation of ideas, and develop a
             skilled workforce aligned with industry needs.
@@ -28,7 +28,7 @@ export default function CatalystsPage() {
         <div className="mx-auto max-w-6xl px-6 sm:px-8 space-y-12">
           <section>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              What Does "Catalyst" Mean at BRAIN?
+              What Does &quot;Catalyst&quot; Mean at BRAIN?
             </h2>
             <p className="mt-2 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-600">
               Catalysts are industry and agency members who collaborate with faculty to co-define

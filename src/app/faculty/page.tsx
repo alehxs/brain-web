@@ -51,11 +51,7 @@ export function CardRoot<E extends ElementType = "article">({
   );
 }
 
-type FacultyPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
-
-export default function FacultyPage(_props: FacultyPageProps) {
+export default function FacultyPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-12">
       <h1 className="text-3xl font-semibold tracking-tight">Faculty</h1>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 import { researchThrusts } from "@/data/thrusts";
 
@@ -32,10 +33,11 @@ export default function ResearchThrustsPage() {
           {researchThrusts.map((thrust) => (
             <Card key={thrust.slug} href={thrust.href}>
               <Card.Media ratio="1/1">
-                <img
+                <Image
                   src={thrust.imageSrc}
                   alt={thrust.imageAlt}
                   className="h-full w-full object-cover"
+                  fill
                 />
               </Card.Media>
               <Card.Body>

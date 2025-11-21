@@ -36,7 +36,7 @@ export default function IABPage() {
           </h1>
           <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
             The Industry Advisory Board (IAB) provides strategic guidance, shapes research
-            priorities, and ensures the BRAIN Center's work remains aligned with real-world industry
+            priorities, and ensures the BRAIN Center&apos;s work remains aligned with real-world industry
             needs and opportunities.
           </p>
         </div>

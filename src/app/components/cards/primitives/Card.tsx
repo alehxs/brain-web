@@ -43,7 +43,7 @@ function CardRoot({
 
 type MediaProps = {
   children: ReactNode;      // pass your <Image/> or <img/>
-  ratio?: "16/9" | "4/3" | "1/1" | "4/5"; // defaults to 16/9
+  ratio?: "16/9" | "4/3" | "1/1" | "4/5" | "5/6"; // defaults to 16/9
   className?: string;
 };
 function CardMedia({ children, ratio = "16/9", className = "" }: MediaProps) {

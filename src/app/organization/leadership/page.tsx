@@ -127,7 +127,7 @@ export default function LeadershipPage() {
           </h1>
           <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
             Meet the directors, investigators, and staff driving innovation and guiding
-            the BRAIN Center's research direction.
+            the BRAIN Center&apos;s research direction.
           </p>
         </div>
       </section>
