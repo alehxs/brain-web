@@ -14,8 +14,7 @@ export interface Site {
     small: string;
   };
   description?: string;
-  // ADD THIS FIELD
-  coordinates: [number, number]; 
+  coordinates: [number, number]; // [Longitude, Latitude]
 }
 
 export const sites: Site[] = [
@@ -80,7 +79,7 @@ export const sites: Site[] = [
     link: "https://www.northeastern.edu",
     logos: { full: "/partners/neu.png", small: "/logos/neu-logo-white.png" },
     description: "External collaborator on key research initiatives.",
-    coordinates: [-87.6753, 42.0565]
+    coordinates: [-71.0892, 42.3398] // Fixed coords (Chicago was in your snippet, switched to Boston for NEU)
   },
   {
     id: "uab",
@@ -109,7 +108,7 @@ export const sites: Site[] = [
     name: "Tecnológico de Monterrey",
     abbreviation: "TEC",
     category: "International Affiliate Site",
-    link: "https://tec.mx",
+    link: "https://tec.mx/en",
     logos: { full: "/partners/tec.png", small: "/logos/tec-logo-white.png" },
     description: "Key Latin American partner for innovation and talent.",
     coordinates: [-100.3167, 25.6667]
