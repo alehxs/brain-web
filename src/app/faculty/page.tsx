@@ -53,7 +53,7 @@ export function CardRoot<E extends ElementType = "article">({
 export default function FacultyPage() {
   return (
     // Standard Layout: No dark hero, just clean spacing matching other pages
-    <main className="bg-slate-50 min-h-screen mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
+    <main className="bg-white min-h-screen mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
       <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--midnight-blue)] tracking-tight mb-8">
         Faculty
       </h1>
