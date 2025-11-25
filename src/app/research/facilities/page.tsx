@@ -179,7 +179,7 @@ export default function FacilitiesPage() {
         <div className="space-y-10">
           <ResearchThrustMatrix
             universityName="University of Houston"
-            logoSrc="/images/logos/uh-vertical.png"
+            logoSrc="/partners/uh.png"
             logoAlt="University of Houston"
             columns={thrustColumns}
             labs={uhLabs}
@@ -187,7 +187,7 @@ export default function FacilitiesPage() {
 
           <ResearchThrustMatrix
             universityName="Arizona State University"
-            logoSrc="/images/logos/asu-vertical.png"
+            logoSrc="/partners/asu.png"
             logoAlt="Arizona State University"
             columns={thrustColumns}
             labs={asuLabs}
