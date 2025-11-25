@@ -22,11 +22,4 @@ export const facultyList: Faculty[] = [
     alt: "Portrait of Alexander Sangurima",
     subtitle: "BRAIN Center",
   },
-  {
-    name: "Priya Shah, Ph.D.",
-    src: "/faculty/priya-shah.jpg",
-    href: "/faculty/priya-shah",
-    alt: "Portrait of Priya Shah",
-    subtitle: "BRAIN Center",
-  },
 ];
