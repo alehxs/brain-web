@@ -50,9 +50,7 @@ export default function PortraitCard({
         {affiliation && (
           <p className="mt-1 text-xs text-gray-600 line-clamp-2">{affiliation}</p>
         )}
-        <span className="mt-3 inline-block text-xs font-semibold text-[var(--deep-teal,#00A79D)] group-hover:underline">
-          View profile →
-        </span>
+        
       </div>
     </Link>
   );
