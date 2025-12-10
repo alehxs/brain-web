@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 function isExternal(href: string) {
   return /^https?:\/\//i.test(href);
@@ -13,6 +12,24 @@ function ChevronDown({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={className}>
       <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.17l3.71-2.94a.75.75 0 1 1 .94 1.16l-4.24 3.36a.75.75 0 0 1-.94 0L5.21 8.39a.75.75 0 0 1 .02-1.18z" />
+    </svg>
+  );
+}
+
+function ExternalArrow({ className = "w-3 h-3" }: { className?: string }) {
+  return (
+    <svg 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 17L17 7" />
+      <path d="M7 7h10v10" />
     </svg>
   );
 }
@@ -122,13 +139,13 @@ const NAV: NavItem[] = [
     label: "Workforce",
     items: [
       { label: "Information", href: "/workforce/information" },
-      { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
-      { label: "REU Regulatory Science", href: "https://reu.egr.uh.edu/regulatory-science" },
       { label: "REU Supplement", href: "/workforce/supplement" },
       { label: "BRAIN Student Network", href: "/workforce/brain-student-network" },
+      { label: "Training", href: "/workforce/training" },
+      { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
+      { label: "REU Regulatory Science", href: "https://reu.egr.uh.edu/regulatory-science" },
       { label: "NSAP (Post-Bacc)", href: "https://www.egr.uh.edu/nsap/about" },
       { label: "REM (Research Mentoring)", href: "https://reu.egr.uh.edu/rem" },
-      { label: "Training", href: "/workforce/training" },
     ],
   },
   {
@@ -141,15 +158,13 @@ const NAV: NavItem[] = [
   },
   { label: "News", href: "/news" },
   { label: "Events", href: "/events" },
-  { label: "IAB", href: "/iab" },
   { label: "Donate", href: "/donate" }, 
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const pathname = usePathname();
-
+  
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape" && mobileOpen) {
@@ -167,9 +182,6 @@ export default function Header() {
       document.body.style.overflow = "";
     }
   }, [mobileOpen]);
-
-  const isActive = (href: string) => pathname?.startsWith(href);
-  const isGroupActive = (items: NavSubItem[]) => items.some(i => pathname?.startsWith(i.href));
 
   return (
     <header className="relative z-50 text-white bg-[var(--midnight-blue)] shadow-xl">
@@ -207,21 +219,16 @@ export default function Header() {
                         onClick={() => setOpenMenu((v) => (v === item.label ? null : item.label))}
                       >
                         <span className={`relative ${
-                          openMenu === item.label || isGroupActive(item.items) ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
+                          openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
                         }`}>
                           {item.label}
-                          {/* Active indicator line */}
-                          {(isGroupActive(item.items) || openMenu === item.label) && (
-                            <span className="absolute -bottom-[9px] left-0 w-full h-[2px] bg-[var(--deep-teal)]" />
-                          )}
                         </span>
-                        <ChevronDown className={`w-3 h-3 transition-transform ${openMenu === item.label ? "rotate-180" : ""} ${
-                          openMenu === item.label || isGroupActive(item.items) ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
+                        <ChevronDown className={`w-[0.7em] h-[0.7em] transition-transform ${openMenu === item.label ? "rotate-180" : ""} ${
+                          openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
                         }`} />
                       </button>
                       
                       <div
-                        // Removed "border-t-2 border-[var(--deep-teal)]" here
                         className={`absolute left-0 top-full mt-0 w-64 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
                           openMenu === item.label ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                         }`}
@@ -231,16 +238,13 @@ export default function Header() {
                           {item.items.map((sub, idx) => (
                             <li key={`${sub.href}-${idx}`}>
                               <Link
-                                className={`block px-4 py-2.5 text-[13px] transition-colors ${
-                                  isActive(sub.href) 
-                                    ? "bg-white/10 text-[var(--luminous-mint)]" 
-                                    : "text-white/80 hover:bg-white/5 hover:text-white"
-                                }`}
+                                className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
                                 href={sub.href}
                                 target={isExternal(sub.href) ? "_blank" : undefined}
                                 onClick={() => setOpenMenu(null)}
                               >
-                                {sub.label}
+                                <span>{sub.label}</span>
+                                {isExternal(sub.href) && <ExternalArrow className="w-3 h-3 opacity-50" />}
                               </Link>
                             </li>
                           ))}
@@ -250,17 +254,14 @@ export default function Header() {
                   ) : (
                     <>
                       <Link
-                        className="py-2 group transition-colors"
+                        className="py-2 group transition-colors flex items-center gap-1.5"
                         href={item.href}
+                        target={isExternal(item.href) ? "_blank" : undefined}
                       >
-                         <span className={`relative ${
-                          isActive(item.href) ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
-                        }`}>
+                         <span className="relative text-white/90 group-hover:text-[var(--luminous-mint)]">
                           {item.label}
-                          {isActive(item.href) && (
-                             <span className="absolute -bottom-[9px] left-0 w-full h-[2px] bg-[var(--deep-teal)]" />
-                          )}
                         </span>
+                        {isExternal(item.href) && <ExternalArrow className="w-3 h-3 text-white/60 group-hover:text-[var(--luminous-mint)] transition-colors" />}
                       </Link>
                     </>
                   )}
@@ -281,25 +282,28 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-80px)] overflow-y-auto">
-          <ul className="flex flex-col p-6 gap-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-73px)] overflow-y-auto">
+          {/* UPDATED: Added px-8 py-8 and gap-6 to spread links out more generously */}
+          <ul className="flex flex-col px-8 py-8 pb-20 gap-6">
             {NAV.map((item) => (
-              <li key={item.label} className="border-b border-white/5 pb-2">
+              <li key={item.label} className="border-b border-white/5 pb-4 last:border-0">
                 {isNavGroup(item) ? (
                   <details className="group">
                     <summary className="flex cursor-pointer items-center justify-between text-lg font-semibold text-white/90">
                       {item.label}
-                      <ChevronDown className="transition-transform group-open:rotate-180" />
+                      <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-white/60" />
                     </summary>
-                    <ul className="mt-4 ml-4 space-y-3 border-l border-white/10 pl-4">
+                    <ul className="mt-4 ml-2 space-y-4 border-l border-white/10 pl-5">
                       {item.items.map((sub, idx) => (
                         <li key={idx}>
                           <Link
                             href={sub.href}
-                            className="block text-white/70 hover:text-[var(--luminous-mint)]"
+                            className="flex items-center gap-2 text-[15px] text-white/70 hover:text-[var(--luminous-mint)] py-1"
                             onClick={() => setMobileOpen(false)}
+                            target={isExternal(sub.href) ? "_blank" : undefined}
                           >
-                            {sub.label}
+                            <span>{sub.label}</span>
+                            {isExternal(sub.href) && <ExternalArrow className="w-3.5 h-3.5 opacity-60" />}
                           </Link>
                         </li>
                       ))}
@@ -308,10 +312,12 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block text-lg font-semibold ${item.label === 'Donate' ? 'text-[var(--luminous-mint)]' : 'text-white/90'}`}
+                    className={`flex items-center gap-2 text-lg font-semibold ${item.label === 'Donate' ? 'text-[var(--luminous-mint)] mt-2' : 'text-white/90'}`}
                     onClick={() => setMobileOpen(false)}
+                    target={isExternal(item.href) ? "_blank" : undefined}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {isExternal(item.href) && <ExternalArrow className="w-4 h-4 opacity-60" />}
                   </Link>
                 )}
               </li>
