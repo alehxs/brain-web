@@ -15,7 +15,6 @@ export interface PortraitCardProps {
 type BaseCardProps<E extends ElementType = "article"> = {
   as?: E;
   href?: string;
-  external?: boolean;
   className?: string;
   children: ReactNode;
 } & Omit<
@@ -26,7 +25,6 @@ type BaseCardProps<E extends ElementType = "article"> = {
 function CardRoot<E extends ElementType = "article">({
   as = "article" as E,
   href,
-  external,
   className = "",
   children,
   ...rest
@@ -36,7 +34,7 @@ function CardRoot<E extends ElementType = "article">({
   const props = href ? { href, ...rest } : { ...rest };
 
   return (
-    // @ts-ignore 
+    // @ts-expect-error - is safe
     <Cmp
       {...props}
       className={[
