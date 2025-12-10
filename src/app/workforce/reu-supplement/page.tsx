@@ -14,7 +14,6 @@ export default function ReuSupplementPage() {
   return (
     <main className="bg-slate-50 min-h-screen">
       <PageHeader 
-        eyebrow="Next Generation"
         title="REU Students"
         description="Providing Research Experiences for Undergraduates to foster the next generation of neurotechnology leaders."
       />
