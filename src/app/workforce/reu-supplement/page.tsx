@@ -17,9 +17,7 @@ export default function ReuSupplementPage() {
         title="REU Students"
         description="Providing Research Experiences for Undergraduates to foster the next generation of neurotechnology leaders."
       />
-
       <div className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
-        
         <section className="mb-16 max-w-4xl">
           <p className="text-lg text-slate-800 font-medium mb-6 leading-relaxed">
             Marco Santello is the Director of the BRAIN Center, the School of Biological and Health Systems Engineering, 
