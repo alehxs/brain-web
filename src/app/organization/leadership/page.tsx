@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 
+import { people } from "../../../data/people";
+import { sites } from "../../../data/sites";
+
 export const metadata: Metadata = {
   title: "Leadership | NSF BRAIN",
   description:
@@ -17,102 +20,51 @@ type Person = {
   href?: string;
 };
 
-const directors: Person[] = [
-  {
-    name: "Jose Luis Contreras-Vidal",
-    role: "Center Director",
-    university: "University of Houston",
-    imageSrc: "/images/people/jose-luis-contreras-vidal.jpg",
-    imageAlt: "Dr. Jose Luis Contreras-Vidal",
-  },
-  {
-    name: "Marco Santello",
-    role: "Site Director",
-    university: "Arizona State University",
-    imageSrc: "/images/people/marco-santello.jpg",
-    imageAlt: " Marco Santello",
-  },
-  {
-    name: "Peter Konrad",
-    role: "Site Director",
-    university: "West Virginia University",
-    imageSrc: "/images/people/peter-konrad.jpg",
-    imageAlt: "Peter Konrad",
-  },
-  {
-    name: "Thibault Duchemin",
-    role: "Site Director",
-    university: "Georgia Tech",
-    imageSrc: "/images/people/thibault-duchemin.jpg",
-    imageAlt: "Thibault Duchemin",
-  },
-  {
-    name: "Justin Sanchez",
-    role: "Site Director",
-    university: "Battelle / LIFE",
-    imageSrc: "/images/people/justin-sanchez.jpg",
-    imageAlt: "Justin Sanchez",
-  },
-];
+function getUniversityName(identifier: string): string | undefined {
+  const site = sites.find(
+    (s) =>
+      s.id === identifier.toLowerCase() ||
+      s.abbreviation === identifier ||
+      s.name === identifier
+  );
+  return site?.name;
+}
 
-const coInvestigators: Person[] = [
-  {
-    name: "Gerard Francisco",
-    role: "Co-Director",
-    university: "TIRR Memorial Hermann",
-    imageSrc: "/images/people/gerard-francisco.jpg",
-    imageAlt: "Gerard Francisco",
-  },
-  {
-    name: "Zachary Danziger",
-    role: "Co-Investigator",
-    university: "Florida International University",
-    imageSrc: "/images/people/zachary-danziger.jpg",
-    imageAlt: "Zachary Danziger",
-  },
-  {
-    name: "James Sulzer",
-    role: "Co-Investigator",
-    university: "MetroHealth",
-    imageSrc: "/images/people/james-sulzer.jpg",
-    imageAlt: "James Sulzer",
-  },
-  {
-    name: "Luca Pollonini",
-    role: "Co-Investigator",
-    university: "University of Houston",
-    imageSrc: "/images/people/luca-pollonini.jpg",
-    imageAlt: "Luca Pollonini",
-  },
-  {
-    name: "Saurabh Prasad",
-    role: "Co-Investigator",
-    university: "University of Houston",
-    imageSrc: "/images/people/saurabh-prasad.jpg",
-    imageAlt: "Saurabh Prasad",
-  },
-];
+const leadership: Person[] = people
+  .filter((person) => person.group.includes("Leadership"))
+  .map((person) => ({
+    name: person.name,
+    role: person.tags[0] || "",
+    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+    imageSrc: person.src,
+    imageAlt: person.name,
+    href: person.href,
+  }));
 
-const staff: Person[] = [
-  {
-    name: "Maria Gonzalez",
-    role: "Center Manager",
-    imageSrc: "/images/people/maria-gonzalez.jpg",
-    imageAlt: "Maria Gonzalez",
-  },
-  {
-    name: "Juan Rodriguez",
-    role: "Research Coordinator",
-    imageSrc: "/images/people/juan-rodriguez.jpg",
-    imageAlt: "Juan Rodriguez",
-  },
-  {
-    name: "Alex Smith",
-    role: "Technical Lead",
-    imageSrc: "/images/people/alex-smith.jpg",
-    imageAlt: "Alex Smith",
-  },
-];
+const coInvestigators: Person[] = people
+  .filter((person) =>
+    person.group.includes("Associate Professor") ||
+    person.group.includes("Professor")
+  )
+  .map((person) => ({
+    name: person.name,
+    role: person.tags[0] || "",
+    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+    imageSrc: person.src,
+    imageAlt: person.name,
+    href: person.href,
+  }));
+
+const staff: Person[] = people
+  .filter((person) => person.group.includes("Staff"))
+  .map((person) => ({
+    name: person.name,
+    role: person.tags[0] || "",
+    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+    imageSrc: person.src,
+    imageAlt: person.name,
+    href: person.href,
+  }));
 
 export default function LeadershipPage() {
   return (
@@ -138,7 +90,7 @@ export default function LeadershipPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 mb-6">
               Center Directors
             </h2>
-            <PersonGrid people={directors} />
+            <PersonGrid people={leadership} />
           </section>
 
           <section>
@@ -195,7 +147,7 @@ function PersonGrid({ people }: { people: Person[] }) {
               {person.role}
             </p>
             {person.university && (
-              <p className="text-[10px] text-slate-500 leading-snug mt-1 line-clamp-1">
+              <p className="text-[10px] text-slate-500 leading-snug mt-1 line-clamp-2">
                 {person.university}
               </p>
             )}
