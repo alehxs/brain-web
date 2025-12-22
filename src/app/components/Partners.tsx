@@ -75,14 +75,14 @@ export default function Partners() {
 
 function Logo({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative w-40 h-20">
+    <div className="flex items-center justify-center p-4">
+      <div className="relative w-48 h-24">
         <Image
           src={src}
           alt={alt}
           fill
           className="object-contain"
-          sizes="160px"
+          sizes="(max-width: 768px) 192px, 160px"
         />
       </div>
     </div>

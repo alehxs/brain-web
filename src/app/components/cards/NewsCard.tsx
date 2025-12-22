@@ -43,21 +43,23 @@ export function NewsCard({
         />
       </Card.Media>
 
-      <Card.Body className="border-t border-[#00A79D33] bg-white px-4 py-4 text-black">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#00A79D]">
+      <Card.Body className="flex flex-col flex-1 border-t border-slate-100 bg-white px-4 py-4 text-black">
+        <p className="text-xs text-slate-600 font-medium leading-snug">
           {dateLabel}
         </p>
 
         <Card.Title
           as="h3"
-          className="mt-1 text-base font-semibold leading-snug text-[#0A192F] line-clamp-2"
+          className="mt-2 text-base font-semibold leading-snug text-[#0A192F] line-clamp-2 mb-3"
         >
           {title}
         </Card.Title>
 
-        <p className="mt-2 text-sm text-[#8892B0] line-clamp-3">
-          {summary}
-        </p>
+        <div className="mt-auto flex justify-end">
+          <span className="text-xs font-semibold text-[#00A79D] leading-snug group-hover:underline">
+            Read more &rarr;
+          </span>
+        </div>
       </Card.Body>
     </Card>
   );

@@ -13,7 +13,7 @@ export function NewsGrid({ items }: NewsGridProps) {
   return (
     <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
-        <NewsCard key={item.id} {...item} />
+        <NewsCard key={item.id} {...item} aspectRatio="16/9" />
       ))}
     </section>
   );
