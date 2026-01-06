@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "NSF IUCRC Program | NSF BRAIN",
@@ -19,39 +20,11 @@ function CheckIcon() {
 export default function IucrcPage() {
   return (
     <main className="bg-white">
-      {/* HERO SECTION */}
-      <section className="bg-[var(--light-slate)] relative overflow-hidden border-b border-slate-200/60">
-        {/* Padding updated to match CatalystsPage: px-6 sm:px-8 py-10 sm:py-12 lg:py-16 */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-            <div className="max-w-3xl">
-              <span className="block text-xs font-bold uppercase tracking-widest text-[var(--deep-teal)] mb-4">
-                Supported By
-              </span>
-              
-              {/* UPDATED: Downscaled to match Catalysts sizing (3xl/4xl) */}
-              <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--midnight-blue)] leading-tight tracking-tight">
-                Industry–University Cooperative Research Centers Program
-              </h1>
-              
-              {/* UPDATED: Downscaled to match Catalysts sizing (sm/base) */}
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600 max-w-2xl">
-                The BRAIN Center is supported by the NSF IUCRC Program, accelerating the impact of fundamental research through long-term collaboration between industry, universities, and government.
-              </p>
-            </div>
-            <div className="shrink-0 bg-white p-6 rounded-2xl shadow-sm border border-slate-100/50">
-              <Image
-                src="/nsf-logo.png"
-                alt="National Science Foundation"
-                width={120}
-                height={120}
-                className="object-contain w-24 h-24 md:w-32 md:h-32"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Supported By"
+        title="Industry–University Cooperative Research Centers Program"
+        description="The BRAIN Center is supported by the NSF IUCRC Program, accelerating the impact of fundamental research through long-term collaboration between industry, universities, and government."
+      />
 
       {/* MISSION: Editorial Layout */}
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">

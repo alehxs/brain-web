@@ -3,6 +3,7 @@ import NewsGrid, {
   type NewsGridItem,
 } from "../components/news/NewsGrid";
 import { sortedNewsItems } from "@/data/news";
+import PageHeader from "../components/PageHeader";
 
 const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
   id: n.slug,
@@ -17,15 +18,14 @@ const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
 
 export default function NewsPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-black">News</h1>
-        <p className="mt-2 text-sm text-black/70">
-          Recent announcements, highlights, and stories from the BRAIN Center.
-        </p>
-      </header>
-
-      <NewsGrid items={newsForGrid} />
+    <main className="bg-slate-50 min-h-screen">
+      <PageHeader
+        title="News"
+        description="Recent announcements, highlights, and stories from the BRAIN Center."
+      />
+      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
+        <NewsGrid items={newsForGrid} />
+      </section>
     </main>
   );
 }

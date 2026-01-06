@@ -1,5 +1,6 @@
 // app/media/page.tsx (or wherever)
 import MediaGrid from "../components/MediaGrid";
+import PageHeader from "../components/PageHeader";
 
 const mediaItems = [
   {
@@ -22,13 +23,12 @@ const mediaItems = [
 
 export default function MediaPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-black">BRAIN Media</h1>
-      <p className="mt-2 text-black/70">
-        Explore photos, videos, and outreach materials from the BRAIN Center.
-      </p>
-
-      <section className="mt-8">
+    <main className="bg-slate-50 min-h-screen">
+      <PageHeader
+        title="BRAIN Media"
+        description="Explore photos, videos, and outreach materials from the BRAIN Center."
+      />
+      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
         <MediaGrid items={mediaItems} />
       </section>
     </main>

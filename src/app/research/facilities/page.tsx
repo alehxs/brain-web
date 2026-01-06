@@ -5,6 +5,7 @@ import {
   type ThrustColumn,
   type LabRow,
 } from "../../components/thrusts/ResearchThrustMatrix";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Facilities, Equipment & Software | The BRAIN Center",
@@ -157,24 +158,12 @@ const umhLabs: LabRow[] = [
 export default function FacilitiesPage() {
   return (
     <main className="bg-white">
+      <PageHeader
+        eyebrow="Research"
+        title="Facilities, Equipment & Software"
+        description="The BRAIN Center's research mission is supported by a broad network of laboratories and shared facilities across partner institutions. Together, these labs provide infrastructure for neurotechnology research, clinical translation, and broader impacts activities."
+      />
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Page header */}
-        <header className="mb-10 border-b border-slate-200 pb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Research
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Facilities, Equipment &amp; Software
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
-            The BRAIN Center&apos;s research mission is supported by a broad
-            network of laboratories and shared facilities across partner
-            institutions. Together, these labs provide infrastructure for
-            neurotechnology research, clinical translation, and broader impacts
-            activities.
-          </p>
-        </header>
-
         {/* Research thrust matrices */}
         <div className="space-y-10">
           <ResearchThrustMatrix

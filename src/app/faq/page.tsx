@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "FAQ | The BRAIN Center",
@@ -27,22 +28,12 @@ function FaqItem({ question, children }: FaqItemProps) {
 export default function QAPage() {
   return (
     <main className="bg-white">
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Page header */}
-        <header className="mb-10 border-b border-slate-200 pb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Membership &amp; Governance
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            FAQ
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
-            Answers to common questions about the NSF IUCRC BRAIN Center,
-            including membership, benefits, intellectual property, and Industry
-            Advisory Board responsibilities.
-          </p>
-        </header>
-
+      <PageHeader
+        eyebrow="Membership & Governance"
+        title="FAQ"
+        description="Answers to common questions about the NSF IUCRC BRAIN Center, including membership, benefits, intellectual property, and Industry Advisory Board responsibilities."
+      />
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="space-y-8">
           <FaqItem question="What is an IUCRC?">
             <p>

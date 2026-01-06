@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Uniqueness & Differentiators | BRAIN Center",
@@ -17,18 +18,13 @@ function StarIcon() {
 export default function UniquenessPage() {
   return (
     <main className="bg-white">
-      {/* HEADER SECTION - Tightened Top/Bottom Padding */}
-      <section className="mx-auto max-w-5xl px-6 pt-12 lg:pt-16 pb-6 border-b border-slate-100">
-        <span className="block text-xs font-bold uppercase tracking-widest text-[var(--deep-teal)] mb-3">
-          About The Center
-        </span>
-        <h1 className="text-3xl md:text-4xl font-serif font-bold text-[var(--midnight-blue)] leading-tight">
-          Uniqueness: Key Differentiators
-        </h1>
-      </section>
+      <PageHeader
+        eyebrow="About The Center"
+        title="Uniqueness: Key Differentiators"
+      />
 
       {/* CONTENT BODY */}
-      <section className="mx-auto max-w-5xl px-6 py-10">
+      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         
         {/* 1. THE LEAD: Reduced margin-bottom (mb-10 instead of mb-16) */}
         <div className="prose prose-lg max-w-none text-slate-600 mb-10">

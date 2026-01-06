@@ -1,5 +1,6 @@
 // src/app/intellectual-property/page.tsx
 import type { Metadata } from "next";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Intellectual Property | The BRAIN Center",
@@ -32,22 +33,12 @@ function StepCard({ stepLabel, title, children }: StepCardProps) {
 export default function IntellectualPropertyPage() {
   return (
     <main className="bg-white">
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Page header */}
-        <header className="mb-10 border-b border-slate-200 pb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Policies &amp; Processes
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Intellectual Property
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
-            This page summarizes the invention disclosure and licensing process
-            for BRAIN Center investigators and Industry Advisory Board (IAB)
-            member companies.
-          </p>
-        </header>
-
+      <PageHeader
+        eyebrow="Policies & Processes"
+        title="Intellectual Property"
+        description="This page summarizes the invention disclosure and licensing process for BRAIN Center investigators and Industry Advisory Board (IAB) member companies."
+      />
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="space-y-8">
           {/* Step 1 */}
           <StepCard

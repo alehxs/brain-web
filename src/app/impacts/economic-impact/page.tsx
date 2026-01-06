@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Economic Impact | The BRAIN Center",
@@ -9,17 +10,11 @@ export const metadata: Metadata = {
 export default function EconomicImpactPage() {
   return (
     <main className="bg-white">
+      <PageHeader
+        eyebrow="Impacts"
+        title="Improving National Economic Health"
+      />
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Page header */}
-        <header className="mb-10 border-b border-slate-200 pb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Impacts
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Improving National Economic Health
-          </h1>
-        </header>
-
         {/* Context / problem statement */}
         <div className="space-y-6 text-sm leading-relaxed text-slate-700">
           <p>
