@@ -18,13 +18,13 @@ function ChevronDown({ className = "w-4 h-4" }: { className?: string }) {
 
 function ExternalArrow({ className = "w-3 h-3" }: { className?: string }) {
   return (
-    <svg 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className={className}
       aria-hidden="true"
     >
@@ -64,7 +64,7 @@ function LogoGroup() {
         priority
         className="h-12 w-auto object-contain"
       />
-      
+
       {/* Divider and NSF Lockup */}
       <div className="flex items-center gap-4 border-l border-white/30 pl-6 py-1">
         <Image
@@ -74,7 +74,7 @@ function LogoGroup() {
           height={48}
           className="h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
         />
-        
+
         <div className="hidden md:block text-left leading-tight opacity-80">
           <span className="block text-[0.65rem] uppercase tracking-widest font-semibold">Supported by</span>
           <span className="block text-[0.65rem] uppercase tracking-widest font-semibold">National Science Foundation</span>
@@ -139,7 +139,7 @@ const NAV: NavItem[] = [
     label: "Workforce",
     items: [
       { label: "Information", href: "/workforce/information" },
-      { label: "REU Supplement", href: "/workforce/supplement" },
+      { label: "REU Supplement", href: "/workforce/reu-supplement" },
       { label: "BRAIN Student Network", href: "/workforce/brain-student-network" },
       { label: "Training", href: "/workforce/training" },
       { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
@@ -158,13 +158,13 @@ const NAV: NavItem[] = [
   },
   { label: "News", href: "/news" },
   { label: "Events", href: "/events" },
-  { label: "Donate", href: "/donate" }, 
+  { label: "Donate", href: "/donate" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  
+
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape" && mobileOpen) {
@@ -189,7 +189,7 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex w-full items-center justify-between py-3">
             <LogoGroup />
-            
+
             <button
               className="lg:hidden rounded-md border border-white/20 p-2 text-white hover:bg-white/10"
               aria-expanded={mobileOpen}
@@ -218,20 +218,17 @@ export default function Header() {
                         onMouseEnter={() => setOpenMenu(item.label)}
                         onClick={() => setOpenMenu((v) => (v === item.label ? null : item.label))}
                       >
-                        <span className={`relative ${
-                          openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
-                        }`}>
+                        <span className={`relative ${openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
+                          }`}>
                           {item.label}
                         </span>
-                        <ChevronDown className={`w-[0.7em] h-[0.7em] transition-transform ${openMenu === item.label ? "rotate-180" : ""} ${
-                          openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
-                        }`} />
+                        <ChevronDown className={`w-[0.7em] h-[0.7em] transition-transform ${openMenu === item.label ? "rotate-180" : ""} ${openMenu === item.label ? "text-[var(--luminous-mint)]" : "text-white/90 group-hover:text-[var(--luminous-mint)]"
+                          }`} />
                       </button>
-                      
+
                       <div
-                        className={`absolute left-0 top-full mt-0 w-64 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
-                          openMenu === item.label ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                        }`}
+                        className={`absolute left-0 top-full mt-0 w-64 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${openMenu === item.label ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                          }`}
                         onMouseEnter={() => setOpenMenu(item.label)}
                       >
                         <ul className="py-2">
@@ -258,7 +255,7 @@ export default function Header() {
                         href={item.href}
                         target={isExternal(item.href) ? "_blank" : undefined}
                       >
-                         <span className="relative text-white/90 group-hover:text-[var(--luminous-mint)]">
+                        <span className="relative text-white/90 group-hover:text-[var(--luminous-mint)]">
                           {item.label}
                         </span>
                         {isExternal(item.href) && <ExternalArrow className="w-3 h-3 text-white/60 group-hover:text-[var(--luminous-mint)] transition-colors" />}
@@ -270,12 +267,12 @@ export default function Header() {
             </div>
 
             <li>
-               <Link 
-                 href="/donate" 
-                 className="bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-[var(--midnight-blue)] text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all transform hover:-translate-y-0.5 shadow-lg"
-               >
-                 Donate
-               </Link>
+              <Link
+                href="/donate"
+                className="bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-[var(--midnight-blue)] text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all transform hover:-translate-y-0.5 shadow-lg"
+              >
+                Donate
+              </Link>
             </li>
           </ul>
         </nav>
