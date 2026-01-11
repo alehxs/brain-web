@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The BRAIN Center Website
+
+The official website for **The BRAIN Center** (Building Reliable Advances and Innovations in Neurotechnology) — an NSF-funded Industry-University Cooperative Research Center (IUCRC) advancing neurotechnology research and innovation.
+
+The BRAIN Center bridges academia, industry, government, and clinical communities to develop safe, effective, and affordable neurotechnologies for sensory, motor, affective, and cognitive functions.
+
+## Why This Site Was Built
+
+This site replaces a legacy WordPress website with a modern, maintainable architecture.
+
+**Key improvements:**
+
+- **Performance** — Static site generation, Turbopack builds, optimized images and video. Faster load times and better SEO.
+- **Modularity** — Reusable React components and consistent design patterns. Easy to extend and maintain.
+- **Modern Stack** — TypeScript for type safety, Tailwind for styling, component-based architecture. Better developer experience.
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- [React 19](https://react.dev/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) (animations)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Project Structure
+
+```
+src/
+├── app/                  # Pages (App Router - folder-based routing)
+│   ├── components/       # Reusable UI components
+│   ├── about/            # About section pages
+│   ├── research/         # Research thrusts, projects, facilities
+│   ├── organization/     # Leadership, sites, faculty, students
+│   ├── workforce/        # REU, training, student network
+│   ├── impacts/          # Impact reports and assessments
+│   ├── membership/       # Industry partnership info
+│   └── ...
+├── data/                 # Content data files (TypeScript)
+│   ├── people.ts         # Faculty & student profiles
+│   ├── news.ts           # News articles
+│   ├── events.ts         # Upcoming events
+│   ├── projects.ts       # Research projects
+│   ├── publications.ts   # Academic publications
+│   ├── sites.ts          # BRAIN Center site locations
+│   └── thrusts.ts        # Research thrust areas
+└── types/                # TypeScript type definitions
+
+public/                   # Static assets (images, videos, documents)
+├── people/               # Faculty and student photos
+├── media/                # News and media images
+└── ...
+```
 
 ## Getting Started
 
-First, run the development server:
+**Prerequisites:** Node.js 18+
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server (with Turbopack)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content Management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Content is stored as TypeScript data files in `src/data/`. This approach provides type safety and makes content easy to update without touching component code.
 
-## Learn More
+For detailed instructions on adding faculty, news, events, publications, and other content, see **[CONTENT-GUIDE.md](./CONTENT-GUIDE.md)**.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This is a standard Next.js application. Deploy to any platform that supports Next.js:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Vercel](https://vercel.com/) (recommended, zero-config)
+- [Netlify](https://www.netlify.com/)
+- Any Node.js hosting environment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
