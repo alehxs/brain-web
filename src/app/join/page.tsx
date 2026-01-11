@@ -30,13 +30,13 @@ export default function JoinPage() {
 
             <div className="space-y-6 text-sm sm:text-base leading-relaxed text-slate-700 max-w-xl">
               <p>
-                Industry partners play a key role in the BRAIN Center's mission to
+                Industry partners play a key role in the BRAIN Center&apos;s mission to
                 develop safe, effective, and affordable personalized
                 neurotechnologies for the restoration, enhancement, and
                 rehabilitation of sensory, motor, affective, and cognitive functions.
               </p>
               <p>
-                BRAIN Center's members, which will include academic, clinical,
+                BRAIN Center&apos;s members, which will include academic, clinical,
                 industrial, and regulatory partners, will have expertise that spans
                 single cells to systems and both human and non-human models.
               </p>
@@ -44,7 +44,7 @@ export default function JoinPage() {
                 This partnership will allow rigorous testing of the efficacy,
                 safety, and long-term reliability of neurotechnology advances
                 that would not be otherwise possible within the traditional
-                'silos' of academic, industry, regulatory, and clinical
+                &apos;silos&apos; of academic, industry, regulatory, and clinical
                 communities.
               </p>
             </div>

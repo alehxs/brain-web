@@ -18,7 +18,7 @@ export type NewsCardProps = {
 export function NewsCard({
   title,
   dateLabel,
-  summary,
+  summary: _summary,
   imageSrc,
   imageAlt,
   href,
