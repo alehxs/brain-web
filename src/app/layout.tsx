@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata = {
   title: "The BRAIN Center - Building Reliable Advances and Innovations in Neurotechnology",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <main id="main" className="w-full">
           {children}
         </main>
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
