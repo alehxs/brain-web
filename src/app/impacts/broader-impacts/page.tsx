@@ -4,46 +4,75 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Broader Impacts | The BRAIN Center",
   description:
-    "How the BRAIN Center advances education, diversity, innovation, and regulatory science through its broader impacts.",
+    "How the BRAIN Center advances education, innovation, and regulatory science through its broader impacts.",
 };
 
 export default function BroaderImpactsPage() {
   return (
     <main className="bg-white">
-      <PageHeader
-        eyebrow="Impacts"
-        title="Broader Impacts"
-      />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="space-y-6 text-sm leading-relaxed text-slate-700">
+      <PageHeader eyebrow="Impacts" title="Broader Impacts" />
+
+      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Opening paragraph */}
+        <p className="text-base leading-relaxed text-slate-700">
+          The BRAIN Center leverages engineering, neuroscience, and innovation
+          ecosystems, and is structured specifically to advance training of
+          students and mentoring of postdoctoral and graduate fellows.
+        </p>
+
+        {/* Focus areas - 3 compact highlight boxes */}
+        <div className="my-10 grid gap-4 sm:grid-cols-3">
+          <div className="rounded-lg border border-slate-200 bg-[var(--light-slate)] p-5">
+            <p className="font-semibold text-[var(--deep-teal)]">Education</p>
+            <p className="mt-2 text-sm text-slate-600">
+              Training students and mentoring postdoctoral fellows
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-[var(--light-slate)] p-5">
+            <p className="font-semibold text-[var(--deep-teal)]">Opportunity</p>
+            <p className="mt-2 text-sm text-slate-600">
+              Expanding access for students and faculty nationwide
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-[var(--light-slate)] p-5">
+            <p className="font-semibold text-[var(--deep-teal)]">Innovation</p>
+            <p className="mt-2 text-sm text-slate-600">
+              Attracting start-ups and bridging with entrepreneurial ecosystems
+            </p>
+          </div>
+        </div>
+
+        {/* Body content */}
+        <div className="space-y-6 text-base leading-relaxed text-slate-700">
           <p>
-            The BRAIN Center will leverage engineering, neuroscience, and
-            innovation ecosystems, and will be structured specifically to
-            advance training of students and mentoring of postdoctoral and
-            graduate fellows.
+            All of our sites are committed to excellence in research and
+            education. The Center fosters relationships with programs across
+            institutions, expanding access and opportunity for students and
+            faculty in our research.
           </p>
 
           <p>
-            All of our sites are fully committed to diversity in research and
-            education and have established programs for promoting institutional
-            initiatives in support of these goals. The Center will foster
-            relationships with these programs, enhancing access of
-            underrepresented students and faculty in our research. The Center
-            will enhance institutional infrastructures and improve our
+            The Center enhances institutional infrastructures and improves our
             capabilities for research that will have a substantive impact on
             education, training, technological development, and deployment of
             innovative neurotechnologies.
           </p>
 
           <p>
-            Moreover, the BRAIN Center will contribute to the local, regional,
-            and national economies, be an attractor for innovation start-ups,
-            and bridge with local and state entrepreneurial and accelerator
-            sites. Importantly, the Center will also work closely with
-            regulatory agencies to help develop basic regulatory science in
-            support of translation of emergent neurotechnologies to end users
-            (see letter of interest from the FDA in the Supplementary
-            Documents).
+            Moreover, the BRAIN Center contributes to the local, regional, and
+            national economies, serving as an attractor for innovation start-ups
+            and bridging with local and state entrepreneurial and accelerator
+            sites.
+          </p>
+        </div>
+
+        {/* Regulatory callout */}
+        <div className="mt-10 rounded-lg border-l-4 border-[var(--deep-teal)] bg-[var(--light-slate)] p-6">
+          <p className="font-medium text-slate-900">Regulatory Science</p>
+          <p className="mt-2 text-base leading-relaxed text-slate-700">
+            The Center works closely with regulatory agencies, including the
+            FDA, to help develop basic regulatory science in support of
+            translating emergent neurotechnologies to end users.
           </p>
         </div>
       </section>
