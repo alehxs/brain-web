@@ -1,5 +1,6 @@
 // src/app/workforce/page.tsx
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata = {
   title: "Workforce Development | BRAIN Center",
@@ -10,23 +11,11 @@ export const metadata = {
 export default function WorkforcePage() {
   return (
     <main className="bg-white">
-      {/* Hero */}
-      <section className="bg-[var(--light-slate,#F0F2F5)] border-b border-gray-200">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue,#0A192F)]">
-            Workforce Development
-          </h1>
-          <p className="mt-4 max-w-4xl text-sm sm:text-base text-gray-900">
-            In addition to research initiatives, the BRAIN Center invests in workforce development
-            through training and education. Our goal is to cultivate: (a) technical and scientific
-            visionaries who will lead industry-driven neurotechnology initiatives, (b) R&amp;D
-            managers who can execute the technical vision, (c) engineers who analyze, design, and
-            maintain neurotechnologies while understanding their broader impacts, and (d) future
-            educators in neurotechnology innovation. We also collaborate with our Academic Advisory
-            Board (AAB) on entrepreneurship programming from pre-college to postdoctoral levels.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Workforce"
+        title="Workforce Development"
+        description="In addition to research initiatives, the BRAIN Center invests in workforce development through training and education. Our goal is to cultivate: (a) technical and scientific visionaries who will lead industry-driven neurotechnology initiatives, (b) R&D managers who can execute the technical vision, (c) engineers who analyze, design, and maintain neurotechnologies while understanding their broader impacts, and (d) future educators in neurotechnology innovation. We also collaborate with our Academic Advisory Board (AAB) on entrepreneurship programming from pre-college to postdoctoral levels."
+      />
 
       {/* Content */}
       <section className="py-10 sm:py-12 lg:py-14">

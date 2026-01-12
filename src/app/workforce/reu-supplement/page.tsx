@@ -13,7 +13,8 @@ export default function ReuSupplementPage() {
 
   return (
     <main className="bg-slate-50 min-h-screen">
-      <PageHeader 
+      <PageHeader
+        eyebrow="Workforce"
         title="REU Students"
         description="Providing Research Experiences for Undergraduates to foster the next generation of neurotechnology leaders."
       />

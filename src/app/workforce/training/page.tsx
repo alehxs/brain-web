@@ -1,5 +1,6 @@
 // src/app/workforce/training/page.tsx
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata = {
   title: "Training | BRAIN Center Workforce Development",
@@ -10,22 +11,18 @@ export const metadata = {
 export default function TrainingPage() {
   return (
     <main className="bg-white">
-      {/* Hero (solid, readable) */}
-      <section className="bg-[var(--light-slate,#F0F2F5)] border-b border-gray-200">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue,#0A192F)]">
-            Training
-          </h1>
-          <p className="mt-3 text-base font-semibold text-[var(--midnight-blue,#0A192F)]">
-            Medical Device Law, Regulation, and Ethics
-            <span className="font-normal"> (IUCRC BRAIN Center Know-How Resource)</span>
-          </p>
-          <p className="mt-3 max-w-3xl text-sm sm:text-base text-gray-900">
-            A concise, practical series designed to help researchers and partners navigate regulatory
-            pathways, manage risk, and understand policy trends shaping neurotechnology.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Workforce"
+        title="Training"
+        description={
+          <>
+            <span className="font-semibold">Medical Device Law, Regulation, and Ethics</span>{" "}
+            (IUCRC BRAIN Center Know-How Resource) — A concise, practical series designed to help
+            researchers and partners navigate regulatory pathways, manage risk, and understand
+            policy trends shaping neurotechnology.
+          </>
+        }
+      />
 
       {/* Body */}
       <section className="py-10 sm:py-12 lg:py-14">
