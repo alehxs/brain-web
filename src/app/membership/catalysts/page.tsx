@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Innovation Catalysts | NSF BRAIN",
@@ -10,19 +11,18 @@ export const metadata: Metadata = {
 export default function CatalystsPage() {
   return (
     <main className="bg-white">
-      <section className="bg-[var(--light-slate)] border-b border-slate-200">
-        <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
-          <h1 className="text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
-            Catalysts of Technological Development & Innovation
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
+      <PageHeader
+        eyebrow="Membership"
+        title="Catalysts of Technological Development & Innovation"
+        description={
+          <>
             In the NSF IUCRC model, member organizations are more than sponsors—they&apos;re{" "}
             <span className="font-semibold">catalysts</span>. By partnering with our academic sites,
             members help shape research roadmaps, accelerate translation of ideas, and develop a
             skilled workforce aligned with industry needs.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 space-y-12">

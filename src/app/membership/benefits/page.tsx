@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Membership Benefits | NSF BRAIN",
@@ -50,18 +51,11 @@ const benefitGroups = [
 export default function BenefitsPage() {
   return (
     <main className="bg-white">
-      <section className="bg-[var(--light-slate)] border-b border-slate-200">
-        <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
-          <h1 className="text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
-            Membership Benefits
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
-            As a member of the BRAIN Center, you gain collaborative influence over a shared research
-            portfolio, access to multi-institution resources and talent, and clear pathways to translate
-            ideas toward practice through the NSF IUCRC model.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Membership"
+        title="Membership Benefits"
+        description="As a member of the BRAIN Center, you gain collaborative influence over a shared research portfolio, access to multi-institution resources and talent, and clear pathways to translate ideas toward practice through the NSF IUCRC model."
+      />
 
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
