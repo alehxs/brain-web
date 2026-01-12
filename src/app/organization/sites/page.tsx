@@ -50,15 +50,15 @@ const MapSection = () => {
           className="w-full h-full"
         >
           {/* LAYER 1: World Countries */}
-          <Geographies 
+          <Geographies
             geography={geoUrl}
             // Log errors if the map fails to load
             onGeographyError={(err) => console.error("Map Load Error:", err)}
           >
             {({ geographies }) =>
-              geographies.map((geo) => (
+              geographies.map((geo, index) => (
                 <Geography
-                  key={geo.rsmKey}
+                  key={geo.rsmKey ?? `world-geo-${index}`}
                   geography={geo}
                   fill="rgba(255,255,255,0.2)"
                   stroke="rgba(255,255,255,0.3)"
@@ -76,9 +76,9 @@ const MapSection = () => {
           {/* LAYER 2: US States Overlay (ADDED) */}
           <Geographies geography={usGeoUrl}>
             {({ geographies }) =>
-              geographies.map((geo) => (
+              geographies.map((geo, index) => (
                 <Geography
-                  key={geo.rsmKey}
+                  key={geo.rsmKey ?? `us-geo-${index}`}
                   geography={geo}
                   fill="none"
                   stroke="rgba(255,255,255,0.15)"
