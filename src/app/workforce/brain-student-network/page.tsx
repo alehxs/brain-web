@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SquareSlideshow from "./SquareSlideshow";
-import PortraitCard from "../../components/PortraitCard";
+import PortraitCard from "@/app/components/cards/PortraitCard";
 
 export const metadata = {
   title: "BRAIN Student Network | BRAIN Center",
