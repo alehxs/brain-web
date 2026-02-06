@@ -89,7 +89,7 @@ export default function QAPage() {
               {/* Adjust this route to match however you wire membership in the new site */}
               <a
                 href="/membership"
-                className="font-medium text-teal-700 underline underline-offset-2"
+                className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
               >
                 View current BRAIN Center members
               </a>
@@ -141,7 +141,7 @@ export default function QAPage() {
               More details are provided on the{" "}
               <a
                 href="/about/intellectual-property"
-                className="font-medium text-teal-700 underline underline-offset-2"
+                className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
               >
                 Intellectual Property
               </a>{" "}
@@ -217,7 +217,7 @@ export default function QAPage() {
                 Center Director (University of Houston):{" "}
                 <a
                   href="mailto:jlcontreras-vidal@uh.edu"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   jlcontreras-vidal@uh.edu
                 </a>
@@ -226,7 +226,7 @@ export default function QAPage() {
                 Program Management / Membership Inquiries:{" "}
                 <a
                   href="mailto:brain@uh.edu"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   brain@uh.edu
                 </a>

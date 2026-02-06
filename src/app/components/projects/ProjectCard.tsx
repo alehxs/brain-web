@@ -49,7 +49,7 @@ export default function ProjectCard({
 
         {/* Only show “View details →” if this project has a link */}
         {href && (
-          <div className="mt-3 inline-flex items-center text-xs font-medium text-teal-700">
+          <div className="mt-3 inline-flex items-center text-xs font-medium text-[var(--deep-teal)]">
             <span>View details</span>
             <span
               aria-hidden="true"

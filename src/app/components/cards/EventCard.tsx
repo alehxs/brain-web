@@ -36,7 +36,7 @@ export function EventCard({
       as={as}
       href={href}
       external={external}
-      className="h-full overflow-hidden border border-[#0A192F14] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      className="h-full overflow-hidden border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       {/* Media Container:
         - If it's a photo (hasImage), use standard gray background for loading.
@@ -44,7 +44,7 @@ export function EventCard({
       */}
       <Card.Media 
         ratio={aspectRatio} 
-        className={hasImage ? "bg-slate-100" : "bg-[#02111B]"}
+        className={hasImage ? "bg-slate-100" : "bg-[var(--midnight-blue)]"}
       >
         <Image
           src={finalSrc}
@@ -55,19 +55,19 @@ export function EventCard({
         />
       </Card.Media>
 
-      <Card.Body className="border-t border-[#00A79D33] bg-white px-4 py-4 text-black">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#00A79D]">
+      <Card.Body className="border-t border-[var(--deep-teal)]/20 bg-white px-4 py-4 text-black">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--deep-teal)]">
           {dateLabel}
         </p>
 
         <Card.Title
           as="h3"
-          className="mt-1 text-base font-semibold leading-snug text-[#0A192F] line-clamp-2"
+          className="mt-1 text-base font-semibold leading-snug text-[var(--midnight-blue)] line-clamp-2"
         >
           {title}
         </Card.Title>
 
-        <p className="mt-2 text-sm text-[#8892B0] line-clamp-1">
+        <p className="mt-2 text-sm text-slate-500 line-clamp-1">
           {location}
         </p>
       </Card.Body>

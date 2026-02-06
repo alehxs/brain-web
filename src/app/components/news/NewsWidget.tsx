@@ -11,10 +11,10 @@ export function NewsWidget() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pt-12 pb-4">
       <header className="mb-4 flex items-baseline justify-between">
-        <h2 className="text-2xl font-bold text-[#0A192F]">Latest News</h2>
+        <h2 className="text-2xl font-bold text-[var(--midnight-blue)]">Latest News</h2>
         <Link
           href="/news"
-          className="text-sm font-semibold text-[#00A79D] hover:underline"
+          className="text-sm font-semibold text-[var(--deep-teal)] hover:underline"
         >
           View all
         </Link>

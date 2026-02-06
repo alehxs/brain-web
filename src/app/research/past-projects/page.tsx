@@ -20,7 +20,7 @@ export default function PastProjectsPage() {
             Completed projects that have contributed to the development of neurotechnologies and regulatory science through the BRAIN Center. To see ongoing work,{" "}
             <a
               href="/research/current-projects"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
             >
               view current projects
             </a>.

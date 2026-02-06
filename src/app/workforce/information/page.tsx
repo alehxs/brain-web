@@ -23,55 +23,55 @@ export default function WorkforcePage() {
 
           {/* Goals */}
           <section>
-            <h2 className="text-2xl font-semibold text-[var(--midnight-blue,#0A192F)]">
+            <h2 className="text-2xl font-semibold text-[var(--midnight-blue)]">
               Center Academic Goals
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-gray-900">
+            <p className="mt-3 text-sm sm:text-base text-slate-900">
               Our programs and activities are designed to:
             </p>
 
             {/* Grouped, readable bullets with teal markers */}
-            <ul className="mt-5 space-y-3 list-disc list-inside marker:text-[var(--deep-teal,#00A79D)]">
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+            <ul className="mt-5 space-y-3 list-disc list-inside marker:text-[var(--deep-teal)]">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Create a continuous pipeline of engineering education from K–12 through postdoctoral studies.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Enhance interactions among faculty, graduate, and undergraduate students.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Provide active supervision and constructive feedback at all levels.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Introduce undergraduate students to research early and often.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Prepare graduate students for careers in academia and industry.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Broaden training at every stage and encourage progression to the next level of an
                 engineering career while building international leadership.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Attract high-school students to engineering careers.
               </li>
             </ul>
           </section>
 
           {/* CTA block */}
-          <section className="rounded-xl border border-gray-200 bg-[var(--light-slate,#F8FAFC)] p-5">
+          <section className="rounded-xl border border-slate-200 bg-[var(--light-slate)] p-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-[var(--midnight-blue,#0A192F)]">
+                <h3 className="text-lg font-semibold text-[var(--midnight-blue)]">
                   Get Involved
                 </h3>
-                <p className="mt-1 text-sm text-gray-900">
+                <p className="mt-1 text-sm text-slate-900">
                   Interested in partnering with the Center or participating in workforce programs?
                 </p>
               </div>
               <div className="mt-2 sm:mt-0">
                 <Link
                   href="/join"
-                  className="inline-flex items-center rounded-md border border-[var(--deep-teal,#00A79D)] px-4 py-2 text-sm font-semibold text-[var(--deep-teal,#00A79D)] hover:bg-[var(--deep-teal,#00A79D)] hover:text-white transition-colors"
+                  className="inline-flex items-center rounded-md border border-[var(--deep-teal)] px-4 py-2 text-sm font-semibold text-[var(--deep-teal)] hover:bg-[var(--deep-teal)] hover:text-white transition-colors"
                 >
                   CLICK HERE
                 </Link>

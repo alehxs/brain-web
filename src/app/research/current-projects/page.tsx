@@ -21,7 +21,7 @@ export default function CurrentProjectsPage() {
             Looking for completed work?{" "}
             <a
               href="/research/past-projects"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
             >
               View past projects
             </a>.

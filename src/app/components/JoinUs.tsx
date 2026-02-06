@@ -8,7 +8,7 @@ const JoinUs: React.FC = () => {
           Get Involved
         </h2>
 
-        <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-[rgba(10,25,47,0.85)]">
+        <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-[var(--midnight-blue)]/85">
           Partner with us to advance neurotechnology research, innovation, and
           education. Join our mission to bridge academia, industry, and
           innovation for a better future.
