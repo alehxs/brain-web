@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function EconomicImpactPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Impacts"
         title="Improving National Economic Health"
@@ -180,6 +180,6 @@ export default function EconomicImpactPage() {
           </ul>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

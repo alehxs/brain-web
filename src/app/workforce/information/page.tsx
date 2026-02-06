@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function WorkforcePage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Workforce"
         title="Workforce Development"
@@ -81,6 +81,6 @@ export default function WorkforcePage() {
 
         </div>
       </section>
-    </main>
+    </div>
   );
 }

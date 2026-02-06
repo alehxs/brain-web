@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function TrainingPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Workforce"
         title="Training"
@@ -107,6 +107,6 @@ export default function TrainingPage() {
 
         </div>
       </section>
-    </main>
+    </div>
   );
 }

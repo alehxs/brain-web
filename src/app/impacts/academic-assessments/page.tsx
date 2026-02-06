@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function AcademicAssessmentsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* Hero */}
       <section className="bg-[var(--light-slate)] border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
@@ -70,7 +70,7 @@ export default function AcademicAssessmentsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

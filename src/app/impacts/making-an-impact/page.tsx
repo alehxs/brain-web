@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ImpactPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader eyebrow="Impacts" title="Making An Impact" />
 
       <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
@@ -92,6 +92,6 @@ export default function ImpactPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

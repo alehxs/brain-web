@@ -17,7 +17,7 @@ function StarIcon() {
 
 export default function UniquenessPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="About The Center"
         title="Uniqueness: Key Differentiators"
@@ -116,6 +116,6 @@ export default function UniquenessPage() {
         </div>
 
       </section>
-    </main>
+    </div>
   );
 }

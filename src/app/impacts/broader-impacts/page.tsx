@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BroaderImpactsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader eyebrow="Impacts" title="Broader Impacts" />
 
       <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
@@ -76,6 +76,6 @@ export default function BroaderImpactsPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

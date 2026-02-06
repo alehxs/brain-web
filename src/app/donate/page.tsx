@@ -3,7 +3,7 @@ import PageHeader from "@/app/components/PageHeader";
 
 export default function DonatePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <PageHeader
         eyebrow="Support"
         title="Donate"
@@ -65,6 +65,6 @@ export default function DonatePage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

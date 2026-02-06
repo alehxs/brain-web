@@ -19,7 +19,7 @@ function CheckIcon() {
 
 export default function IucrcPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Supported By"
         title="Industry–University Cooperative Research Centers Program"
@@ -160,6 +160,6 @@ export default function IucrcPage() {
           />
         </figure>
       </section>
-    </main>
+    </div>
   );
 }

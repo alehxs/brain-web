@@ -69,7 +69,7 @@ const staff: Person[] = people
 
 export default function LeadershipPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Organization"
         title="Leadership"
@@ -100,7 +100,7 @@ export default function LeadershipPage() {
           </section>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -47,7 +47,7 @@ const GALLERY = [
 
 export default function StudentNetworkPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* HERO — top 2/3 crop, no extra whitespace */}
       <section className="relative border-b border-slate-200">
         <div className="relative w-full overflow-hidden aspect-[1600/350]">
@@ -114,6 +114,6 @@ export default function StudentNetworkPage() {
           <SquareSlideshow images={GALLERY} />
         </div>
       </section>
-    </main>
+    </div>
   );
 }

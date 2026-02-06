@@ -57,7 +57,7 @@ const facultyMembers = people
 
 export default function FacultyPage() {
   return (
-    <main className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen">
       <PageHeader
         eyebrow="Organization"
         title="Faculty"
@@ -106,6 +106,6 @@ export default function FacultyPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

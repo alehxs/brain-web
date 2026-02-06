@@ -12,7 +12,7 @@ export default function ReuSupplementPage() {
   const students = people.filter((person) => person.group.includes("Student"))
 
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       <PageHeader
         eyebrow="Workforce"
         title="REU Students"
@@ -52,6 +52,6 @@ export default function ReuSupplementPage() {
         </section>
 
       </div>
-    </main>
+    </div>
   );
 }

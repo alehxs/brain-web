@@ -157,7 +157,7 @@ const umhLabs: LabRow[] = [
 
 export default function FacilitiesPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Research"
         title="Facilities, Equipment & Software"
@@ -203,6 +203,6 @@ export default function FacilitiesPage() {
           </p>
         </section>
       </section>
-    </main>
+    </div>
   );
 }

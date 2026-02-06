@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PastProjectsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Research"
         title="Past Projects"
@@ -50,6 +50,6 @@ export default function PastProjectsPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

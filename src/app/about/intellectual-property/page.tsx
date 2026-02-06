@@ -32,7 +32,7 @@ function StepCard({ stepLabel, title, children }: StepCardProps) {
 
 export default function IntellectualPropertyPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Policies & Processes"
         title="Intellectual Property"
@@ -178,6 +178,6 @@ export default function IntellectualPropertyPage() {
           </StepCard>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default function JoinPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white py-10 sm:py-12 lg:py-16">
+    <div className="min-h-screen bg-white py-10 sm:py-12 lg:py-16">
       <div className="container mx-auto max-w-6xl px-6 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
@@ -134,6 +134,6 @@ export default function JoinPage() {
 
         </div>
       </div>
-    </main>
+    </div>
   );
 }

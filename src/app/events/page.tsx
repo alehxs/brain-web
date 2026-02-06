@@ -5,7 +5,7 @@ import PageHeader from "../components/PageHeader";
 
 export default function EventsPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       <PageHeader
         title="Events"
         description="Past, present, and upcoming seminars, workshops, conferences, and BRAIN Center activities."
@@ -13,6 +13,6 @@ export default function EventsPage() {
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
         <EventsGrid events={events} />
       </section>
-    </main>
+    </div>
   );
 }

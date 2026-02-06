@@ -27,7 +27,7 @@ function FaqItem({ question, children }: FaqItemProps) {
 
 export default function QAPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Membership & Governance"
         title="FAQ"
@@ -235,6 +235,6 @@ export default function QAPage() {
           </FaqItem>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

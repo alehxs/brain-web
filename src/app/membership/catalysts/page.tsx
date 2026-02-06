@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CatalystsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Membership"
         title="Catalysts of Technological Development & Innovation"
@@ -161,6 +161,6 @@ export default function CatalystsPage() {
           </section>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

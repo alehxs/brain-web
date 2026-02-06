@@ -16,7 +16,7 @@ const orderedTiers: MembershipTier[] = [
 
 export default function MembersPage() {
   return (
-    <main className="bg-slate-50">
+    <div className="bg-slate-50">
       <PageHeader
         eyebrow="Organization"
         title="Industry Members"
@@ -36,6 +36,6 @@ export default function MembersPage() {
           })}
         </div>
       </section>
-    </main>
+    </div>
   );
 }
