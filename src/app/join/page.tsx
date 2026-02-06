@@ -23,7 +23,7 @@ export default function JoinPage() {
               <span className="block text-xs font-bold uppercase tracking-widest text-[var(--deep-teal)] mb-4">
                 Partnership Opportunities
               </span>
-              <h1 className="text-3xl sm:text-4xl font-serif font-bold leading-tight tracking-tight text-[var(--midnight-blue)]">
+              <h1 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-[var(--midnight-blue)]">
                 Join The BRAIN Center!
               </h1>
             </div>
@@ -52,7 +52,7 @@ export default function JoinPage() {
 
           <div className="w-full">
             <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
-              <h2 className="text-2xl font-serif font-bold text-[var(--midnight-blue)] mb-3">
+              <h2 className="text-2xl font-bold text-[var(--midnight-blue)] mb-3">
                 Become an Industry Partner
               </h2>
               <p className="text-sm sm:text-base text-slate-600 mb-8 leading-relaxed">
