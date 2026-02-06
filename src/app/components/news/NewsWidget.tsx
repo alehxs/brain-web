@@ -9,7 +9,7 @@ export function NewsWidget() {
   const recent = sortedNewsItems.slice(0, MAX_ITEMS);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pt-12 pb-4">
+    <section className="mx-auto w-full max-w-6xl px-6 pt-12 pb-4 sm:px-8">
       <header className="mb-4 flex items-baseline justify-between">
         <h2 className="text-2xl font-bold text-[var(--midnight-blue)]">Latest News</h2>
         <Link

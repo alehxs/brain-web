@@ -163,7 +163,7 @@ export default function FacilitiesPage() {
         title="Facilities, Equipment & Software"
         description="The BRAIN Center's research mission is supported by a broad network of laboratories and shared facilities across partner institutions. Together, these labs provide infrastructure for neurotechnology research, clinical translation, and broader impacts activities."
       />
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Research thrust matrices */}
         <div className="space-y-10">
           <ResearchThrustMatrix

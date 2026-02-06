@@ -12,7 +12,7 @@ export default function ImpactPage() {
     <main className="bg-white">
       <PageHeader eyebrow="Impacts" title="Making An Impact" />
 
-      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening paragraph */}
         <p className="text-base leading-relaxed text-slate-700">
           Worldwide, the number of people aged 65 and above is projected to grow

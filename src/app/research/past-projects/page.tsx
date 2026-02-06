@@ -27,7 +27,7 @@ export default function PastProjectsPage() {
           </>
         }
       />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         <div className="space-y-10">
           {pastProjectsByYear.map(({ year, projects }) => (
             <section key={year} className="space-y-4">

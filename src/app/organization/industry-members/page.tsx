@@ -22,7 +22,7 @@ export default function MembersPage() {
         title="Industry Members"
         description="The NSF BRAIN Center collaborates with clinical, industry, and government partners to translate neurotechnology research into real-world impact."
       />
-      <section className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-12 sm:px-8">
         <div className="space-y-12">
           {orderedTiers.map((tier) => {
             const tierMembers = members.filter((m) => m.tier === tier);

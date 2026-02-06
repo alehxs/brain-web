@@ -15,7 +15,7 @@ export default function EconomicImpactPage() {
         title="Improving National Economic Health"
       />
 
-      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening context */}
         <p className="text-base leading-relaxed text-slate-700">
           Increases in life expectancy have shifted the leading causes of
