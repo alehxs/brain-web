@@ -1,15 +1,16 @@
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
 
 export default function DonatePage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
-          Donate
-        </h1>
-        <p className="mt-3 text-lg font-semibold text-slate-800">
-          Help accelerate safe, reliable neurotechnology that improves quality of life.
-        </p>
+      <PageHeader
+        eyebrow="Support"
+        title="Donate"
+        description="Help accelerate safe, reliable neurotechnology that improves quality of life."
+      />
+
+      <section className="mx-auto max-w-5xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
 
         <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-800">
           <p>

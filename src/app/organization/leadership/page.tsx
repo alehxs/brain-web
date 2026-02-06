@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
+import PageHeader from "@/app/components/PageHeader";
 
 import { people } from "../../../data/people";
 import { sites } from "../../../data/sites";
@@ -69,20 +70,11 @@ const staff: Person[] = people
 export default function LeadershipPage() {
   return (
     <main className="bg-white">
-      <section className="bg-[var(--light-slate)] border-b border-slate-200">
-        <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--deep-teal)]">
-            Organization
-          </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
-            Leadership
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-800">
-            Meet the directors, investigators, and staff driving innovation and guiding
-            the BRAIN Center&apos;s research direction.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Organization"
+        title="Leadership"
+        description="Meet the directors, investigators, and staff driving innovation and guiding the BRAIN Center's research direction."
+      />
 
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 space-y-12">
