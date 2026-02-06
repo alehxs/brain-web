@@ -1,7 +1,7 @@
 export default function MissionSummary() {
   return (
     <section className="bg-[var(--midnight-blue)] py-12 md:py-16">
-      <div className="mx-auto max-w-5xl px-4 text-center text-white">
+      <div className="mx-auto max-w-5xl px-6 text-center text-white sm:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--deep-teal)] mb-2">
           Organization
         </p>

@@ -8,14 +8,14 @@ export const metadata = {
 
 export default function AcademicAssessmentsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* Hero */}
-      <section className="bg-[var(--light-slate,#F0F2F5)] border-b border-gray-200">
+      <section className="bg-[var(--light-slate)] border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue,#0A192F)]">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue)]">
             Academic Assessments
           </h1>
-          <p className="mt-4 max-w-4xl text-sm sm:text-base text-gray-900">
+          <p className="mt-4 max-w-4xl text-sm sm:text-base text-slate-900">
             Each Center site collaborates with the Education/Outreach coordinator to evaluate
             education plans and participant impact. Assessment data are gathered semi-annually,
             rolled up annually, and reviewed across all participants. Evaluation follows the{" "}
@@ -48,7 +48,7 @@ export default function AcademicAssessmentsPage() {
           </div>
 
           {/* Process copy */}
-          <div className="mt-10 sm:mt-12 lg:mt-14 max-w-4xl text-sm sm:text-base text-gray-900 space-y-4">
+          <div className="mt-10 sm:mt-12 lg:mt-14 max-w-4xl text-sm sm:text-base text-slate-900 space-y-4">
             <p>
               The Education/Outreach coordinator consolidates site data and conducts internal
               reviews semi-annually with input from the Academic Advisory Board (AAB). The AAB
@@ -70,16 +70,16 @@ export default function AcademicAssessmentsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
 /** Simple, consistent assessment card with teal-accent icon */
 function AssessCard({ title, blurb }: { title: string; blurb: string }) {
   return (
-    <div className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5">
+    <div className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5">
       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full"
-           style={{ backgroundColor: "var(--deep-teal, #00A79D)" }}>
+           style={{ backgroundColor: "var(--deep-teal)" }}>
         {/* Check icon (white) */}
         <svg
           className="h-6 w-6 text-white"
@@ -94,8 +94,8 @@ function AssessCard({ title, blurb }: { title: string; blurb: string }) {
           <path d="M20 6 9 17l-5-5" />
         </svg>
       </div>
-      <h3 className="text-lg font-semibold text-[var(--midnight-blue,#0A192F)]">{title}</h3>
-      <p className="mt-2 text-sm text-gray-900">{blurb}</p>
+      <h3 className="text-lg font-semibold text-[var(--midnight-blue)]">{title}</h3>
+      <p className="mt-2 text-sm text-slate-900">{blurb}</p>
     </div>
   );
 }

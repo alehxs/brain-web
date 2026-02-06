@@ -31,7 +31,7 @@ export function NewsCard({
       as={as}
       href={href}
       external={external}
-      className="h-full overflow-hidden border border-[#0A192F14] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      className="h-full overflow-hidden border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <Card.Media ratio={aspectRatio}>
         <Image
@@ -50,14 +50,14 @@ export function NewsCard({
 
         <Card.Title
           as="h3"
-          className="mt-2 text-base font-semibold leading-snug text-[#0A192F] line-clamp-2 mb-3"
+          className="mt-2 text-base font-semibold leading-snug text-[var(--midnight-blue)] line-clamp-2 mb-3"
         >
           {title}
         </Card.Title>
 
-        <div className="mt-auto flex justify-end">
-          <span className="text-xs font-semibold text-[#00A79D] leading-snug group-hover:underline">
-            Read more &rarr;
+        <div className="mt-auto">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)] leading-snug">
+            Read more <span className="transition group-hover:translate-x-0.5">→</span>
           </span>
         </div>
       </Card.Body>

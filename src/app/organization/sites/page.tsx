@@ -31,7 +31,7 @@ const MapSection = () => {
 
       <div className="container mx-auto px-6 sm:px-8 relative z-10 mb-8 sm:mb-12">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Our Global <span className="text-[var(--luminous-mint)]">Neuro-Network</span>
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">

@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function TrainingPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Workforce"
         title="Training"
@@ -30,27 +30,27 @@ export default function TrainingPage() {
 
           {/* Objectives */}
           <section>
-            <h2 className="text-2xl font-semibold text-[var(--midnight-blue,#0A192F)]">Objectives</h2>
-            <ul className="mt-5 space-y-3 list-disc list-inside marker:text-[var(--deep-teal,#00A79D)]">
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+            <h2 className="text-2xl font-semibold text-[var(--midnight-blue)]">Objectives</h2>
+            <ul className="mt-5 space-y-3 list-disc list-inside marker:text-[var(--deep-teal)]">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Make informed, strategic choices that position your work under favorable regulatory
                 pathways (e.g., FDA PMA / 510(k), De Novo; HIPAA; Common Rule; FDA/IDE).
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Navigate regulatory frameworks affecting innovative biotechnologies:
                 FDA drug &amp; biologic regulations plus relevant EPA, USDA, and consumer protections.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Understand and manage liability risks.
               </li>
-              <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+              <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                 Track and influence policy in two key areas:
-                <ul className="mt-2 ml-6 list-disc space-y-2 marker:text-[var(--deep-teal,#00A79D)]">
-                  <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+                <ul className="mt-2 ml-6 list-disc space-y-2 marker:text-[var(--deep-teal)]">
+                  <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                     Regulation of neurotech software as a medical device after the 21<sup>st</sup> Century
                     Cures Act of 2016.
                   </li>
-                  <li className="text-sm sm:text-base leading-relaxed text-gray-900">
+                  <li className="text-sm sm:text-base leading-relaxed text-slate-900">
                     Privacy and access to biospecimens and neurotech data, including research data commons.
                   </li>
                 </ul>
@@ -60,18 +60,18 @@ export default function TrainingPage() {
 
           {/* Two-up: Who it's for / Outcomes */}
           <section className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <h3 className="text-lg font-semibold text-[var(--midnight-blue,#0A192F)]">Who It’s For</h3>
-              <ul className="mt-3 space-y-2 list-disc list-inside marker:text-[var(--deep-teal,#00A79D)] text-sm sm:text-base text-gray-900">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-lg font-semibold text-[var(--midnight-blue)]">Who It’s For</h3>
+              <ul className="mt-3 space-y-2 list-disc list-inside marker:text-[var(--deep-teal)] text-sm sm:text-base text-slate-900">
                 <li>Faculty, postdocs, and students advancing neurotechnology.</li>
                 <li>Industry partners and startups preparing for translation.</li>
                 <li>Project leads who interface with compliance, IRB, or legal teams.</li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <h3 className="text-lg font-semibold text-[var(--midnight-blue,#0A192F)]">Expected Outcomes</h3>
-              <ul className="mt-3 space-y-2 list-disc list-inside marker:text-[var(--deep-teal,#00A79D)] text-sm sm:text-base text-gray-900">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-lg font-semibold text-[var(--midnight-blue)]">Expected Outcomes</h3>
+              <ul className="mt-3 space-y-2 list-disc list-inside marker:text-[var(--deep-teal)] text-sm sm:text-base text-slate-900">
                 <li>Clear action paths for regulatory next steps and documentation.</li>
                 <li>Improved collaboration with IRB/compliance and legal counsel.</li>
                 <li>Better risk awareness and integration of policy constraints in planning.</li>
@@ -80,15 +80,15 @@ export default function TrainingPage() {
           </section>
 
           {/* Contact / Materials */}
-          <section className="rounded-xl border border-gray-200 bg-[var(--light-slate,#F8FAFC)] p-5">
+          <section className="rounded-xl border border-slate-200 bg-[var(--light-slate)] p-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-gray-900">
+              <p className="text-sm text-slate-900">
                 Interested in workshop dates or materials?
               </p>
               <div className="flex gap-3">
                 <Link
                   href="/join"
-                  className="inline-flex items-center rounded-md border border-[var(--deep-teal,#00A79D)] px-4 py-2 text-sm font-semibold text-[var(--deep-teal,#00A79D)] hover:bg-[var(--deep-teal,#00A79D)] hover:text-white transition-colors"
+                  className="inline-flex items-center rounded-md border border-[var(--deep-teal)] px-4 py-2 text-sm font-semibold text-[var(--deep-teal)] hover:bg-[var(--deep-teal)] hover:text-white transition-colors"
                 >
                   Contact the Center
                 </Link>
@@ -107,6 +107,6 @@ export default function TrainingPage() {
 
         </div>
       </section>
-    </main>
+    </div>
   );
 }

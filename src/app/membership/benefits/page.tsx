@@ -50,7 +50,7 @@ const benefitGroups = [
 
 export default function BenefitsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Membership"
         title="Membership Benefits"
@@ -130,6 +130,6 @@ export default function BenefitsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

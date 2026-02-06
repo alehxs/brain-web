@@ -21,7 +21,7 @@ export default function SquareSlideshow({
   const next = () => setI((p) => (p + 1) % images.length);
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+    <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
       <Image
         key={images[i]}
         src={images[i]}
@@ -33,14 +33,14 @@ export default function SquareSlideshow({
       />
       <button
         onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-md border border-gray-300 bg-white/90 px-3 py-1 text-sm font-semibold text-gray-800 hover:bg-white"
+        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-md border border-slate-300 bg-white/90 px-3 py-1 text-sm font-semibold text-slate-800 hover:bg-white"
         aria-label="Previous image"
       >
         ‹
       </button>
       <button
         onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md border border-gray-300 bg-white/90 px-3 py-1 text-sm font-semibold text-gray-800 hover:bg-white"
+        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md border border-slate-300 bg-white/90 px-3 py-1 text-sm font-semibold text-slate-800 hover:bg-white"
         aria-label="Next image"
       >
         ›

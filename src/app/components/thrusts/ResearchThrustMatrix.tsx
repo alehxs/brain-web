@@ -44,7 +44,7 @@ export function ResearchThrustMatrix({
             {universityName}
           </h2>
         </div>
-        <div className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600">
+        <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--deep-teal)]">
           Research Thrusts
         </div>
       </div>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PastProjectsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Research"
         title="Past Projects"
@@ -20,14 +20,14 @@ export default function PastProjectsPage() {
             Completed projects that have contributed to the development of neurotechnologies and regulatory science through the BRAIN Center. To see ongoing work,{" "}
             <a
               href="/research/current-projects"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
             >
               view current projects
             </a>.
           </>
         }
       />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         <div className="space-y-10">
           {pastProjectsByYear.map(({ year, projects }) => (
             <section key={year} className="space-y-4">
@@ -50,6 +50,6 @@ export default function PastProjectsPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }
