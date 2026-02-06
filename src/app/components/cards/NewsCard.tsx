@@ -55,9 +55,9 @@ export function NewsCard({
           {title}
         </Card.Title>
 
-        <div className="mt-auto flex justify-end">
-          <span className="text-xs font-semibold text-[var(--deep-teal)] leading-snug group-hover:underline">
-            Read more &rarr;
+        <div className="mt-auto">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)] leading-snug">
+            Read more <span className="transition group-hover:translate-x-0.5">→</span>
           </span>
         </div>
       </Card.Body>
