@@ -6,7 +6,7 @@
 
 :root {
   --midnight-blue: #02111B;   /* deeper, cleaner navy */
-  --deep-teal: #00A79D;       /* bright saturated teal */
+  --deep-teal: #007D75;       /* WCAG AA compliant teal (5.01:1 on white) */
   --luminous-mint: #5EEAD4;   /* vivid mint accent */
   --light-slate: #E6FAF8;     /* cleaner, fresher background tint */
   --slate-gray: #334155;      /* refined cool gray for text contrast */
