@@ -244,8 +244,7 @@ export default function Header() {
           className="mx-auto max-w-7xl px-4"
           onMouseLeave={() => setOpenMenu(null)}
         >
-          <ul className="flex items-center justify-between h-14 text-sm font-medium">
-            <div className="flex items-center gap-8">
+          <ul className="flex items-center h-14 text-sm font-medium gap-8">
               {NAV.filter((item) => item.label !== "Donate").map((item) => (
                 <li
                   key={item.label}
@@ -327,9 +326,8 @@ export default function Header() {
                   )}
                 </li>
               ))}
-            </div>
 
-            <li>
+            <li className="ml-auto">
               <Link
                 href="/donate"
                 className="bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-[var(--midnight-blue)] text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all transform hover:-translate-y-0.5 shadow-lg"
