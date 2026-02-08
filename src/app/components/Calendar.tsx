@@ -6,6 +6,7 @@ export default function CalendarEmbed() {
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Events Calendar</h2>
         <div className="relative w-full overflow-hidden rounded-xl shadow-md">
           <iframe
+            title="Google Calendar - Events Schedule"
             src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=1&amp;ctz=America%2FChicago&amp;showPrint=0&amp;showTitle=0&amp;showNav=0&amp;showCalendars=0&amp;src=Y2RjZjBhYTI3ODA5OGI2YjE4YjI0ODIzMWEzYWMxZjYwNmEyMzA5Njg2NGU5MWU4Yjk1N2U2N2M4ZjIzZjlkNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%2300a79d"
             style={{
               border: 0,
