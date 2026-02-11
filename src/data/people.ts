@@ -935,9 +935,9 @@ export const people: Person[] = [
     group: ["Faculty"],
   },
   {
-    name: "Maria Alvarado",
-    tags: ["Faculty"],
-    src: "/people/faculty/maria-alvarado.jpg",
+    name: "Michael Garrido",
+    tags: ["Program Manager", "UH NSF BRAIN"],
+    src: "/people/faculty/michael-garrido.jpg",
     group: ["Faculty"],
   },
   {
@@ -1564,4 +1564,5 @@ export const people: Person[] = [
     src: "/people/faculty/zhu-han.jpg",
     group: ["Faculty"],
   },
+ 
 ];
