@@ -106,7 +106,7 @@ function SitesMap() {
             {({ geographies }) =>
               geographies.map((geo, index) => (
                 <Geography
-                  key={geo.rsmKey ?? `world-geo-${index}`}
+                  key={(geo as any).rsmKey ?? `world-geo-${index}`}
                   geography={geo}
                   fill="rgba(255,255,255,0.2)"
                   stroke="rgba(255,255,255,0.3)"
@@ -126,7 +126,7 @@ function SitesMap() {
             {({ geographies }) =>
               geographies.map((geo, index) => (
                 <Geography
-                  key={geo.rsmKey ?? `us-geo-${index}`}
+                  key={(geo as any).rsmKey ?? `us-geo-${index}`}
                   geography={geo}
                   fill="none"
                   stroke="rgba(255,255,255,0.15)"
