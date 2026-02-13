@@ -100,10 +100,22 @@ export const people: Person[] = [
     group: ["Staff"],
   },
   {
-    name: "Jenny Fula Torrijos",
+    name: "Dr. Pranav Parikh",
     tags: ["Workforce Development Director"],
-    src: "/people/faculty/jenny-fula-torrijos.jpg",
+    src: "/people/faculty/pranav-parikh.jpg",
     group: ["Staff"],
+  },
+  {
+    name: "Michael Garrido",
+    tags: ["Business Program Manager", "UH"],
+    src: "/people/faculty/michael-garrido.jpeg",
+    group: ["Faculty", "Staff"],
+  },
+  {
+    name: "Vanina Ngeumsop",
+    tags: ["Office Staff", "UH"],
+    src: "",
+    group: ["Faculty", "Staff"],
   },
   {
     name: "Dalia Khaled",
@@ -180,9 +192,9 @@ export const people: Person[] = [
   },
   {
     name: "Lianne Shanchez Rodriguez",
-    tags: ["ECE (UH) Mentor: Dr. Jose Contreras-Vidal"],
+    tags: ["Industry Liaison", "UH"],
     src: "/people/students/lianne-shanchez-rodriguez.jpg",
-    group: ["Student"],
+    group: ["Student", "Staff"],
   },
   {
     name: "Arturo Haces-Garcia",

@@ -131,7 +131,7 @@ function PersonGrid({ people }: { people: Person[] }) {
             </div>
           )}
 
-          <div className="p-4 flex flex-col justify-center flex-1 border-t border-slate-100">
+          <div className="p-4 flex flex-col justify-start flex-1 border-t border-slate-100">
             <h3 className="text-sm font-bold text-slate-900 line-clamp-2 leading-tight mb-1">
               {person.name}
             </h3>
