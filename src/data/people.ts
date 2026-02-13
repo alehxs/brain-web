@@ -100,7 +100,7 @@ export const people: Person[] = [
     group: ["Staff"],
   },
   {
-    name: "Dr. Pranav Parikh",
+    name: "Pranav Parikh",
     tags: ["Workforce Development Director"],
     src: "/people/faculty/pranav-parikh.jpg",
     group: ["Staff"],
@@ -1388,12 +1388,6 @@ export const people: Person[] = [
     name: "Pedro Ponce Cruz",
     tags: ["Faculty"],
     src: "/people/faculty/pedro-ponce-cruz.jpg",
-    group: ["Faculty"],
-  },
-  {
-    name: "Pranav Parikh",
-    tags: ["Faculty"],
-    src: "/people/faculty/pranav-parikh.jpg",
     group: ["Faculty"],
   },
   {
