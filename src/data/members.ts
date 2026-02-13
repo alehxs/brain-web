@@ -115,6 +115,14 @@ export const members: MemberOrg[] = [
     tier: "associate",
     alt: "Positive Impact Alliance logo",
   },
+  {
+    id: "voxel-systems",
+    name: "Voxel Systems",
+    logoSrc: "/logos/members/voxel-systems.png",
+    website: "https://www.voxelsystems.com/",
+    tier: "associate",
+    alt: "Voxel Systems Logo"
+  },
 
   {
     id: "ferguson-in-kind",
