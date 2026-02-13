@@ -1,6 +1,13 @@
-// app/media/page.tsx (or wherever)
+// app/media/page.tsx
+import type { Metadata } from "next";
 import MediaGrid from "../components/MediaGrid";
 import PageHeader from "../components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Media",
+  description:
+    "Photos, videos, and outreach materials from the NSF BRAIN Center.",
+};
 
 const mediaItems = [
   {

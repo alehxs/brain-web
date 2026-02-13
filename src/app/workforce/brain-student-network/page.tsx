@@ -3,7 +3,7 @@ import SquareSlideshow from "./SquareSlideshow";
 import PortraitCard from "@/app/components/cards/PortraitCard";
 
 export const metadata = {
-  title: "BRAIN Student Network | BRAIN Center",
+  title: "BRAIN Student Network",
   description:
     "The BRAIN Student Network fosters collaboration, leadership, and professional development across the BRAIN Center sites.",
 };

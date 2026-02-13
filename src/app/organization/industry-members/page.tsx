@@ -4,7 +4,7 @@ import { members, type MembershipTier } from "../../../data/members";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Industry Members | NSF BRAIN",
+  title: "Industry Members",
 };
 
 const orderedTiers: MembershipTier[] = [

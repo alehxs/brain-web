@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Industry Advisory Board | NSF BRAIN",
+  title: "Industry Advisory Board",
   description:
     "Meet the Industry Advisory Board leadership guiding the BRAIN Center's research direction and industry partnerships.",
 };

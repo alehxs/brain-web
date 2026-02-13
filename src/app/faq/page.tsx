@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "FAQ | The BRAIN Center",
+  title: "FAQ",
   description:
     "Frequently asked questions about membership, projects, intellectual property, and Industry Advisory Board participation in the BRAIN Center.",
 };

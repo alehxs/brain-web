@@ -4,7 +4,7 @@ import { pastProjectsByYear } from "@/data/projects";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Past Projects | The BRAIN Center",
+  title: "Past Projects",
   description:
     "Archive of previously funded research projects at the NSF BRAIN Center.",
 };

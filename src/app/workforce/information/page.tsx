@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata = {
-  title: "Workforce Development | BRAIN Center",
+  title: "Workforce Development",
   description:
     "How the BRAIN Center develops the next-generation neurotechnology workforce across K–12, undergraduate, graduate, and postdoctoral levels.",
 };

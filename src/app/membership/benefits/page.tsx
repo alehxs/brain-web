@@ -4,7 +4,7 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Membership Benefits | NSF BRAIN",
+  title: "Membership Benefits",
   description:
     "What members gain through the BRAIN Center's NSF IUCRC model: collaboration, influence, access, and workforce pipelines.",
 };

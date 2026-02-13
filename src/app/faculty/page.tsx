@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import type {
   ElementType,
@@ -6,6 +7,12 @@ import type {
 } from "react";
 import { people, type Person } from "../../data/people";
 import PageHeader from "@/app/components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Faculty",
+  description:
+    "Meet the BRAIN Center faculty driving neurotechnology research and innovation.",
+};
 
 type BaseCardProps<E extends ElementType = "article"> = {
   as?: E;

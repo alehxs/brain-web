@@ -4,7 +4,7 @@ import { currentProjects } from "@/data/projects";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Current Projects | The BRAIN Center",
+  title: "Current Projects",
   description:
     "Current NSF BRAIN Center research projects and project leaders.",
 };

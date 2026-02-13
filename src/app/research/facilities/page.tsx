@@ -8,7 +8,7 @@ import {
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Facilities, Equipment & Software | The BRAIN Center",
+  title: "Facilities, Equipment & Software",
   description:
     "Center facilities, laboratories, and research thrusts that support the BRAIN Center mission.",
 };

@@ -6,7 +6,7 @@ import { people } from "../../../data/people";
 import { sites } from "../../../data/sites";
 
 export const metadata: Metadata = {
-    title: "Students | NSF BRAIN",
+    title: "Students",
     description:
         "Meet the students driving innovation and conducting research at the BRAIN Center.",
 };

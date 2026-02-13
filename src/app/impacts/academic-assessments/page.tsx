@@ -1,7 +1,7 @@
 // src/app/workforce/academic-assessments/page.tsx
 
 export const metadata = {
-  title: "Academic Assessments | BRAIN Center",
+  title: "Academic Assessments",
   description:
     "Kirkpatrick-aligned assessment across Center sites: Reaction, Learning, Behavior, and Results, plus the Center’s evaluation process.",
 };

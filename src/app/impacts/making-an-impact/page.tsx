@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Making An Impact | The BRAIN Center",
+  title: "Making An Impact",
   description:
     "How demographic change, chronic disease, and emerging neurotechnologies shape the BRAIN Center's broader impacts.",
 };

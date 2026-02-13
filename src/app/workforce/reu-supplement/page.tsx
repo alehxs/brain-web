@@ -4,7 +4,7 @@ import PortraitCard from "@/app/components/cards/PortraitCard";
 import { people } from "@/data/people";
 
 export const metadata: Metadata = {
-  title: "REU Supplement | BRAIN Center",
+  title: "REU Supplement",
   description: "Providing Research Experiences for Undergraduates through the NSF REU Supplement program.",
 };
 

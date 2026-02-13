@@ -7,7 +7,7 @@ import { people } from "../../../data/people";
 import { sites } from "../../../data/sites";
 
 export const metadata: Metadata = {
-  title: "Leadership | NSF BRAIN",
+  title: "Leadership",
   description:
     "Meet the leadership team driving innovation and guiding the BRAIN Center's research direction.",
 };

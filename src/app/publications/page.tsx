@@ -4,7 +4,7 @@ import { publications } from "@/data/publications";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Publications | The BRAIN Center",
+  title: "Publications",
   description: "Recent publications, inventions, and patents from the NSF BRAIN Center.",
 };
 

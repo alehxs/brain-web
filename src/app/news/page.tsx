@@ -1,9 +1,16 @@
 // app/news/page.tsx
+import type { Metadata } from "next";
 import NewsGrid, {
   type NewsGridItem,
 } from "../components/news/NewsGrid";
 import { sortedNewsItems } from "@/data/news";
 import PageHeader from "../components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "News",
+  description:
+    "Latest announcements, highlights, and stories from the NSF BRAIN Center.",
+};
 
 const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
   id: n.slug,

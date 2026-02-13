@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata = {
-  title: "Training | BRAIN Center Workforce Development",
+  title: "Training",
   description:
     "Medical Device Law, Regulation, and Ethics (IUCRC BRAIN Center Know-How Resource) — clear objectives, who it’s for, and expected outcomes.",
 };

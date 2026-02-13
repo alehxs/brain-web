@@ -4,7 +4,7 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "NSF IUCRC Program | NSF BRAIN",
+  title: "NSF IUCRC Program",
   description:
     "Learn about the National Science Foundation Industry–University Cooperative Research Centers (IUCRC) Program.",
 };

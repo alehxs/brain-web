@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Donate",
+  description:
+    "Support neurotechnology research and innovation at the NSF BRAIN Center through the University of Houston giving portal.",
+};
 
 export default function DonatePage() {
   return (

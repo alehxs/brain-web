@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Intellectual Property | The BRAIN Center",
+  title: "Intellectual Property",
   description:
     "Overview of the intellectual property and invention disclosure process for BRAIN Center investigators and member companies.",
 };

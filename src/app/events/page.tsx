@@ -1,7 +1,14 @@
 // app/events/page.tsx
+import type { Metadata } from "next";
 import EventsGrid from "../components/EventGrid";
 import { events } from "@/data/events";
 import PageHeader from "../components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Events",
+  description:
+    "Seminars, workshops, conferences, and upcoming activities from the NSF BRAIN Center.",
+};
 
 export default function EventsPage() {
   return (
