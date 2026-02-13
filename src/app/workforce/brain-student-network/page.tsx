@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SquareSlideshow from "./SquareSlideshow";
 import PortraitCard from "@/app/components/cards/PortraitCard";
 
 export const metadata = {
@@ -39,11 +38,6 @@ const OFFICERS = [
   },
 ];
 
-const GALLERY = [
-  "/images/student-network/gallery/1.jpg",
-  "/images/student-network/gallery/2.jpg",
-  "/images/student-network/gallery/3.jpg",
-];
 
 export default function StudentNetworkPage() {
   return (
@@ -108,12 +102,6 @@ export default function StudentNetworkPage() {
         </div>
       </section>
 
-      {/* SLIDESHOW (square) */}
-      <section className="py-10 sm:py-14">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <SquareSlideshow images={GALLERY} />
-        </div>
-      </section>
     </div>
   );
 }
