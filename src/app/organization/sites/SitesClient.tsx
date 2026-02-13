@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -11,19 +11,68 @@ import {
 } from "@vnedyalk0v/react19-simple-maps";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { sites } from "@/data/sites";
+import { sites, Site } from "@/data/sites";
 
-// Using unpkg as a reliable fallback source for the map topology
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
-// Added US Atlas for state borders
 const usGeoUrl = "https://unpkg.com/us-atlas@3.0.0/states-10m.json";
 
-export default function SitesClient() {
-  const [hoveredSite, setHoveredSite] = useState<string | null>(null);
+type PopoverPosition = "above" | "below";
 
-  // 1. SAFETY: Filter out sites that are missing coordinates to prevent crashes
+function SitesMap() {
+  const [mounted, setMounted] = useState(false);
+  const [hoveredSite, setHoveredSite] = useState<string | null>(null);
+  const [popoverPos, setPopoverPos] = useState<{ x: number; y: number; position: PopoverPosition; offsetX: number } | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setMounted(true), []);
+
   const validSites = sites.filter(s => s.coordinates && s.coordinates.length === 2);
   const leadSite = validSites.find((s) => s.id === "uh");
+  const hoveredSiteData = validSites.find((s) => s.id === hoveredSite);
+
+  const handlePointerEnter = useCallback((site: Site) => {
+    setHoveredSite(site.id);
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const containerW = containerRect.width;
+    const containerH = containerRect.height;
+
+    // Find the actual <circle> element for this marker via data attribute
+    const circle = container.querySelector(`[data-marker-id="${site.id}"]`);
+    if (!circle) return;
+
+    const circleRect = circle.getBoundingClientRect();
+    const markerX = circleRect.left + circleRect.width / 2 - containerRect.left;
+    const markerY = circleRect.top + circleRect.height / 2 - containerRect.top;
+
+    const POPOVER_HEIGHT = 200;
+    const POPOVER_WIDTH = 240;
+    const MARGIN = 16;
+
+    // Prefer above; fall back to below only if not enough room above
+    const position: PopoverPosition =
+      markerY < POPOVER_HEIGHT + MARGIN && containerH - markerY >= POPOVER_HEIGHT + MARGIN
+        ? "below"
+        : "above";
+
+    // Horizontal offset to keep popover within container bounds
+    const halfW = POPOVER_WIDTH / 2;
+    let offsetX = 0;
+    if (markerX - halfW < MARGIN) {
+      offsetX = MARGIN - (markerX - halfW); // shift right
+    } else if (markerX + halfW > containerW - MARGIN) {
+      offsetX = (containerW - MARGIN) - (markerX + halfW); // shift left (negative)
+    }
+
+    setPopoverPos({ x: markerX, y: markerY, position, offsetX });
+  }, []);
+
+  const handlePointerLeave = useCallback(() => {
+    setHoveredSite(null);
+    setPopoverPos(null);
+  }, []);
 
   return (
     <section className="bg-[var(--midnight-blue)] py-10 sm:py-12 lg:py-16 relative overflow-hidden">
@@ -40,8 +89,8 @@ export default function SitesClient() {
         </div>
       </div>
 
-      <div className="relative w-full h-[500px] sm:h-[600px] max-w-7xl mx-auto">
-        <ComposableMap
+      <div ref={containerRef} className="relative w-full h-[500px] sm:h-[600px] max-w-7xl mx-auto">
+        {!mounted ? null : <ComposableMap
           projection="geoMercator"
           projectionConfig={{
             scale: 450,
@@ -52,7 +101,6 @@ export default function SitesClient() {
           {/* LAYER 1: World Countries */}
           <Geographies
             geography={geoUrl}
-            // Log errors if the map fails to load
             onGeographyError={(err) => console.error("Map Load Error:", err)}
           >
             {({ geographies }) =>
@@ -73,7 +121,7 @@ export default function SitesClient() {
             }
           </Geographies>
 
-          {/* LAYER 2: US States Overlay (ADDED) */}
+          {/* LAYER 2: US States Overlay */}
           <Geographies geography={usGeoUrl}>
             {({ geographies }) =>
               geographies.map((geo, index) => (
@@ -123,12 +171,22 @@ export default function SitesClient() {
               <Marker
                 key={site.id}
                 coordinates={site.coordinates as any}
-                onMouseEnter={() => setHoveredSite(site.id)}
-                onMouseLeave={() => setHoveredSite(null)}
               >
-                <g className="cursor-pointer">
+                <g
+                  className="cursor-pointer"
+                  onPointerEnter={() => handlePointerEnter(site)}
+                  onPointerLeave={handlePointerLeave}
+                >
                   {/* Hit area */}
-                  <circle r={30} fill="transparent" />
+                  <circle r={14} fill="rgba(0,0,0,0.001)" style={{ pointerEvents: "all" }} />
+
+                  {/* Anchor circle for position measurement — tiny, invisible, but has geometry Safari can measure */}
+                  <circle
+                    data-marker-id={site.id}
+                    r={1}
+                    fill="none"
+                    stroke="none"
+                  />
 
                   {/* Pulsing Effect */}
                   <motion.circle
@@ -162,66 +220,74 @@ export default function SitesClient() {
                     }}
                   />
                 </g>
-
-                {/* Popover Card */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <g style={{ pointerEvents: "none" }}>
-                      <foreignObject
-                        x={-120}
-                        y={-190}
-                        width={240}
-                        height={200}
-                        style={{ overflow: "visible" }}
-                      >
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="relative flex justify-center"
-                          style={{ pointerEvents: "auto" }}
-                        >
-                          <div className="w-full p-4 rounded-xl backdrop-blur-xl bg-slate-900/95 border border-[var(--luminous-mint)] shadow-2xl relative">
-                            {/* Arrow Pointer */}
-                            <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-900 border-r border-b border-[var(--luminous-mint)] rotate-45" />
-
-                            <div className="flex items-start gap-3 mb-3">
-                              <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shrink-0 text-[10px] font-bold text-slate-900 shadow-inner">
-                                {site.abbreviation}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-[9px] uppercase tracking-wider font-bold text-[var(--luminous-mint)] mb-0.5">
-                                  {site.category}
-                                </p>
-                                <h3 className="text-white font-bold text-sm leading-tight">
-                                  {site.name}
-                                </h3>
-                              </div>
-                            </div>
-
-                            <p className="text-slate-300 text-[11px] mb-3 leading-relaxed border-t border-white/10 pt-2 line-clamp-3">
-                              {site.description}
-                            </p>
-
-                            <Link
-                              href={site.link}
-                              target="_blank"
-                              className="block w-full py-2 text-center rounded bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-black text-white text-[10px] font-bold uppercase tracking-wide transition-all"
-                            >
-                              Visit Website
-                            </Link>
-                          </div>
-                        </motion.div>
-                      </foreignObject>
-                    </g>
-                  )}
-                </AnimatePresence>
               </Marker>
             );
           })}
-        </ComposableMap>
+        </ComposableMap>}
+
+        {/* Popover rendered as HTML overlay outside SVG */}
+        <AnimatePresence>
+          {hoveredSiteData && popoverPos && (
+            <motion.div
+              key={hoveredSiteData.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="absolute z-20 pointer-events-none"
+              style={{
+                left: popoverPos.x + popoverPos.offsetX,
+                top: popoverPos.y,
+                x: "-50%",
+                y: popoverPos.position === "above" ? "calc(-100% - 12px)" : "12px",
+              } as any}
+            >
+              <div className="w-[240px] p-4 rounded-xl bg-slate-900/95 border border-[var(--luminous-mint)] shadow-2xl relative">
+                {/* Dynamic Arrow — offset so it always points at the marker */}
+                <div
+                  className={`absolute w-3 h-3 bg-slate-900 ${
+                    popoverPos.position === "above"
+                      ? "-bottom-1.5 border-r border-b border-[var(--luminous-mint)]"
+                      : "-top-1.5 border-l border-t border-[var(--luminous-mint)]"
+                  }`}
+                  style={{
+                    left: `calc(50% - ${popoverPos.offsetX}px)`,
+                    transform: "translateX(-50%) rotate(45deg)",
+                  }}
+                />
+
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shrink-0 text-[10px] font-bold text-slate-900 shadow-inner">
+                    {hoveredSiteData.abbreviation}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[9px] uppercase tracking-wider font-bold text-[var(--luminous-mint)] mb-0.5">
+                      {hoveredSiteData.category}
+                    </p>
+                    <h3 className="text-white font-bold text-sm leading-tight">
+                      {hoveredSiteData.name}
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-slate-300 text-[11px] mb-3 leading-relaxed border-t border-white/10 pt-2 line-clamp-3">
+                  {hoveredSiteData.description}
+                </p>
+
+                <Link
+                  href={hoveredSiteData.link}
+                  target="_blank"
+                  className="block w-full py-2 text-center rounded bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-black text-white text-[10px] font-bold uppercase tracking-wide transition-all pointer-events-auto"
+                >
+                  Visit Website
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
 }
+
+export default SitesMap;
