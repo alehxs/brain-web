@@ -105,7 +105,7 @@ export default function JoinClient() {
                 </div>
               </div>
 
-              <div>
+              <div className="mt-8">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--midnight-blue)] mb-4 border-b border-slate-100 pb-2">
                   What to include in your email
                 </h3>
@@ -120,7 +120,7 @@ export default function JoinClient() {
                   </li>
                   <li className="flex flex-col sm:flex-row sm:gap-3 text-sm text-slate-600">
                     <span className="font-bold text-[var(--deep-teal)] min-w-[80px]">Role:</span>
-                    <span>Are you looking to join as an Industry Partner, Academic Site, or Advisor?</span>
+                    <span>Are you looking to join as an Industry Partner, Academic Site, Advisor, or Student?</span>
                   </li>
                   <li className="flex flex-col sm:flex-row sm:gap-3 text-sm text-slate-600">
                     <span className="font-bold text-[var(--deep-teal)] min-w-[80px]">Goal:</span>
