@@ -43,3 +43,7 @@ scripts/
 
 # todo
 TODO.md
+
+# scripts
+generate_students.py
+new_students.txt
