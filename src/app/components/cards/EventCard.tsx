@@ -23,7 +23,7 @@ export function EventCard({
   href,
   external,
   as = "article",
-  aspectRatio = "4/3",
+  aspectRatio = "16/9",
 }: EventCardProps) {
   
   // Logic: Check if we have a real image. If not, use the fallback.
