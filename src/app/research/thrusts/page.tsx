@@ -7,7 +7,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Research Thrusts",
   description:
-    "Explore the NSF BRAIN Center research thrust areas and their associated faculty.",
+    "Explore the The BRAIN Center research thrust areas and their associated faculty.",
 };
 
 export default function ResearchThrustsPage() {

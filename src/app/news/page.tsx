@@ -9,7 +9,7 @@ import PageHeader from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "News",
   description:
-    "Latest announcements, highlights, and stories from the NSF BRAIN Center.",
+    "Latest announcements, highlights, and stories from the The BRAIN Center.",
 };
 
 const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({

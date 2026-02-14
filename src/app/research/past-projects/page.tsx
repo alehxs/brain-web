@@ -6,7 +6,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Past Projects",
   description:
-    "Archive of previously funded research projects at the NSF BRAIN Center.",
+    "Archive of previously funded research projects at the The BRAIN Center.",
 };
 
 export default function PastProjectsPage() {
