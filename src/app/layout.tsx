@@ -7,14 +7,14 @@ import ScrollToTop from "./components/ScrollToTop";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nsfbrain.org"),
   title: {
-    template: "%s | NSF BRAIN Center",
+    template: "%s | The BRAIN Center",
     default:
       "The BRAIN Center — Building Reliable Advances and Innovations in Neurotechnology",
   },
   description:
     "An NSF-funded IUCRC advancing neurotechnology research and innovation.",
   openGraph: {
-    siteName: "NSF BRAIN Center",
+    siteName: "The BRAIN Center",
     type: "website",
     locale: "en_US",
     images: [{ url: "/brain-center.png", width: 1200, height: 630 }],

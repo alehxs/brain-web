@@ -20,7 +20,7 @@ export default function MembersPage() {
       <PageHeader
         eyebrow="Organization"
         title="Industry Members"
-        description="The NSF BRAIN Center collaborates with clinical, industry, and government partners to translate neurotechnology research into real-world impact."
+        description="The The BRAIN Center collaborates with clinical, industry, and government partners to translate neurotechnology research into real-world impact."
       />
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-12 sm:px-8">
         <div className="space-y-12">

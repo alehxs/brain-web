@@ -6,7 +6,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Current Projects",
   description:
-    "Current NSF BRAIN Center research projects and project leaders.",
+    "Current The BRAIN Center research projects and project leaders.",
 };
 
 export default function CurrentProjectsPage() {
@@ -17,7 +17,7 @@ export default function CurrentProjectsPage() {
         title="Current Projects"
         description={
           <>
-            This page lists active NSF BRAIN Center projects. When new projects are funded, they will appear here.{" "}
+            This page lists active The BRAIN Center projects. When new projects are funded, they will appear here.{" "}
             Looking for completed work?{" "}
             <a
               href="/research/past-projects"

@@ -7,7 +7,7 @@ import PageHeader from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Seminars, workshops, conferences, and upcoming activities from the NSF BRAIN Center.",
+    "Seminars, workshops, conferences, and upcoming activities from the The BRAIN Center.",
 };
 
 export default function EventsPage() {

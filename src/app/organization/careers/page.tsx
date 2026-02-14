@@ -4,7 +4,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Career opportunities at the NSF BRAIN Center and partner institutions.",
+    "Career opportunities at the The BRAIN Center and partner institutions.",
 };
 
 export default function CareersPage() {
