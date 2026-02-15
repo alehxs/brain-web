@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/ctg/"],
     },
     sitemap: "https://www.nsfbrain.org/sitemap.xml",
   };
