@@ -18,9 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Events
     { url: `${base}/events`, changeFrequency: "weekly", priority: 0.8 },
 
-    // Faculty
-    { url: `${base}/faculty`, changeFrequency: "monthly", priority: 0.8 },
-
     // FAQ
     { url: `${base}/faq`, changeFrequency: "monthly", priority: 0.6 },
 
@@ -45,10 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Organization
     { url: `${base}/organization/careers`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/organization/faculty`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/organization/iab`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${base}/organization/industry-members`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/organization/leadership`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/organization/sites`, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${base}/organization/staff`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/organization/students`, changeFrequency: "monthly", priority: 0.6 },
 
     // Publications
