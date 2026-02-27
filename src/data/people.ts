@@ -91,31 +91,31 @@ export const people: Person[] = [
     name: "Mauricio Ramírez",
     tags: ["TEC Program Manager", "TEC"],
     src: "/people/faculty/mauricio-adolfo-ramrez-moreno.jpeg",
-    group: ["Staff"],
+    group: [],
   },
   {
     name: "Eduardo Ianez",
     tags: ["Researcher", "BMI Lab"],
     src: "/people/faculty/eduardo-iez.jpg",
-    group: ["Staff"],
+    group: [],
   },
   {
     name: "Pranav Parikh",
     tags: ["Workforce Development Director"],
     src: "/people/faculty/pranav-parikh.jpg",
-    group: ["Staff"],
+    group: [],
   },
   {
     name: "Michael Garrido",
     tags: ["Business Program Manager", "UH"],
-    src: "/people/faculty/michael-garrido.jpeg",
-    group: ["Faculty", "Staff"],
+    src: "/people/staff/michael-garrido.jpeg",
+    group: ["Staff"],
   },
   {
-    name: "Vanina Ngeumsop",
-    tags: ["Office Staff", "UH"],
+    name: "Vanina Nguemmsop",
+    tags: ["Office Assistant", "UH"],
     src: "",
-    group: ["Faculty", "Staff"],
+    group: ["Staff"],
   },
   {
     name: "Dalia Khaled",
@@ -129,6 +129,9 @@ export const people: Person[] = [
     src: "/people/students/catherine-nunez.jpg",
     group: ["Student"],
   },
+
+  
+
   {
     name: "Avinash Puppala",
     tags: ["REU Student"],
@@ -194,7 +197,7 @@ export const people: Person[] = [
     name: "Lianne Shanchez Rodriguez",
     tags: ["Industry Liaison", "UH"],
     src: "/people/students/lianne-shanchez-rodriguez.jpg",
-    group: ["Student", "Staff"],
+    group: ["Student"],
   },
   {
     name: "Arturo Haces-Garcia",
@@ -947,9 +950,9 @@ export const people: Person[] = [
     group: ["Faculty"],
   },
   {
-    name: "Michael Garrido",
-    tags: ["Program Manager", "UH NSF BRAIN"],
-    src: "/people/faculty/michael-garrido.jpg",
+    name: "Maria Alvarado",
+    tags: ["Faculty"],
+    src: "/people/faculty/maria-alvarado.jpg",
     group: ["Faculty"],
   },
   {
@@ -1570,5 +1573,4 @@ export const people: Person[] = [
     src: "/people/faculty/zhu-han.jpg",
     group: ["Faculty"],
   },
- 
 ];
