@@ -1,3 +1,4 @@
+// Faculty page displaying all center faculty members
 import type { Metadata } from "next";
 import Image from "next/image";
 import type {
