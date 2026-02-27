@@ -4,13 +4,13 @@ import { publications } from "@/data/publications";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Publications | The BRAIN Center",
-  description: "Recent publications, inventions, and patents from the NSF BRAIN Center.",
+  title: "Publications",
+  description: "Recent publications, inventions, and patents from the The BRAIN Center.",
 };
 
 export default function PublicationsPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       <PageHeader
         eyebrow="Research Output"
         title="Publications"
@@ -25,6 +25,6 @@ export default function PublicationsPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

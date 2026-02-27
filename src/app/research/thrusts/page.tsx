@@ -5,20 +5,20 @@ import { researchThrusts } from "@/data/thrusts";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Research Thrusts | The BRAIN Center",
+  title: "Research Thrusts",
   description:
-    "Explore the NSF BRAIN Center research thrust areas and their associated faculty.",
+    "Explore the The BRAIN Center research thrust areas and their associated faculty.",
 };
 
 export default function ResearchThrustsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Research"
         title="Research Thrusts"
         description="The BRAIN Center is a multi-university Industry/University Cooperative Research Center. Each research thrust focuses on a key aspect of reliable, impactful neurotechnology."
       />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Thrust cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {researchThrusts.map((thrust) => (
@@ -38,6 +38,6 @@ export default function ResearchThrustsPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

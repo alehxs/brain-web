@@ -1,9 +1,8 @@
 import Image from "next/image";
-import SquareSlideshow from "./SquareSlideshow";
-import PortraitCard from "../../components/PortraitCard";
+import PortraitCard from "@/app/components/cards/PortraitCard";
 
 export const metadata = {
-  title: "BRAIN Student Network | BRAIN Center",
+  title: "BRAIN Student Network",
   description:
     "The BRAIN Student Network fosters collaboration, leadership, and professional development across the BRAIN Center sites.",
 };
@@ -39,17 +38,12 @@ const OFFICERS = [
   },
 ];
 
-const GALLERY = [
-  "/images/student-network/gallery/1.jpg",
-  "/images/student-network/gallery/2.jpg",
-  "/images/student-network/gallery/3.jpg",
-];
 
 export default function StudentNetworkPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* HERO — top 2/3 crop, no extra whitespace */}
-      <section className="relative border-b border-gray-200">
+      <section className="relative border-b border-slate-200">
         <div className="relative w-full overflow-hidden aspect-[1600/350]">
           <Image
             src="/images/brain-student-network.png"
@@ -61,7 +55,7 @@ export default function StudentNetworkPage() {
           />
         </div>
         <div className="mx-auto max-w-6xl px-6 sm:px-8 py-6">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue,#0A192F)]">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue)]">
             BRAIN Student Network
           </h1>
         </div>
@@ -71,12 +65,12 @@ export default function StudentNetworkPage() {
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <div className="max-w-4xl">
-            <p className="text-sm sm:text-base text-gray-900">
+            <p className="text-sm sm:text-base text-slate-900">
               The BRAIN Student Network builds community among students across Center sites,
               supports student-led initiatives, and connects members with faculty, industry, and
               peers for professional development.
             </p>
-            <ul className="mt-5 list-disc list-inside space-y-2 marker:text-[var(--deep-teal,#00A79D)] text-sm sm:text-base text-gray-900">
+            <ul className="mt-5 list-disc list-inside space-y-2 marker:text-[var(--deep-teal)] text-sm sm:text-base text-slate-900">
               <li>Foster collaboration and membership engagement across sites.</li>
               <li>Improve communication between colleges, labs, and BRAIN Center sites.</li>
               <li>Support student-led initiatives and research involvement.</li>
@@ -90,7 +84,7 @@ export default function StudentNetworkPage() {
       {/* OFFICERS (tall portrait cards) */}
       <section className="py-4">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <h2 className="text-2xl font-semibold text-[var(--midnight-blue,#0A192F)]">
+          <h2 className="text-2xl font-semibold text-[var(--midnight-blue)]">
             UH BRAIN Student Officers
           </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -108,12 +102,6 @@ export default function StudentNetworkPage() {
         </div>
       </section>
 
-      {/* SLIDESHOW (square) */}
-      <section className="py-10 sm:py-14">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <SquareSlideshow images={GALLERY} />
-        </div>
-      </section>
-    </main>
+    </div>
   );
 }

@@ -4,31 +4,31 @@ import { currentProjects } from "@/data/projects";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Current Projects | The BRAIN Center",
+  title: "Current Projects",
   description:
-    "Current NSF BRAIN Center research projects and project leaders.",
+    "Current The BRAIN Center research projects and project leaders.",
 };
 
 export default function CurrentProjectsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Research"
         title="Current Projects"
         description={
           <>
-            This page lists active NSF BRAIN Center projects. When new projects are funded, they will appear here.{" "}
+            This page lists active The BRAIN Center projects. When new projects are funded, they will appear here.{" "}
             Looking for completed work?{" "}
             <a
               href="/research/past-projects"
-              className="font-medium text-teal-700 underline underline-offset-2"
+              className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
             >
               View past projects
             </a>.
           </>
         }
       />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-5xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Content */}
         {currentProjects.length === 0 ? (
           <p className="text-sm text-slate-600">
@@ -43,6 +43,6 @@ export default function CurrentProjectsPage() {
           </div>
         )}
       </section>
-    </main>
+    </div>
   );
 }

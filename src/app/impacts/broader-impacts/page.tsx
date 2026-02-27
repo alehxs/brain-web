@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Broader Impacts | The BRAIN Center",
+  title: "Broader Impacts",
   description:
     "How the BRAIN Center advances education, innovation, and regulatory science through its broader impacts.",
 };
 
 export default function BroaderImpactsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader eyebrow="Impacts" title="Broader Impacts" />
 
-      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening paragraph */}
         <p className="text-base leading-relaxed text-slate-700">
           The BRAIN Center leverages engineering, neuroscience, and innovation
@@ -76,6 +76,6 @@ export default function BroaderImpactsPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,6 +1,13 @@
-// app/media/page.tsx (or wherever)
+// app/media/page.tsx
+import type { Metadata } from "next";
 import MediaGrid from "../components/MediaGrid";
 import PageHeader from "../components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Media",
+  description:
+    "Photos, videos, and outreach materials from the The BRAIN Center.",
+};
 
 const mediaItems = [
   {
@@ -23,7 +30,7 @@ const mediaItems = [
 
 export default function MediaPage() {
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       <PageHeader
         title="BRAIN Media"
         description="Explore photos, videos, and outreach materials from the BRAIN Center."
@@ -31,6 +38,6 @@ export default function MediaPage() {
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
         <MediaGrid items={mediaItems} />
       </section>
-    </main>
+    </div>
   );
 }

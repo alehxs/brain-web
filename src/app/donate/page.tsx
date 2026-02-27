@@ -1,15 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "@/app/components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Donate",
+  description:
+    "Support neurotechnology research and innovation at the The BRAIN Center through the University of Houston giving portal.",
+};
 
 export default function DonatePage() {
   return (
-    <main className="min-h-screen bg-white">
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
-          Donate
-        </h1>
-        <p className="mt-3 text-lg font-semibold text-slate-800">
-          Help accelerate safe, reliable neurotechnology that improves quality of life.
-        </p>
+    <div className="min-h-screen bg-white">
+      <PageHeader
+        eyebrow="Support"
+        title="Donate"
+        description="Help accelerate safe, reliable neurotechnology that improves quality of life."
+      />
+
+      <section className="mx-auto max-w-5xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
 
         <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-800">
           <p>
@@ -58,12 +66,12 @@ export default function DonatePage() {
             href="https://giving.uh.edu/brain"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-[var(--luminous-mint)] bg-[var(--luminous-mint)] px-6 py-2 text-sm font-semibold text-[var(--midnight-blue)] shadow-sm hover:bg-transparent hover:text-[var(--luminous-mint)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-secondary)]"
+            className="inline-flex items-center justify-center rounded-lg bg-[var(--deep-teal)] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--cta-hover)]"
           >
             Support the BRAIN Center ↗
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Intellectual Property | The BRAIN Center",
+  title: "Intellectual Property",
   description:
     "Overview of the intellectual property and invention disclosure process for BRAIN Center investigators and member companies.",
 };
@@ -17,7 +17,7 @@ type StepCardProps = {
 function StepCard({ stepLabel, title, children }: StepCardProps) {
   return (
     <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--deep-teal)]">
         {stepLabel}
       </p>
       <h2 className="mt-2 text-lg font-semibold tracking-tight text-slate-900">
@@ -32,7 +32,7 @@ function StepCard({ stepLabel, title, children }: StepCardProps) {
 
 export default function IntellectualPropertyPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Policies & Processes"
         title="Intellectual Property"
@@ -59,7 +59,7 @@ export default function IntellectualPropertyPage() {
                   href="https://www.skysonginnovations.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-teal-700 underline underline-offset-2"
+                  className="text-sm font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   https://www.skysonginnovations.com
                 </a>
@@ -73,7 +73,7 @@ export default function IntellectualPropertyPage() {
                   href="https://uh.edu/uh-energy-innovation/uh-innovation/technology-transfer/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-teal-700 underline underline-offset-2"
+                  className="text-sm font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   https://uh.edu/uh-energy-innovation/uh-innovation/
                   technology-transfer/
@@ -90,14 +90,14 @@ export default function IntellectualPropertyPage() {
                 For ASU, email{" "}
                 <a
                   href="mailto:Marco.Santello@asu.edu"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   Marco.Santello@asu.edu
                 </a>{" "}
                 and cc{" "}
                 <a
                   href="mailto:IP@skysonginnovations.com"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   IP@skysonginnovations.com
                 </a>{" "}
@@ -108,7 +108,7 @@ export default function IntellectualPropertyPage() {
                 For UH, email{" "}
                 <a
                   href="mailto:jlcontr2@Central.UH.EDU"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   jlcontr2@Central.UH.EDU
                 </a>{" "}
@@ -130,7 +130,7 @@ export default function IntellectualPropertyPage() {
                 notification to the IAB members (copying{" "}
                 <a
                   href="mailto:oipm@central.uh.edu"
-                  className="font-medium text-teal-700 underline underline-offset-2"
+                  className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
                 >
                   oipm@central.uh.edu
                 </a>
@@ -169,7 +169,7 @@ export default function IntellectualPropertyPage() {
                 href=""
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-teal-700 underline underline-offset-2"
+                className="font-medium text-[var(--deep-teal)] underline underline-offset-2"
               >
                 PPT
               </a>
@@ -178,6 +178,6 @@ export default function IntellectualPropertyPage() {
           </StepCard>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

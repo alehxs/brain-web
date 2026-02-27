@@ -8,13 +8,13 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <Hero />
       <MissionSummary />
       <NewsWidget />
       <JoinUs/>
       <CalendarEmbed />
       <Partners />
-    </main>
+    </div>
   );
 }

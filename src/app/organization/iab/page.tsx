@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Industry Advisory Board | NSF BRAIN",
+  title: "Industry Advisory Board",
   description:
     "Meet the Industry Advisory Board leadership guiding the BRAIN Center's research direction and industry partnerships.",
 };
@@ -28,7 +28,7 @@ A modest investment into BRAIN membership gives industry members the leverage an
 
 export default function IABPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <section className="bg-[var(--light-slate)] border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
           <h1 className="text-3xl font-extrabold tracking-tight text-[var(--midnight-blue)] sm:text-4xl">
@@ -83,6 +83,6 @@ export default function IABPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

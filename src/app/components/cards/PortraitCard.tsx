@@ -5,11 +5,13 @@ import { type ElementType, type ComponentPropsWithoutRef, type ReactNode } from 
 export interface PortraitCardProps {
   name: string;
   subtitle?: string;
+  role?: string;
+  affiliation?: string;
   src?: string;
   href?: string;
   alt?: string;
   className?: string;
-  disableHover?: boolean; // New prop
+  disableHover?: boolean;
 }
 
 type BaseCardProps<E extends ElementType = "article"> = {
@@ -54,11 +56,13 @@ function CardRoot<E extends ElementType = "article">({
 export default function PortraitCard({
   name,
   subtitle,
+  role,
+  affiliation,
   src,
   href,
   alt,
   className,
-  disableHover = false, // Default to false so existing cards keep hover
+  disableHover = false,
 }: PortraitCardProps) {
   
   // Conditional classes for hover effects
@@ -89,7 +93,13 @@ export default function PortraitCard({
         <h2 className={`text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight ${textHoverClass}`}>
           {name}
         </h2>
-        {subtitle && (
+        {role && (
+          <p className="mt-1 text-xs text-slate-700 font-medium">{role}</p>
+        )}
+        {affiliation && (
+          <p className="mt-1 text-xs text-slate-600 line-clamp-2">{affiliation}</p>
+        )}
+        {!role && !affiliation && subtitle && (
           <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-medium">
             {subtitle}
           </p>

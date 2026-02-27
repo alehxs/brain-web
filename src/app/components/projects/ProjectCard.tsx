@@ -49,15 +49,9 @@ export default function ProjectCard({
 
         {/* Only show “View details →” if this project has a link */}
         {href && (
-          <div className="mt-3 inline-flex items-center text-xs font-medium text-teal-700">
-            <span>View details</span>
-            <span
-              aria-hidden="true"
-              className="ml-1 transition-transform group-hover:translate-x-0.5"
-            >
-              →
-            </span>
-          </div>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)]">
+            View details <span className="transition group-hover:translate-x-0.5">→</span>
+          </span>
         )}
       </div>
     </article>

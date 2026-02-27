@@ -55,10 +55,6 @@
   .full-bleed { @apply md:relative md:left-1/2 md:right-1/2 md:-mx-[50vw] md:w-screen; }
 }
 
-.cta-button {
-  @apply inline-block bg-[var(--cta-primary)] hover:bg-[var(--cta-hover)] text-white font-semibold py-3 px-6 rounded transition-all transform hover:-translate-y-1;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     /* Force the site to remain light even when user prefers dark */

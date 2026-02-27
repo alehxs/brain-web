@@ -22,7 +22,7 @@ export default function ContentCard({
         <Card.Title>{title}</Card.Title>
         {meta && <Card.Meta>{meta}</Card.Meta>}
         {summary && <Card.Summary>{summary}</Card.Summary>}
-        <span className="mt-3 inline-flex items-center gap-1 text-[var(--luminous-mint)]">
+        <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)]">
           Read more <span className="transition group-hover:translate-x-0.5">→</span>
         </span>
       </Card.Body>

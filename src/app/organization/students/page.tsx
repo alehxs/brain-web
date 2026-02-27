@@ -6,7 +6,7 @@ import { people } from "../../../data/people";
 import { sites } from "../../../data/sites";
 
 export const metadata: Metadata = {
-    title: "Students | NSF BRAIN",
+    title: "Students",
     description:
         "Meet the students driving innovation and conducting research at the BRAIN Center.",
 };
@@ -44,7 +44,7 @@ const students: Person[] = people
 
 export default function StudentsPage() {
     return (
-        <main className="bg-white">
+        <div className="bg-white">
             <section className="bg-[var(--light-slate)] border-b border-slate-200">
                 <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--deep-teal)]">
@@ -66,7 +66,7 @@ export default function StudentsPage() {
                     </section>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "NSF IUCRC Program | NSF BRAIN",
+  title: "NSF IUCRC Program",
   description:
     "Learn about the National Science Foundation Industry–University Cooperative Research Centers (IUCRC) Program.",
 };
@@ -19,7 +19,7 @@ function CheckIcon() {
 
 export default function IucrcPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Supported By"
         title="Industry–University Cooperative Research Centers Program"
@@ -30,7 +30,7 @@ export default function IucrcPage() {
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5">
-            <h2 className="text-3xl font-serif font-bold text-[var(--midnight-blue)] mb-6">
+            <h2 className="text-3xl font-bold text-[var(--midnight-blue)] mb-6">
               Mission and History
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
@@ -94,7 +94,7 @@ export default function IucrcPage() {
         
         {/* Inner padding updated to px-6 sm:px-8 */}
         <div className="mx-auto max-w-4xl px-6 sm:px-8 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
             Program Structure
           </h2>
           <div className="prose prose-lg prose-invert mx-auto opacity-90 leading-relaxed">
@@ -145,7 +145,7 @@ export default function IucrcPage() {
            <span className="text-[var(--deep-teal)] font-bold tracking-widest uppercase text-xs mb-3 block">
             Visualizing the Ecosystem
           </span>
-          <h2 className="text-3xl font-serif font-bold text-[var(--midnight-blue)]">
+          <h2 className="text-3xl font-bold text-[var(--midnight-blue)]">
             The Partnership Model
           </h2>
         </div>
@@ -160,6 +160,6 @@ export default function IucrcPage() {
           />
         </figure>
       </section>
-    </main>
+    </div>
   );
 }

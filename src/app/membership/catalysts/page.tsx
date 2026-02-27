@@ -3,14 +3,14 @@ import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Innovation Catalysts | NSF BRAIN",
+  title: "Innovation Catalysts",
   description:
     "How BRAIN Center members act as catalysts—guiding, funding, and accelerating industry-relevant research through the NSF IUCRC model.",
 };
 
 export default function CatalystsPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Membership"
         title="Catalysts of Technological Development & Innovation"
@@ -161,6 +161,6 @@ export default function CatalystsPage() {
           </section>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

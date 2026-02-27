@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Economic Impact | The BRAIN Center",
+  title: "Economic Impact",
   description:
     "How BRAIN Center research improves national economic health by addressing disability, chronic disease, and neurotechnology innovation.",
 };
 
 export default function EconomicImpactPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="Impacts"
         title="Improving National Economic Health"
       />
 
-      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening context */}
         <p className="text-base leading-relaxed text-slate-700">
           Increases in life expectancy have shifted the leading causes of
@@ -180,6 +180,6 @@ export default function EconomicImpactPage() {
           </ul>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

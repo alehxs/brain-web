@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Uniqueness & Differentiators | BRAIN Center",
+  title: "Uniqueness & Differentiators",
   description: "Discover the key differentiators that make the BRAIN Center a leader in neurotechnology research.",
 };
 
@@ -17,7 +17,7 @@ function StarIcon() {
 
 export default function UniquenessPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader
         eyebrow="About The Center"
         title="Uniqueness: Key Differentiators"
@@ -43,7 +43,7 @@ export default function UniquenessPage() {
 
         {/* 2. THE ECOSYSTEM GRID: Tighter padding and gaps */}
         <div className="bg-[var(--light-slate)] rounded-xl p-6 md:p-10 mb-10">
-          <h2 className="text-xl font-serif font-bold text-[var(--midnight-blue)] mb-6">
+          <h2 className="text-xl font-bold text-[var(--midnight-blue)] mb-6">
             The Innovation Ecosystem
           </h2>
           
@@ -97,7 +97,7 @@ export default function UniquenessPage() {
         {/* 3. ETHICS & WORKFORCE: Tighter vertical gap (pt-10 instead of pt-12) */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 border-t border-slate-100 pt-10">
           <div>
-            <h3 className="font-serif font-bold text-lg text-[var(--midnight-blue)] mb-3">
+            <h3 className="font-bold text-lg text-[var(--midnight-blue)] mb-3">
               Ethics & Policy
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
@@ -106,7 +106,7 @@ export default function UniquenessPage() {
           </div>
           
           <div>
-            <h3 className="font-serif font-bold text-lg text-[var(--midnight-blue)] mb-3">
+            <h3 className="font-bold text-lg text-[var(--midnight-blue)] mb-3">
               Workforce Development
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
@@ -116,6 +116,6 @@ export default function UniquenessPage() {
         </div>
 
       </section>
-    </main>
+    </div>
   );
 }

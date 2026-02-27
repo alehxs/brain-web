@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Making An Impact | The BRAIN Center",
+  title: "Making An Impact",
   description:
     "How demographic change, chronic disease, and emerging neurotechnologies shape the BRAIN Center's broader impacts.",
 };
 
 export default function ImpactPage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <PageHeader eyebrow="Impacts" title="Making An Impact" />
 
-      <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening paragraph */}
         <p className="text-base leading-relaxed text-slate-700">
           Worldwide, the number of people aged 65 and above is projected to grow
@@ -92,6 +92,6 @@ export default function ImpactPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
