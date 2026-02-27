@@ -5,7 +5,7 @@ import type {
   ReactNode,
   ComponentPropsWithoutRef,
 } from "react";
-import { people, type Person } from "../../data/people";
+import { people, type Person } from "../../../data/people";
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
