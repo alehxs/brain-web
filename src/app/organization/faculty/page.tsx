@@ -1,14 +1,9 @@
-// Faculty page displaying all center faculty members
-// Displays faculty members filtered from the people data
 import type { Metadata } from "next";
 import Image from "next/image";
-import type {
-  ElementType,
-  ReactNode,
-  ComponentPropsWithoutRef,
-} from "react";
-import { people, type Person } from "../../../data/people";
+import Card from "../../components/cards/primitives/Card";
 import PageHeader from "@/app/components/PageHeader";
+
+import { people } from "../../../data/people";
 
 export const metadata: Metadata = {
   title: "Faculty",
@@ -16,116 +11,70 @@ export const metadata: Metadata = {
     "Meet the BRAIN Center faculty driving neurotechnology research and innovation.",
 };
 
-type BaseCardProps<E extends ElementType = "article"> = {
-  as?: E;
+type FacultyMember = {
+  name: string;
+  role: string;
+  imageSrc: string;
+  imageAlt?: string;
   href?: string;
-  external?: boolean;
-  className?: string;
-  children: ReactNode;
-} & Omit<
-  ComponentPropsWithoutRef<E>,
-  "as" | "children" | "className" | "href" | "target" | "rel"
->;
+};
 
-export function CardRoot<E extends ElementType = "article">({
-  as = "article" as E,
-  href,
-  external,
-  className = "",
-  children,
-  ...rest
-}: BaseCardProps<E>) {
-  const Cmp = href ? "a" : as;
-  const attrs = href
-    ? {
-      href,
-      target: external ? "_blank" : undefined,
-      rel: external ? "noopener noreferrer" : undefined,
-    }
-    : {};
-
-  return (
-    <Cmp
-      {...attrs}
-      {...rest}
-      className={[
-        "block rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md group",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
-      {children}
-    </Cmp>
-  );
-}
-
-const facultyMembers = people
+const facultyList: FacultyMember[] = people
   .filter((person) => person.group.includes("Faculty"))
+  .map((person) => ({
+    name: person.name,
+    role: person.tags[0] || "",
+    imageSrc: person.src,
+    imageAlt: person.name,
+    href: person.href,
+  }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export default function FacultyPage() {
-  if (!facultyMembers || facultyMembers.length === 0) {
-    return (
-      <div className="bg-white min-h-screen">
-        <PageHeader
-          eyebrow="Organization"
-          title="Faculty"
-        />
-        <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-          <p>No faculty members found.</p>
-        </section>
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-white min-h-screen">
-      <PageHeader
-        eyebrow="Organization"
-        title="Faculty"
-      />
+    <div className="bg-white">
+      <PageHeader eyebrow="Organization" title="Faculty" />
 
-      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {facultyMembers.map((person: Person) => (
-            <CardRoot
-              key={person.href ?? person.name}
-              href={person.href}
-              className="flex flex-col overflow-hidden"
+      <section className="mx-auto max-w-7xl px-6 sm:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {facultyList.map((faculty) => (
+            <Card
+              key={faculty.name}
+              href={faculty.href}
+              external={false}
+              className="group"
             >
-              {person.src ? (
-                <div className="relative w-full aspect-[4/5] bg-white">
+              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-t-lg bg-slate-100">
+                {faculty.imageSrc ? (
                   <Image
-                    src={person.src}
-                    alt={person.name}
+                    src={faculty.imageSrc}
+                    alt={faculty.imageAlt || faculty.name}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                </div>
-              ) : (
-                <div className="relative w-full aspect-[4/5] bg-slate-100 flex items-center justify-center text-slate-300">
-                  <svg
-                    className="w-12 h-12"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-              )}
-              <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight group-hover:text-[var(--deep-teal)] transition-colors">
-                  {person.name}
-                </h2>
-                {person.tags[0] && (
-                  <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-medium">
-                    {person.tags[0]}
+                ) : (
+                  <div className="flex items-center justify-center w-full h-full bg-slate-200">
+                    <svg
+                      className="w-16 h-16 text-slate-400"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div className="p-4">
+                <h3 className="text-sm font-bold text-slate-900 line-clamp-2">
+                  {faculty.name}
+                </h3>
+                {faculty.role && (
+                  <p className="mt-1 text-xs text-slate-600 line-clamp-2">
+                    {faculty.role}
                   </p>
                 )}
               </div>
-            </CardRoot>
+            </Card>
           ))}
         </div>
       </section>
