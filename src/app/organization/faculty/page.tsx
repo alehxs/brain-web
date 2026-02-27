@@ -1,4 +1,5 @@
 // Faculty page displaying all center faculty members
+// Displays faculty members filtered from the people data
 import type { Metadata } from "next";
 import Image from "next/image";
 import type {
@@ -64,6 +65,20 @@ const facultyMembers = people
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export default function FacultyPage() {
+  if (!facultyMembers || facultyMembers.length === 0) {
+    return (
+      <div className="bg-white min-h-screen">
+        <PageHeader
+          eyebrow="Organization"
+          title="Faculty"
+        />
+        <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
+          <p>No faculty members found.</p>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white min-h-screen">
       <PageHeader
