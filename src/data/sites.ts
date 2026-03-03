@@ -25,7 +25,7 @@ export const sites: Site[] = [
     abbreviation: "UH",
     category: "BRAIN Site",
     link: "https://www.uh.edu",
-    logos: { full: "/partners/uh.png", small: "/logos/uh-logo-white.png" },
+    logos: { full: "/partners/uh.png", small: "/logos/sites/uh.png" },
     description: "Lead site driving neurotechnology research and innovation.",
     coordinates: [-95.3584, 29.7199]
   },
@@ -35,7 +35,7 @@ export const sites: Site[] = [
     abbreviation: "ASU",
     category: "BRAIN Site",
     link: "https://www.asu.edu",
-    logos: { full: "/partners/asu.png", small: "/logos/asu-logo-white.png" },
+    logos: { full: "/partners/asu.png", small: "/logos/sites/asu.png" },
     description: "Collaborating on advancing neural engineering solutions.",
     coordinates: [-111.9281, 33.4242]
   },
@@ -45,7 +45,7 @@ export const sites: Site[] = [
     abbreviation: "GT",
     category: "BRAIN Site",
     link: "https://www.gatech.edu",
-    logos: { full: "/partners/git.png", small: "/logos/gt-logo-white.png" },
+    logos: { full: "/partners/git.png", small: "/logos/sites/gt.png" },
     description: "Prospective partner expanding our technical expertise.",
     coordinates: [-84.3963, 33.7756]
   },
@@ -55,7 +55,7 @@ export const sites: Site[] = [
     abbreviation: "WVU",
     category: "BRAIN Site",
     link: "https://www.wvu.edu",
-    logos: { full: "/partners/wvu.png", small: "/logos/wvu-logo-white.png" },
+    logos: { full: "/partners/wvu.png", small: "/logos/sites/wvu.png" },
     description: "Focusing on clinical applications and neural disorders.",
     coordinates: [-79.9559, 39.6358]
   },
@@ -65,7 +65,7 @@ export const sites: Site[] = [
     abbreviation: "UMBC",
     category: "BRAIN Site",
     link: "https://www.umbc.edu",
-    logos: { full: "/partners/umbc.png", small: "/logos/umbc-logo-white.png" },
+    logos: { full: "/partners/umbc.png", small: "/logos/sites/umbc.png" },
     description: "Contributing to data-driven neurotech research.",
     coordinates: [-76.7135, 39.2537]
   },
@@ -77,7 +77,7 @@ export const sites: Site[] = [
     abbreviation: "NEU",
     category: "External Collaborating Site",
     link: "https://www.northeastern.edu",
-    logos: { full: "/partners/neu.png", small: "/logos/neu-logo-white.png" },
+    logos: { full: "/partners/neu.png", small: "/logos/sites/neu.png" },
     description: "External collaborator on key research initiatives.",
     coordinates: [-71.0892, 42.3398] // Fixed coords (Chicago was in your snippet, switched to Boston for NEU)
   },
@@ -87,7 +87,7 @@ export const sites: Site[] = [
     abbreviation: "UAB",
     category: "External Collaborating Site",
     link: "https://www.uab.edu",
-    logos: { full: "/partners/uab.svg", small: "/logos/uab-logo-white.png" },
+    logos: { full: "/partners/uab.svg", small: "/logos/sites/uab.svg" },
     description: "Providing clinical insight.",
     coordinates: [-86.8025, 33.5054]
   },
@@ -99,7 +99,7 @@ export const sites: Site[] = [
     abbreviation: "UMH",
     category: "International Affiliate Site",
     link: "https://www.umh.es",
-    logos: { full: "/partners/umh.png", small: "/logos/umh-logo-white.png" },
+    logos: { full: "/partners/umh.png", small: "/logos/sites/umh.jpg" },
     description: "International affiliate expanding our global reach in Spain.",
     coordinates: [-0.6983, 38.2699]
   },
@@ -109,7 +109,7 @@ export const sites: Site[] = [
     abbreviation: "TEC",
     category: "International Affiliate Site",
     link: "https://tec.mx/en",
-    logos: { full: "/partners/tec.png", small: "/logos/tec-logo-white.png" },
+    logos: { full: "/partners/tec.png", small: "/logos/sites/tec.jpg" },
     description: "Key Latin American partner for innovation and talent.",
     coordinates: [-100.3167, 25.6667]
   },

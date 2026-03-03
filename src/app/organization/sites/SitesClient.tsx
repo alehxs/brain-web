@@ -10,6 +10,7 @@ import {
   Line,
 } from "@vnedyalk0v/react19-simple-maps";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { sites, Site } from "@/data/sites";
 
@@ -23,6 +24,7 @@ function SitesMap() {
   const [hoveredSite, setHoveredSite] = useState<string | null>(null);
   const [popoverPos, setPopoverPos] = useState<{ x: number; y: number; position: PopoverPosition; offsetX: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const leaveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -31,6 +33,10 @@ function SitesMap() {
   const hoveredSiteData = validSites.find((s) => s.id === hoveredSite);
 
   const handlePointerEnter = useCallback((site: Site) => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
     setHoveredSite(site.id);
     if (!containerRef.current) return;
 
@@ -70,6 +76,20 @@ function SitesMap() {
   }, []);
 
   const handlePointerLeave = useCallback(() => {
+    leaveTimeoutRef.current = setTimeout(() => {
+      setHoveredSite(null);
+      setPopoverPos(null);
+    }, 150);
+  }, []);
+
+  const handlePopoverEnter = useCallback(() => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
+  }, []);
+
+  const handlePopoverLeave = useCallback(() => {
     setHoveredSite(null);
     setPopoverPos(null);
   }, []);
@@ -84,12 +104,12 @@ function SitesMap() {
             Our Global <span className="text-[var(--luminous-mint)]">Neuro-Network</span>
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Hover over our collaborating universities to explore the BRAIN Center&apos;s worldwide ecosystem.
+            <span className="hidden sm:inline">Hover over</span><span className="sm:hidden">Tap</span> our collaborating universities to explore the BRAIN Center&apos;s worldwide ecosystem.
           </p>
         </div>
       </div>
 
-      <div ref={containerRef} className="relative w-full h-[500px] sm:h-[600px] max-w-7xl mx-auto">
+      <div ref={containerRef} className="relative w-full max-w-7xl mx-auto" style={{ aspectRatio: "2/1", minHeight: "280px", maxHeight: "700px" }}>
         {!mounted ? null : <ComposableMap
           projection="geoMercator"
           projectionConfig={{
@@ -234,7 +254,9 @@ function SitesMap() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute z-20 pointer-events-none"
+              className="absolute z-20"
+            onMouseEnter={handlePopoverEnter}
+            onMouseLeave={handlePopoverLeave}
               style={{
                 left: popoverPos.x + popoverPos.offsetX,
                 top: popoverPos.y,
@@ -257,8 +279,14 @@ function SitesMap() {
                 />
 
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shrink-0 text-[10px] font-bold text-slate-900 shadow-inner">
-                    {hoveredSiteData.abbreviation}
+                  <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full shrink-0 overflow-hidden shadow-inner">
+                    <Image
+                      src={hoveredSiteData.logos.small}
+                      alt={hoveredSiteData.abbreviation}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain p-1.5"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[9px] uppercase tracking-wider font-bold text-[var(--luminous-mint)] mb-0.5">
@@ -277,7 +305,7 @@ function SitesMap() {
                 <Link
                   href={hoveredSiteData.link}
                   target="_blank"
-                  className="block w-full py-2 text-center rounded bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-black text-white text-[10px] font-bold uppercase tracking-wide transition-all pointer-events-auto"
+                  className="block w-full py-2 text-center rounded bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-black text-white text-[10px] font-bold uppercase tracking-wide transition-all"
                 >
                   Visit Website
                 </Link>
