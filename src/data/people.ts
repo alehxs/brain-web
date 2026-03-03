@@ -950,12 +950,6 @@ export const people: Person[] = [
     group: ["Faculty"],
   },
   {
-    name: "Maria Alvarado",
-    tags: ["Faculty"],
-    src: "/people/faculty/maria-alvarado.jpg",
-    group: ["Faculty"],
-  },
-  {
     name: "Chethan Pandarinath",
     tags: ["Faculty"],
     src: "",
