@@ -17,7 +17,7 @@ export default function FacultyPage() {
   return (
     <div className="bg-white">
       <PageHeader eyebrow="Organization" title="Faculty" />
-      <section className="mx-auto max-w-7xl px-6 sm:px-8 py-12 sm:py-16 lg:py-20">
+      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 sm:py-16 lg:py-20">
         <PeopleGrid people={facultyPeople} variant="faculty" />
       </section>
     </div>
