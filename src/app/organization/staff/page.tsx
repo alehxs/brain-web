@@ -5,7 +5,7 @@ import type {
   ReactNode,
   ComponentPropsWithoutRef,
 } from "react";
-import { people, type Person } from "../../../data/people"; // Note the extra ../ to find the data
+import { people, type Person, INSTITUTION_NAMES } from "../../../data/people"; // Note the extra ../ to find the data
 import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
@@ -106,6 +106,11 @@ export default function StaffPage() {
                 {person.tags[0] && (
                   <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-medium">
                     {person.tags[0]}
+                  </p>
+                )}
+                {person.affiliation[0] && (
+                  <p className="text-[10px] text-slate-500 leading-snug mt-1 line-clamp-2">
+                    {INSTITUTION_NAMES[person.affiliation[0]]}
                   </p>
                 )}
               </div>

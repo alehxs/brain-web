@@ -3,7 +3,7 @@ import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 import PageHeader from "@/app/components/PageHeader";
 
-import { people } from "../../../data/people";
+import { people, INSTITUTION_NAMES } from "../../../data/people";
 
 export const metadata: Metadata = {
   title: "Faculty",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 type FacultyMember = {
   name: string;
   role: string;
+  university?: string;
   imageSrc: string;
   imageAlt?: string;
   href?: string;
@@ -24,6 +25,7 @@ const facultyList: FacultyMember[] = people
   .map((person) => ({
     name: person.name,
     role: person.tags[0] || "",
+    university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
     imageSrc: person.src,
     imageAlt: person.name,
     href: person.href,
@@ -71,6 +73,11 @@ export default function FacultyPage() {
                 {faculty.role && (
                   <p className="mt-1 text-xs text-slate-600 line-clamp-2">
                     {faculty.role}
+                  </p>
+                )}
+                {faculty.university && (
+                  <p className="text-[10px] text-slate-500 leading-snug mt-1 line-clamp-2">
+                    {faculty.university}
                   </p>
                 )}
               </div>

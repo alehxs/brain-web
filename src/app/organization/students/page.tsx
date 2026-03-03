@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 
-import { people } from "../../../data/people";
-import { sites } from "../../../data/sites";
+import { people, INSTITUTION_NAMES } from "../../../data/people";
 
 export const metadata: Metadata = {
     title: "Students",
@@ -20,22 +19,12 @@ type Person = {
     href?: string;
 };
 
-function getUniversityName(identifier: string): string | undefined {
-    const site = sites.find(
-        (s) =>
-            s.id === identifier.toLowerCase() ||
-            s.abbreviation === identifier ||
-            s.name === identifier
-    );
-    return site?.name;
-}
-
 const students: Person[] = people
     .filter((person) => person.group.includes("Student"))
     .map((person) => ({
         name: person.name,
         role: person.tags[0] || "",
-        university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+        university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
         imageSrc: person.src,
         imageAlt: person.name,
         href: person.href,
