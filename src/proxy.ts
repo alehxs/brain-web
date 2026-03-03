@@ -13,7 +13,7 @@ const SPAM_PATTERNS = [
   /^\/ctg\//, // Korean e-commerce spam like /ctg/search/similarImageSearchResultView/
 ];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   for (const pattern of SPAM_PATTERNS) {
