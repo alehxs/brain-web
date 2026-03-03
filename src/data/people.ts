@@ -1109,7 +1109,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/belinda-del-carmen-carrin-chavarra.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Beom-Chan Lee",
@@ -1277,7 +1277,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/david-isaac-ibarra-zarate.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Dennis Reynolds",
@@ -1347,7 +1347,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/gerardo-presbtero-espinosa.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Renjie Hu",
@@ -1389,7 +1389,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/hugo-gustavo-gonzlez-hernndez.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Yue Chen",
@@ -1417,7 +1417,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/javier-mauricio-antelis-ortiz.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Vince Calhoun",
@@ -1480,7 +1480,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/joel-carlos-huegel-west.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "John Wolfe",
@@ -1508,7 +1508,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Juana Gallar",
@@ -1529,7 +1529,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/luz-mara-alonso-valerdi.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Nathalie Matychak",
@@ -1550,7 +1550,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "M. Carmen Acosta",
@@ -1592,14 +1592,14 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Myriam Alanis Espinosa",
     tags: ["Faculty"],
     src: "/people/faculty/myriam-alanis-espinosa.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Selcuk Candan",
@@ -1613,14 +1613,14 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/pedro-daniel-urbina-coronado.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Pedro Ponce Cruz",
     tags: ["Faculty"],
     src: "/people/faculty/pedro-ponce-cruz.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Rafael Sabido Solana",
@@ -1669,7 +1669,7 @@ export const people: Person[] = [
     tags: ["Faculty"],
     src: "/people/faculty/ricardo-ambrocio-ramrez-mendoza.jpg",
     group: ["Faculty"],
-    affiliation: [],
+    affiliation: ["TEC"],
   },
   {
     name: "Rosalind Sadleir",
