@@ -1,8 +1,6 @@
 
 // src/components/organization/members/MemberLogoCard.tsx
 
-"use client";
-
 import Image from "next/image";
 import type { FC } from "react";
 import Card from "./primitives/Card";
