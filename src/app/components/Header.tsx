@@ -161,7 +161,7 @@ const NAV: NavItem[] = [
       { label: "BRAIN Sites", href: "/organization/sites" },
       { label: "Industry Members", href: "/organization/industry-members" },
       { label: "Industry Advisory Board (IAB)", href: "/organization/iab" },
-      { label: "Faculty", href: "/faculty" },
+      { label: "Faculty", href: "/organization/faculty" },
       { label: "Students", href: "/organization/students" },
       { label: "Staff", href: "/organization/staff" },
       { label: "Careers", href: "/organization/careers" },
