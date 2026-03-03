@@ -3,8 +3,7 @@ import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 import PageHeader from "@/app/components/PageHeader";
 
-import { people } from "../../../data/people";
-import { sites } from "../../../data/sites";
+import { people, INSTITUTION_NAMES } from "../../../data/people";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -21,22 +20,12 @@ type Person = {
   href?: string;
 };
 
-function getUniversityName(identifier: string): string | undefined {
-  const site = sites.find(
-    (s) =>
-      s.id === identifier.toLowerCase() ||
-      s.abbreviation === identifier ||
-      s.name === identifier
-  );
-  return site?.name;
-}
-
 const leadership: Person[] = people
   .filter((person) => person.group.includes("Leadership"))
   .map((person) => ({
     name: person.name,
     role: person.tags[0] || "",
-    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+    university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
     imageSrc: person.src,
     imageAlt: person.name,
     href: person.href,
@@ -50,22 +39,12 @@ const coInvestigators: Person[] = people
   .map((person) => ({
     name: person.name,
     role: person.tags[0] || "",
-    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
+    university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
     imageSrc: person.src,
     imageAlt: person.name,
     href: person.href,
   }));
 
-const staff: Person[] = people
-  .filter((person) => person.group.includes("Staff"))
-  .map((person) => ({
-    name: person.name,
-    role: person.tags[0] || "",
-    university: person.tags[1] ? getUniversityName(person.tags[1]) : undefined,
-    imageSrc: person.src,
-    imageAlt: person.name,
-    href: person.href,
-  }));
 
 export default function LeadershipPage() {
   return (
@@ -92,12 +71,6 @@ export default function LeadershipPage() {
             <PersonGrid people={coInvestigators} />
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 mb-6">
-              Staff
-            </h2>
-            <PersonGrid people={staff} />
-          </section>
         </div>
       </section>
     </div>
