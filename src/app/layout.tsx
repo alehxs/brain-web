@@ -64,9 +64,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden">
+      <body className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden">
         <Header />
-        <main id="main" className="w-full">
+        <main id="main" className="w-full flex-grow">
           {children}
         </main>
         <ScrollToTop />
