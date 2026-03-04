@@ -30,22 +30,35 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
 
   return (
     <div>
-      <div className="flex flex-col sm:flex-row gap-3 mb-6">
+      {/* Search bar */}
+      <div className="flex items-center gap-2 mb-4 px-4 py-2.5 rounded-full border border-slate-300 bg-white shadow-sm w-full max-w-[480px]">
+        <svg className="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+        </svg>
         <input
           type="search"
           placeholder="Search by name…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full sm:max-w-xs px-4 py-2 rounded-full border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--deep-teal)] focus:border-transparent"
+          className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
         />
+        {query && (
+          <button onClick={() => setQuery('')} className="text-slate-400 hover:text-slate-600 shrink-0">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        )}
       </div>
-      <div className="flex flex-wrap gap-2 mb-8">
+
+      {/* Filter pills */}
+      <div className="flex flex-wrap gap-2 pb-6 mb-2 border-b border-slate-200">
         <button
           onClick={() => setActiveFilter('all')}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
             activeFilter === 'all'
-              ? 'border-[var(--deep-teal)] bg-teal-50 text-[var(--deep-teal)]'
-              : 'border-transparent bg-slate-100 text-slate-600 hover:bg-slate-200'
+              ? 'bg-[var(--deep-teal)] text-white'
+              : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
@@ -55,7 +68,7 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
             <rect x="9" y="9" width="6" height="6" rx="1" />
           </svg>
           All
-          <span className={`text-xs font-normal ${activeFilter === 'all' ? 'text-teal-600' : 'text-slate-400'}`}>
+          <span className={`text-xs font-normal ${activeFilter === 'all' ? 'text-white/70' : 'text-slate-400'}`}>
             {people.length}
           </span>
         </button>
@@ -63,20 +76,14 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
           <button
             key={id}
             onClick={() => setActiveFilter(id)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               activeFilter === id
-                ? 'border-[var(--deep-teal)] bg-teal-50 text-[var(--deep-teal)]'
-                : 'border-transparent bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-[var(--deep-teal)] text-white'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`/logos/sites/${id.toLowerCase()}.png`}
-              alt=""
-              className="w-4 h-4 object-contain"
-            />
             {id}
-            <span className={`text-xs font-normal ${activeFilter === id ? 'text-teal-600' : 'text-slate-400'}`}>
+            <span className={`text-xs font-normal ${activeFilter === id ? 'text-white/70' : 'text-slate-400'}`}>
               {countByInstitution[id]}
             </span>
           </button>
