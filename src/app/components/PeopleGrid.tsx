@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Card from './cards/primitives/Card';
 import { type Person, type Institution, INSTITUTION_NAMES } from '@/data/people';
+import { toSlug } from '@/lib/slug';
 
 // Explicit order matches the institution tier layout: lead site first, then US sites, then international
 const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC'];
@@ -15,71 +16,113 @@ type Props = {
 
 export default function PeopleGrid({ people, variant = 'student' }: Props) {
   const [activeFilter, setActiveFilter] = useState<'all' | Institution>('all');
+  const [query, setQuery] = useState('');
 
-  const filtered =
-    activeFilter === 'all'
-      ? people
-      : people.filter((p) => p.affiliation.includes(activeFilter));
+  const filtered = people.filter((p) => {
+    const matchesInstitution = activeFilter === 'all' || p.affiliation.includes(activeFilter);
+    const matchesQuery = query === '' || p.name.toLowerCase().includes(query.toLowerCase());
+    return matchesInstitution && matchesQuery;
+  });
+
+  const countByInstitution = Object.fromEntries(
+    INSTITUTIONS.map((id) => [id, people.filter((p) => p.affiliation.includes(id)).length])
+  );
 
   return (
     <div>
+      <div className="flex flex-col sm:flex-row gap-3 mb-6">
+        <input
+          type="search"
+          placeholder="Search by name…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full sm:max-w-xs px-4 py-2 rounded-full border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--deep-teal)] focus:border-transparent"
+        />
+      </div>
       <div className="flex flex-wrap gap-2 mb-8">
         <button
           onClick={() => setActiveFilter('all')}
-          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
             activeFilter === 'all'
-              ? 'bg-[var(--deep-teal)] text-white'
-              : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              ? 'border-[var(--deep-teal)] bg-teal-50 text-[var(--deep-teal)]'
+              : 'border-transparent bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+            <rect x="1" y="1" width="6" height="6" rx="1" />
+            <rect x="9" y="1" width="6" height="6" rx="1" />
+            <rect x="1" y="9" width="6" height="6" rx="1" />
+            <rect x="9" y="9" width="6" height="6" rx="1" />
+          </svg>
           All
+          <span className={`text-xs font-normal ${activeFilter === 'all' ? 'text-teal-600' : 'text-slate-400'}`}>
+            {people.length}
+          </span>
         </button>
         {INSTITUTIONS.map((id) => (
           <button
             key={id}
             onClick={() => setActiveFilter(id)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
               activeFilter === id
-                ? 'bg-[var(--deep-teal)] text-white'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'border-[var(--deep-teal)] bg-teal-50 text-[var(--deep-teal)]'
+                : 'border-transparent bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}
           >
-            <span className="relative w-4 h-4 flex-shrink-0">
-              <Image
-                src={`/logos/sites/${id.toLowerCase()}.png`}
-                alt=""
-                fill
-                className="object-contain"
-              />
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`/logos/sites/${id.toLowerCase()}.png`}
+              alt=""
+              className="w-4 h-4 object-contain"
+            />
             {id}
+            <span className={`text-xs font-normal ${activeFilter === id ? 'text-teal-600' : 'text-slate-400'}`}>
+              {countByInstitution[id]}
+            </span>
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {filtered.map((person) =>
-          variant === 'faculty' ? (
-            <FacultyCard key={person.name} person={person} />
-          ) : (
-            <StudentCard key={person.name} person={person} />
-          )
-        )}
-      </div>
+      {filtered.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-24 text-center">
+          <svg className="w-12 h-12 text-slate-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          </svg>
+          <p className="text-slate-500 text-sm">No results found.</p>
+          <button
+            onClick={() => { setActiveFilter('all'); setQuery(''); }}
+            className="mt-3 text-sm text-[var(--deep-teal)] hover:underline"
+          >
+            Show all
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          {filtered.map((person) =>
+            variant === 'faculty' ? (
+              <FacultyCard key={person.name} person={person} />
+            ) : (
+              <StudentCard key={person.name} person={person} />
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
 function FacultyCard({ person }: { person: Person }) {
   const university = person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined;
+  const slug = person.slugOverride ?? toSlug(person.name);
   return (
-    <Card href={person.href} className="group">
+    <Card href={`/organization/faculty/${slug}`} className="group">
       <Card.Media ratio="3/4" className="rounded-t-lg bg-slate-100">
         {person.src ? (
           <Image
             src={person.src}
             alt={person.name}
             fill
+            sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
