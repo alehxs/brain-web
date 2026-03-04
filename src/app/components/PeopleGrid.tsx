@@ -30,9 +30,9 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
 
   return (
     <div>
-      {/* Search bar */}
-      <div className="flex items-center gap-2 mb-4 px-4 py-2.5 rounded-full border border-slate-300 bg-white shadow-sm w-full max-w-[480px]">
-        <svg className="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      {/* Search bar — focus ring on wrapper so outline-none on input is safe */}
+      <div className="flex items-center gap-2 mb-4 px-4 py-2.5 rounded-full border border-slate-300 bg-white shadow-sm w-full max-w-[480px] focus-within:ring-2 focus-within:ring-[var(--deep-teal)] focus-within:border-transparent transition-shadow">
+        <svg className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
         </svg>
         <input
@@ -41,10 +41,15 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+          aria-label="Search by name"
         />
         {query && (
-          <button onClick={() => setQuery('')} className="text-slate-400 hover:text-slate-600 shrink-0">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <button
+            onClick={() => setQuery('')}
+            aria-label="Clear search"
+            className="text-slate-400 hover:text-slate-600 shrink-0"
+          >
+            <svg className="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -52,30 +57,37 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
       </div>
 
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 pb-6 mb-2 border-b border-slate-200">
+      <div
+        role="group"
+        aria-label="Filter by institution"
+        className="flex flex-wrap gap-2 pb-6 mb-2 border-b border-slate-200"
+      >
         <button
           onClick={() => setActiveFilter('all')}
+          aria-pressed={activeFilter === 'all'}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
             activeFilter === 'all'
               ? 'bg-[var(--deep-teal)] text-white'
               : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+          <svg className="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 16 16">
             <rect x="1" y="1" width="6" height="6" rx="1" />
             <rect x="9" y="1" width="6" height="6" rx="1" />
             <rect x="1" y="9" width="6" height="6" rx="1" />
             <rect x="9" y="9" width="6" height="6" rx="1" />
           </svg>
           All
-          <span className={`text-xs font-normal ${activeFilter === 'all' ? 'text-white/70' : 'text-slate-400'}`}>
+          <span aria-hidden="true" className={`text-xs font-normal ${activeFilter === 'all' ? 'text-white/70' : 'text-slate-400'}`}>
             {people.length}
           </span>
+          <span className="sr-only">— {people.length} results</span>
         </button>
         {INSTITUTIONS.map((id) => (
           <button
             key={id}
             onClick={() => setActiveFilter(id)}
+            aria-pressed={activeFilter === id}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               activeFilter === id
                 ? 'bg-[var(--deep-teal)] text-white'
@@ -83,11 +95,19 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
             }`}
           >
             {id}
-            <span className={`text-xs font-normal ${activeFilter === id ? 'text-white/70' : 'text-slate-400'}`}>
+            <span aria-hidden="true" className={`text-xs font-normal ${activeFilter === id ? 'text-white/70' : 'text-slate-400'}`}>
               {countByInstitution[id]}
             </span>
+            <span className="sr-only">— {countByInstitution[id]} results</span>
           </button>
         ))}
+      </div>
+
+      {/* Live region announces result count to screen readers */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {filtered.length === 0
+          ? 'No results found.'
+          : `${filtered.length} ${filtered.length === 1 ? 'person' : 'people'} shown.`}
       </div>
 
       {filtered.length === 0 ? (
