@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Card from './cards/primitives/Card';
 import { type Person, type Institution, INSTITUTION_NAMES } from '@/data/people';
-import { toSlug } from '@/lib/slug';
 
 const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC'];
 
@@ -139,9 +138,8 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
 
 function FacultyCard({ person }: { person: Person }) {
   const university = person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined;
-  const slug = person.slugOverride ?? toSlug(person.name);
   return (
-    <Card href={`/organization/faculty/${slug}`} className="group">
+    <Card className="group">
       <Card.Media ratio="3/4" className="rounded-t-lg bg-slate-100">
         {person.src ? (
           <Image
