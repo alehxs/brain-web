@@ -6,7 +6,6 @@ import Card from './cards/primitives/Card';
 import { type Person, type Institution, INSTITUTION_NAMES } from '@/data/people';
 import { toSlug } from '@/lib/slug';
 
-// Explicit order matches the institution tier layout: lead site first, then US sites, then international
 const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC'];
 
 type Props = {
