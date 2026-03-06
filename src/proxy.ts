@@ -2,15 +2,18 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Block spam URLs that are polluting Google Search Console.
- * These are fake paths created by external spam bots linking to our domain
- * (random numeric IDs and Korean e-commerce paths).
+ * Block dead URLs that are polluting Google Search Console and eating Vercel quota.
+ * Includes spam bot paths and legacy WordPress URLs from the old site.
  * Returning 410 Gone tells Google to permanently de-index them.
  */
 
 const SPAM_PATTERNS = [
   /^\/\d+$/, // numeric-only paths like /32699919
   /^\/ctg\//, // Korean e-commerce spam like /ctg/search/similarImageSearchResultView/
+  /^\/sites\//, // legacy site pages (e.g. /sites/georgia-institute-of-technology)
+  /^\/staff(s)?(\/|$)/, // old WordPress staff/staffs pages
+  /^\/wp-/, // WordPress paths like /wp-content/, /wp-admin/
+  /^\/xmlrpc\.php/, // WordPress XML-RPC endpoint
 ];
 
 export function proxy(request: NextRequest) {
