@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function isExternal(href: string) {
   return /^https?:\/\//i.test(href);
@@ -116,12 +116,13 @@ function LogoGroup() {
 }
 
 type NavSubItem = { label: string; href: string };
-type NavGroup = { label: string; items: NavSubItem[] };
+type NavSection = { heading?: string; items: NavSubItem[]; tinted?: boolean };
+type NavGroup = { label: string; items?: NavSubItem[]; sections?: NavSection[]; footer?: NavSubItem };
 type NavSingle = { label: string; href: string };
 type NavItem = NavGroup | NavSingle;
 
 function isNavGroup(item: NavItem): item is NavGroup {
-  return "items" in item;
+  return "items" in item || "sections" in item;
 }
 
 const NAV: NavItem[] = [
@@ -156,34 +157,55 @@ const NAV: NavItem[] = [
   },
   {
     label: "Organization",
-    items: [
-      { label: "Leadership", href: "/organization/leadership" },
-      { label: "BRAIN Sites", href: "/organization/sites" },
-      { label: "Industry Members", href: "/organization/industry-members" },
-      { label: "Industry Advisory Board (IAB)", href: "/organization/iab" },
-      { label: "Faculty", href: "/organization/faculty" },
-      { label: "Students", href: "/organization/students" },
-      { label: "Staff", href: "/organization/staff" },
-      { label: "Careers", href: "/organization/careers" },
+    sections: [
+      {
+        heading: "Structure",
+        items: [
+          { label: "BRAIN Sites", href: "/organization/sites" },
+          { label: "Industry Members", href: "/organization/industry-members" },
+          { label: "Industry Advisory Board (IAB)", href: "/organization/iab" },
+        ],
+      },
+      {
+        heading: "People",
+        items: [
+          { label: "Leadership", href: "/organization/leadership" },
+          { label: "Faculty", href: "/organization/faculty" },
+          { label: "Students", href: "/organization/students" },
+          { label: "Staff", href: "/organization/staff" },
+        ],
+      },
     ],
+    footer: { label: "Careers", href: "/organization/careers" },
   },
   {
     label: "Workforce",
-    items: [
-      { label: "Information", href: "/workforce/information" },
-      { label: "REU Supplement", href: "/workforce/reu-supplement" },
+    sections: [
       {
-        label: "BRAIN Student Network",
-        href: "/workforce/brain-student-network",
+        heading: "Information",
+        items: [
+          { label: "Overview", href: "/workforce/information" },
+          { label: "REU Supplement", href: "/workforce/reu-supplement" },
+          {
+            label: "BRAIN Student Network",
+            href: "/workforce/brain-student-network",
+          },
+          { label: "Training", href: "/workforce/training" },
+        ],
       },
-      { label: "Training", href: "/workforce/training" },
-      { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
       {
-        label: "REU Regulatory Science",
-        href: "https://reu.egr.uh.edu/regulatory-science",
+        heading: "External Programs",
+        tinted: true,
+        items: [
+          { label: "REU Website", href: "https://reu.egr.uh.edu/overview" },
+          {
+            label: "REU Regulatory Science",
+            href: "https://reu.egr.uh.edu/regulatory-science",
+          },
+          { label: "NSAP (Post-Bacc)", href: "https://www.egr.uh.edu/nsap/about" },
+          { label: "REM (Research Mentoring)", href: "https://reu.egr.uh.edu/rem" },
+        ],
       },
-      { label: "NSAP (Post-Bacc)", href: "https://www.egr.uh.edu/nsap/about" },
-      { label: "REM (Research Mentoring)", href: "https://reu.egr.uh.edu/rem" },
     ],
   },
   {
@@ -202,16 +224,19 @@ const NAV: NavItem[] = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const mobileOpenRef = useRef(mobileOpen);
+  mobileOpenRef.current = mobileOpen;
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape" && mobileOpen) {
+      if (e.key === "Escape" && (mobileOpenRef.current || openMenu !== null)) {
         setMobileOpen(false);
+        setOpenMenu(null);
       }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [mobileOpen]);
+  }, [openMenu]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -231,6 +256,8 @@ export default function Header() {
             <button
               className="lg:hidden rounded-md border border-white/20 p-2 text-white hover:bg-white/10"
               aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-controls="mobile-nav"
               onClick={() => setMobileOpen((v) => !v)}
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -245,8 +272,7 @@ export default function Header() {
           className="mx-auto max-w-7xl px-4"
           onMouseLeave={() => setOpenMenu(null)}
         >
-          <ul className="flex items-center justify-between h-14 text-sm font-medium">
-            <div className="flex items-center gap-8">
+          <ul className="flex items-center gap-8 h-14 text-sm font-medium">
               {NAV.filter((item) => item.label !== "Donate").map((item) => (
                 <li
                   key={item.label}
@@ -255,7 +281,10 @@ export default function Header() {
                   {isNavGroup(item) ? (
                     <>
                       <button
-                        className="flex items-center gap-1 py-2 group transition-colors"
+                        className="flex items-center gap-1 py-2 group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--luminous-mint)] rounded"
+                        aria-haspopup="true"
+                        aria-expanded={openMenu === item.label}
+                        aria-controls={`nav-menu-${item.label.toLowerCase()}`}
                         onMouseEnter={() => setOpenMenu(item.label)}
                         onClick={() =>
                           setOpenMenu((v) =>
@@ -282,32 +311,86 @@ export default function Header() {
                       </button>
 
                       <div
-                        className={`absolute left-0 top-full mt-0 w-64 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
+                        id={`nav-menu-${item.label.toLowerCase()}`}
+                        className={`absolute left-0 top-full mt-0 w-60 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
                           openMenu === item.label
                             ? "opacity-100 scale-100 translate-y-0"
                             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                         }`}
                         onMouseEnter={() => setOpenMenu(item.label)}
                       >
-                        <ul className="py-2">
-                          {item.items.map((sub, idx) => (
-                            <li key={`${sub.href}-${idx}`}>
-                              <Link
-                                className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
-                                href={sub.href}
-                                target={
-                                  isExternal(sub.href) ? "_blank" : undefined
-                                }
-                                onClick={() => setOpenMenu(null)}
-                              >
-                                <span>{sub.label}</span>
-                                {isExternal(sub.href) && (
-                                  <ExternalArrow className="w-3 h-3 opacity-50" />
+                        {item.sections ? (
+                          <div>
+                            {item.sections.map((section, sIdx) => (
+                              <div key={sIdx}>
+                                {sIdx > 0 && (
+                                  <div className="mx-3 my-1 h-px bg-white/[0.15]" />
                                 )}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                                <div>
+                                {section.heading && (
+                                  <p className="px-4 pt-2 pb-1 text-[10px] uppercase tracking-widest font-semibold text-white/50">
+                                    {section.heading}
+                                  </p>
+                                )}
+                                <ul>
+                                  {section.items.map((sub, idx) => (
+                                    <li key={`${sub.href}-${idx}`}>
+                                      <Link
+                                        className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors hover:bg-white/5 hover:text-white ${section.tinted ? "text-white/75" : "text-white/80"}`}
+                                        href={sub.href}
+                                        target={isExternal(sub.href) ? "_blank" : undefined}
+                                        rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
+                                        onClick={() => setOpenMenu(null)}
+                                      >
+                                        <span>{sub.label}</span>
+                                        {isExternal(sub.href) && (
+                                          <ExternalArrow className="w-3 h-3" />
+                                        )}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                                </div>
+                              </div>
+                            ))}
+                            {item.footer && (
+                              <>
+                                <div className="mx-3 mt-1 h-px bg-white/[0.15]" />
+                                <Link
+                                  className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
+                                  href={item.footer.href}
+                                  target={isExternal(item.footer.href) ? "_blank" : undefined}
+                                  rel={isExternal(item.footer.href) ? "noopener noreferrer" : undefined}
+                                  onClick={() => setOpenMenu(null)}
+                                >
+                                  <span>{item.footer.label}</span>
+                                  {isExternal(item.footer.href) && (
+                                    <ExternalArrow className="w-3 h-3" />
+                                  )}
+                                </Link>
+                              </>
+                            )}
+                          </div>
+                        ) : (
+                          <ul>
+                            {item.items?.map((sub, idx) => (
+                              <li key={`${sub.href}-${idx}`}>
+                                <Link
+                                  className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
+                                  href={sub.href}
+                                  target={isExternal(sub.href) ? "_blank" : undefined}
+                                  rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
+                                  onClick={() => setOpenMenu(null)}
+                                >
+                                  <span>{sub.label}</span>
+                                  {isExternal(sub.href) && (
+                                    <ExternalArrow className="w-3 h-3" />
+                                  )}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </>
                   ) : (
@@ -316,6 +399,7 @@ export default function Header() {
                         className="py-2 group transition-colors flex items-center gap-1.5"
                         href={item.href}
                         target={isExternal(item.href) ? "_blank" : undefined}
+                        rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                       >
                         <span className="relative text-white/90 group-hover:text-[var(--luminous-mint)]">
                           {item.label}
@@ -328,9 +412,8 @@ export default function Header() {
                   )}
                 </li>
               ))}
-            </div>
 
-            <li>
+            <li className="ml-auto">
               <Link
                 href="/donate"
                 className="bg-[var(--deep-teal)] hover:bg-[var(--luminous-mint)] hover:text-[var(--midnight-blue)] text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all transform hover:-translate-y-0.5 shadow-lg"
@@ -343,7 +426,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-73px)] overflow-y-auto">
+        <div id="mobile-nav" className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-73px)] overflow-y-auto">
           {/* UPDATED: Added px-8 py-8 and gap-6 to spread links out more generously */}
           <ul className="flex flex-col px-8 py-8 pb-20 gap-6">
             {NAV.map((item) => (
@@ -357,23 +440,74 @@ export default function Header() {
                       {item.label}
                       <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-white/60" />
                     </summary>
-                    <ul className="mt-4 ml-2 space-y-4 border-l border-white/10 pl-5">
-                      {item.items.map((sub, idx) => (
-                        <li key={idx}>
+                    <div className="mt-4 ml-2 border-l border-white/10 pl-5">
+                      {item.sections ? (
+                        item.sections.map((section, sIdx) => (
+                          <div key={sIdx}>
+                            {sIdx > 0 && <div className="my-3 h-px bg-white/[0.15]" />}
+                            {section.heading && (
+                              <p className="mb-2 text-[10px] uppercase tracking-widest font-semibold text-white/50">
+                                {section.heading}
+                              </p>
+                            )}
+                            <ul className="space-y-4">
+                              {section.items.map((sub, idx) => (
+                                <li key={idx}>
+                                  <Link
+                                    href={sub.href}
+                                    className={`flex items-center gap-2 text-[15px] py-1 hover:text-[var(--luminous-mint)] ${section.tinted ? "text-white/70" : "text-white/70"}`}
+                                    onClick={() => setMobileOpen(false)}
+                                    target={isExternal(sub.href) ? "_blank" : undefined}
+                                    rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
+                                  >
+                                    <span>{sub.label}</span>
+                                    {isExternal(sub.href) && (
+                                      <ExternalArrow className="w-3.5 h-3.5 opacity-60" />
+                                    )}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))
+                      ) : (
+                        <ul className="space-y-4">
+                          {item.items?.map((sub, idx) => (
+                            <li key={idx}>
+                              <Link
+                                href={sub.href}
+                                className="flex items-center gap-2 text-[15px] text-white/70 hover:text-[var(--luminous-mint)] py-1"
+                                onClick={() => setMobileOpen(false)}
+                                target={isExternal(sub.href) ? "_blank" : undefined}
+                                rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
+                              >
+                                <span>{sub.label}</span>
+                                {isExternal(sub.href) && (
+                                  <ExternalArrow className="w-3.5 h-3.5 opacity-60" />
+                                )}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {item.footer && (
+                        <>
+                          <div className="my-3 h-px bg-white/[0.15]" />
                           <Link
-                            href={sub.href}
+                            href={item.footer.href}
                             className="flex items-center gap-2 text-[15px] text-white/70 hover:text-[var(--luminous-mint)] py-1"
                             onClick={() => setMobileOpen(false)}
-                            target={isExternal(sub.href) ? "_blank" : undefined}
+                            target={isExternal(item.footer.href) ? "_blank" : undefined}
+                            rel={isExternal(item.footer.href) ? "noopener noreferrer" : undefined}
                           >
-                            <span>{sub.label}</span>
-                            {isExternal(sub.href) && (
+                            <span>{item.footer.label}</span>
+                            {isExternal(item.footer.href) && (
                               <ExternalArrow className="w-3.5 h-3.5 opacity-60" />
                             )}
                           </Link>
-                        </li>
-                      ))}
-                    </ul>
+                        </>
+                      )}
+                    </div>
                   </details>
                 ) : (
                   <Link
