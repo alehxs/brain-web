@@ -14,6 +14,7 @@ const BrainVideo: React.FC<BrainVideoProps> = ({ overlayOpacity = 0.6 }) => {
         muted
         playsInline
         loop
+        aria-hidden="true"
       />
       {/* Dark overlay for readability */}
       <div
