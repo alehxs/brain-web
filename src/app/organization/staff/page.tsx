@@ -101,7 +101,7 @@ export default function StaffPage() {
                 </div>
               )}
               <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight group-hover:text-[var(--deep-teal)] transition-colors">
+                <h2 className={`text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight transition-colors${person.href ? " group-hover:text-[var(--deep-teal)]" : ""}`}>
                   {person.name}
                 </h2>
                 {person.tags[0] && (
