@@ -27,6 +27,14 @@ A modest investment into BRAIN membership gives industry members the leverage an
   },
 ];
 
+// Strip the redundant IAB role prefix from the title field before display.
+// Prefixes follow the pattern "BRAIN I/U CRC IAB <Role>" plus optional credential
+// suffixes like ", MD, PhD", then a comma separating the actual job title.
+function cleanTitle(title: string): string {
+  const match = title.match(/^BRAIN I\/U CRC IAB [^,]+(?:,\s*(?:MD|PhD|MS|DO))*,\s*(.+)$/i);
+  return match ? match[1] : title;
+}
+
 export default function IABPage() {
   return (
     <div className="bg-white">
@@ -37,34 +45,36 @@ export default function IABPage() {
       />
 
       <section className="py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 space-y-12">
-          {iabMembers.map((member) => (
-            <article
-              key={member.name}
-              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
-            >
-              <div className="grid gap-6 md:grid-cols-[320px_1fr] lg:gap-8">
-                <div className="relative w-full bg-slate-100 md:h-full" style={{ aspectRatio: '4/5' }}>
+        <div className="mx-auto max-w-6xl px-6 sm:px-8">
+          <div className="flex flex-col gap-6">
+            {iabMembers.map((member) => (
+              <article
+                key={member.name}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm flex flex-col md:flex-row"
+              >
+                {/* Photo */}
+                <div className="relative w-full aspect-[3/2] md:aspect-auto md:w-[280px] md:shrink-0 bg-slate-100">
                   <Image
                     src={member.imageSrc}
                     alt={member.name}
                     fill
-                    className="object-cover object-center"
-                    sizes="320px"
+                    className="object-cover object-top"
+                    sizes="(min-width: 768px) 280px, 100vw"
                   />
                 </div>
 
-                <div className="p-6 md:py-8">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-[var(--deep-teal)]">
+                {/* Text */}
+                <div className="flex flex-col p-8">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--deep-teal)]">
                     {member.role}
                   </p>
-                  <h2 className="mt-2 text-2xl font-bold text-slate-900">
+                  <h2 className="mt-1.5 text-xl font-bold text-slate-900">
                     {member.name}
                   </h2>
-                  <p className="mt-2 text-sm font-medium text-slate-700">
-                    {member.title}
+                  <p className="mt-1.5 text-sm font-medium text-slate-600 leading-snug">
+                    {cleanTitle(member.title)}
                   </p>
-                  <div className="mt-4 text-sm leading-relaxed text-slate-600">
+                  <div className="mt-6 pt-6 border-t border-slate-200 text-base leading-loose text-slate-600">
                     {member.bio.split('\n\n').map((paragraph, idx) => (
                       <p key={idx} className={idx > 0 ? 'mt-4' : ''}>
                         {paragraph}
@@ -72,9 +82,9 @@ export default function IABPage() {
                     ))}
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </div>
