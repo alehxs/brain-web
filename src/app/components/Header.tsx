@@ -182,8 +182,9 @@ const NAV: NavItem[] = [
     label: "Workforce",
     sections: [
       {
+        heading: "Information",
         items: [
-          { label: "Workforce Overview", href: "/workforce/information" },
+          { label: "Overview", href: "/workforce/information" },
           { label: "REU Supplement", href: "/workforce/reu-supplement" },
           {
             label: "BRAIN Student Network",
@@ -228,13 +229,14 @@ export default function Header() {
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape" && mobileOpenRef.current) {
+      if (e.key === "Escape" && (mobileOpenRef.current || openMenu !== null)) {
         setMobileOpen(false);
+        setOpenMenu(null);
       }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [openMenu]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -254,6 +256,8 @@ export default function Header() {
             <button
               className="lg:hidden rounded-md border border-white/20 p-2 text-white hover:bg-white/10"
               aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-controls="mobile-nav"
               onClick={() => setMobileOpen((v) => !v)}
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -277,7 +281,10 @@ export default function Header() {
                   {isNavGroup(item) ? (
                     <>
                       <button
-                        className="flex items-center gap-1 py-2 group transition-colors"
+                        className="flex items-center gap-1 py-2 group transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--luminous-mint)] rounded"
+                        aria-haspopup="true"
+                        aria-expanded={openMenu === item.label}
+                        aria-controls={`nav-menu-${item.label.toLowerCase()}`}
                         onMouseEnter={() => setOpenMenu(item.label)}
                         onClick={() =>
                           setOpenMenu((v) =>
@@ -304,7 +311,8 @@ export default function Header() {
                       </button>
 
                       <div
-                        className={`absolute left-0 top-full mt-0 w-64 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
+                        id={`nav-menu-${item.label.toLowerCase()}`}
+                        className={`absolute left-0 top-full mt-0 w-60 rounded-b-lg bg-[var(--midnight-blue)] p-1 shadow-2xl transition-all duration-200 origin-top ${
                           openMenu === item.label
                             ? "opacity-100 scale-100 translate-y-0"
                             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -312,15 +320,15 @@ export default function Header() {
                         onMouseEnter={() => setOpenMenu(item.label)}
                       >
                         {item.sections ? (
-                          <div className="py-2">
+                          <div>
                             {item.sections.map((section, sIdx) => (
                               <div key={sIdx}>
                                 {sIdx > 0 && (
-                                  <div className="mx-3 my-1 h-px bg-white/[0.08]" />
+                                  <div className="mx-3 my-1 h-px bg-white/[0.15]" />
                                 )}
                                 <div>
                                 {section.heading && (
-                                  <p className="px-4 pt-2 pb-1 text-[10px] uppercase tracking-widest font-semibold text-white/30">
+                                  <p className="px-4 pt-2 pb-1 text-[10px] uppercase tracking-widest font-semibold text-white/50">
                                     {section.heading}
                                   </p>
                                 )}
@@ -328,14 +336,15 @@ export default function Header() {
                                   {section.items.map((sub, idx) => (
                                     <li key={`${sub.href}-${idx}`}>
                                       <Link
-                                        className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors hover:bg-white/5 hover:text-white ${section.tinted ? "text-white/60" : "text-white/80"}`}
+                                        className={`flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors hover:bg-white/5 hover:text-white ${section.tinted ? "text-white/75" : "text-white/80"}`}
                                         href={sub.href}
                                         target={isExternal(sub.href) ? "_blank" : undefined}
+                                        rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                                         onClick={() => setOpenMenu(null)}
                                       >
                                         <span>{sub.label}</span>
                                         {isExternal(sub.href) && (
-                                          <ExternalArrow className="w-3 h-3 opacity-50" />
+                                          <ExternalArrow className="w-3 h-3" />
                                         )}
                                       </Link>
                                     </li>
@@ -346,36 +355,36 @@ export default function Header() {
                             ))}
                             {item.footer && (
                               <>
-                                <div className="mx-3 mt-1 h-px bg-white/[0.08]" />
+                                <div className="mx-3 mt-1 h-px bg-white/[0.15]" />
                                 <Link
                                   className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
                                   href={item.footer.href}
                                   target={isExternal(item.footer.href) ? "_blank" : undefined}
+                                  rel={isExternal(item.footer.href) ? "noopener noreferrer" : undefined}
                                   onClick={() => setOpenMenu(null)}
                                 >
                                   <span>{item.footer.label}</span>
                                   {isExternal(item.footer.href) && (
-                                    <ExternalArrow className="w-3 h-3 opacity-50" />
+                                    <ExternalArrow className="w-3 h-3" />
                                   )}
                                 </Link>
                               </>
                             )}
                           </div>
                         ) : (
-                          <ul className="py-2">
+                          <ul>
                             {item.items?.map((sub, idx) => (
                               <li key={`${sub.href}-${idx}`}>
                                 <Link
                                   className="flex items-center justify-between px-4 py-2.5 text-[13px] transition-colors text-white/80 hover:bg-white/5 hover:text-white"
                                   href={sub.href}
-                                  target={
-                                    isExternal(sub.href) ? "_blank" : undefined
-                                  }
+                                  target={isExternal(sub.href) ? "_blank" : undefined}
+                                  rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                                   onClick={() => setOpenMenu(null)}
                                 >
                                   <span>{sub.label}</span>
                                   {isExternal(sub.href) && (
-                                    <ExternalArrow className="w-3 h-3 opacity-50" />
+                                    <ExternalArrow className="w-3 h-3" />
                                   )}
                                 </Link>
                               </li>
@@ -390,6 +399,7 @@ export default function Header() {
                         className="py-2 group transition-colors flex items-center gap-1.5"
                         href={item.href}
                         target={isExternal(item.href) ? "_blank" : undefined}
+                        rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                       >
                         <span className="relative text-white/90 group-hover:text-[var(--luminous-mint)]">
                           {item.label}
@@ -416,7 +426,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-73px)] overflow-y-auto">
+        <div id="mobile-nav" className="lg:hidden absolute top-full left-0 w-full bg-[var(--midnight-blue)] border-t border-white/10 shadow-2xl h-[calc(100vh-73px)] overflow-y-auto">
           {/* UPDATED: Added px-8 py-8 and gap-6 to spread links out more generously */}
           <ul className="flex flex-col px-8 py-8 pb-20 gap-6">
             {NAV.map((item) => (
@@ -434,9 +444,9 @@ export default function Header() {
                       {item.sections ? (
                         item.sections.map((section, sIdx) => (
                           <div key={sIdx}>
-                            {sIdx > 0 && <div className="my-3 h-px bg-white/[0.08]" />}
+                            {sIdx > 0 && <div className="my-3 h-px bg-white/[0.15]" />}
                             {section.heading && (
-                              <p className="mb-2 text-[10px] uppercase tracking-widest font-semibold text-white/30">
+                              <p className="mb-2 text-[10px] uppercase tracking-widest font-semibold text-white/50">
                                 {section.heading}
                               </p>
                             )}
@@ -445,9 +455,10 @@ export default function Header() {
                                 <li key={idx}>
                                   <Link
                                     href={sub.href}
-                                    className={`flex items-center gap-2 text-[15px] py-1 hover:text-[var(--luminous-mint)] ${section.tinted ? "text-white/50" : "text-white/70"}`}
+                                    className={`flex items-center gap-2 text-[15px] py-1 hover:text-[var(--luminous-mint)] ${section.tinted ? "text-white/70" : "text-white/70"}`}
                                     onClick={() => setMobileOpen(false)}
                                     target={isExternal(sub.href) ? "_blank" : undefined}
+                                    rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                                   >
                                     <span>{sub.label}</span>
                                     {isExternal(sub.href) && (
@@ -468,6 +479,7 @@ export default function Header() {
                                 className="flex items-center gap-2 text-[15px] text-white/70 hover:text-[var(--luminous-mint)] py-1"
                                 onClick={() => setMobileOpen(false)}
                                 target={isExternal(sub.href) ? "_blank" : undefined}
+                                rel={isExternal(sub.href) ? "noopener noreferrer" : undefined}
                               >
                                 <span>{sub.label}</span>
                                 {isExternal(sub.href) && (
@@ -480,12 +492,13 @@ export default function Header() {
                       )}
                       {item.footer && (
                         <>
-                          <div className="my-3 h-px bg-white/[0.08]" />
+                          <div className="my-3 h-px bg-white/[0.15]" />
                           <Link
                             href={item.footer.href}
                             className="flex items-center gap-2 text-[15px] text-white/70 hover:text-[var(--luminous-mint)] py-1"
                             onClick={() => setMobileOpen(false)}
                             target={isExternal(item.footer.href) ? "_blank" : undefined}
+                            rel={isExternal(item.footer.href) ? "noopener noreferrer" : undefined}
                           >
                             <span>{item.footer.label}</span>
                             {isExternal(item.footer.href) && (
