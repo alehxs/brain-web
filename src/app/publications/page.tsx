@@ -5,16 +5,16 @@ import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Publications",
-  description: "Recent publications, inventions, and patents from the The BRAIN Center.",
+  description: "Recent publications, inventions, and patents from the BRAIN Center.",
 };
 
 export default function PublicationsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
-        eyebrow="Research Output"
+        eyebrow="Impacts"
         title="Publications"
-        description="IUCRC for Building Reliable Advances and Innovations in Neurotechnology (BRAIN) Publications, Inventions, and Patents."
+        description="Peer-reviewed publications, invention disclosures, and patents produced through BRAIN Center research across member institutions."
       />
 
       {/* Publications List */}

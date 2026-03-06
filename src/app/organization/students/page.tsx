@@ -16,9 +16,9 @@ const studentPeople = people
 export default function StudentsPage() {
   return (
     <div className="bg-white">
-      <PageHeader eyebrow="Organization" title="Students" description="Meet the students driving innovation and conducting research at the BRAIN Center." />
+      <PageHeader eyebrow="Organization" title="Students" description="Graduate and undergraduate students conducting research across BRAIN Center partner institutions." />
 
-      <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-14">
+      <section className="mx-auto max-w-6xl px-6 sm:px-8 pt-6 pb-10 sm:pb-12 lg:pb-14">
         <PeopleGrid people={studentPeople} />
       </section>
     </div>

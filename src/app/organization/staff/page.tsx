@@ -68,6 +68,7 @@ export default function StaffPage() {
       <PageHeader
         eyebrow="Organization"
         title="Staff"
+        description="Supporting the BRAIN Center's mission and day-to-day operations."
       />
 
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
@@ -100,7 +101,7 @@ export default function StaffPage() {
                 </div>
               )}
               <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight group-hover:text-[var(--deep-teal)] transition-colors">
+                <h2 className={`text-sm font-bold text-[var(--midnight-blue)] line-clamp-2 leading-tight transition-colors${person.href ? " group-hover:text-[var(--deep-teal)]" : ""}`}>
                   {person.name}
                 </h2>
                 {person.tags[0] && (

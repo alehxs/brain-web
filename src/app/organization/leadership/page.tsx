@@ -52,7 +52,7 @@ export default function LeadershipPage() {
       <PageHeader
         eyebrow="Organization"
         title="Leadership"
-        description="Meet the directors, investigators, and staff driving innovation and guiding the BRAIN Center's research direction."
+        description="Meet the directors, investigators, and staff leading the BRAIN Center across its partner institutions."
       />
 
       <section className="py-10 sm:py-12 lg:py-14">

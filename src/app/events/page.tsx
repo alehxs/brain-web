@@ -7,13 +7,14 @@ import PageHeader from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Seminars, workshops, conferences, and upcoming activities from the The BRAIN Center.",
+    "Seminars, workshops, conferences, and upcoming activities from the BRAIN Center.",
 };
 
 export default function EventsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
+        eyebrow="Outreach"
         title="Events"
         description="Past, present, and upcoming seminars, workshops, conferences, and BRAIN Center activities."
       />

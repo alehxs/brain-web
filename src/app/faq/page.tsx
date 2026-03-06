@@ -31,7 +31,7 @@ export default function QAPage() {
       <PageHeader
         eyebrow="Membership & Governance"
         title="FAQ"
-        description="Answers to common questions about the NSF IUCRC BRAIN Center, including membership, benefits, intellectual property, and Industry Advisory Board responsibilities."
+        description="Answers to questions about the NSF IUCRC BRAIN Center, including membership, benefits, intellectual property, and Industry Advisory Board responsibilities."
       />
       <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="space-y-8">

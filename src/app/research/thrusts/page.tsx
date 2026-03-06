@@ -7,7 +7,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Research Thrusts",
   description:
-    "Explore the The BRAIN Center research thrust areas and their associated faculty.",
+    "Explore the BRAIN Center research thrust areas and their associated faculty.",
 };
 
 export default function ResearchThrustsPage() {
@@ -16,7 +16,7 @@ export default function ResearchThrustsPage() {
       <PageHeader
         eyebrow="Research"
         title="Research Thrusts"
-        description="The BRAIN Center is a multi-university Industry/University Cooperative Research Center. Each research thrust focuses on a key aspect of reliable, impactful neurotechnology."
+        description="BRAIN Center research is organized into thrusts — each targeting a distinct technical challenge in developing reliable, clinically translatable neurotechnology."
       />
       <section className="mx-auto max-w-5xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Thrust cards */}

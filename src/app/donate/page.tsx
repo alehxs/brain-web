@@ -5,7 +5,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support neurotechnology research and innovation at the The BRAIN Center through the University of Houston giving portal.",
+    "Support neurotechnology research and innovation at the BRAIN Center through the University of Houston giving portal.",
 };
 
 export default function DonatePage() {
