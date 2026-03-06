@@ -13,6 +13,7 @@ export default function EconomicImpactPage() {
       <PageHeader
         eyebrow="Impacts"
         title="Improving National Economic Health"
+        description="BRAIN Center research targets the hundreds-of-billions annual burden of neurological disability through advances in treatment, diagnosis, and rehabilitation."
       />
 
       <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">

@@ -13,8 +13,7 @@ export default function Hero() {
             Building Reliable Advances and Innovations in Neurotechnology
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-base md:text-xl text-white/80">
-            Bridging academia, industry, government, and innovation in
-            neurotechnology.
+            Connecting academia, industry, and government to advance neurotechnology.
           </p>
         </div>
       </div>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BroaderImpactsPage() {
   return (
     <div className="bg-white">
-      <PageHeader eyebrow="Impacts" title="Broader Impacts" />
+      <PageHeader eyebrow="Impacts" title="Broader Impacts" description="BRAIN Center trains the next generation, expands institutional access, and bridges neurotechnology with entrepreneurial and regulatory ecosystems." />
 
       <section className="mx-auto max-w-4xl px-6 py-10 sm:px-8 sm:py-12 lg:py-16">
         {/* Opening paragraph */}
