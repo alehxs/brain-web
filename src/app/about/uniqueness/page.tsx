@@ -19,7 +19,7 @@ export default function UniquenessPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        eyebrow="About The Center"
+        eyebrow="About"
         title="Uniqueness: Key Differentiators"
       />
 

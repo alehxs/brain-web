@@ -21,7 +21,7 @@ export default function IucrcPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        eyebrow="Supported By"
+        eyebrow="About"
         title="Industry–University Cooperative Research Centers Program"
         description="The BRAIN Center is funded through the NSF IUCRC Program, which structures long-term partnerships between universities, industry, and government to advance applied research."
       />

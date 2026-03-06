@@ -34,7 +34,7 @@ export default function IntellectualPropertyPage() {
   return (
     <div className="bg-white">
       <PageHeader
-        eyebrow="Policies & Processes"
+        eyebrow="About"
         title="Intellectual Property"
         description="An overview of the invention disclosure and licensing process for BRAIN Center investigators and Industry Advisory Board member companies."
       />
