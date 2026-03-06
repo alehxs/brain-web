@@ -44,37 +44,37 @@ export default function IABPage() {
         description="The Industry Advisory Board (IAB) provides strategic guidance, sets research priorities, and connects the BRAIN Center's work to industry needs across the neurotechnology sector."
       />
 
-      <section className="py-10 sm:py-12 lg:py-14">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-10">
             {iabMembers.map((member) => (
               <article
                 key={member.name}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm flex flex-col md:flex-row"
+                className="overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-sm flex flex-col md:flex-row"
               >
                 {/* Photo */}
-                <div className="relative w-full aspect-[3/2] md:aspect-auto md:w-[280px] md:shrink-0 bg-slate-100">
+                <div className="relative w-full aspect-[2/3] md:aspect-auto md:w-48 md:shrink-0 md:self-stretch bg-stone-100">
                   <Image
                     src={member.imageSrc}
                     alt={member.name}
                     fill
-                    className="object-cover object-top"
-                    sizes="(min-width: 768px) 280px, 100vw"
+                    className="object-cover object-[50%_20%]"
+                    sizes="(min-width: 768px) 192px, 100vw"
                   />
                 </div>
 
                 {/* Text */}
                 <div className="flex flex-col p-8">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[var(--deep-teal)]">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--deep-teal)]">
                     {member.role}
                   </p>
-                  <h2 className="mt-1.5 text-xl font-bold text-slate-900">
+                  <h2 className="mt-1.5 text-2xl font-semibold text-slate-900">
                     {member.name}
                   </h2>
-                  <p className="mt-1.5 text-sm font-medium text-slate-600 leading-snug">
+                  <p className="mt-1.5 text-sm text-slate-600 leading-snug">
                     {cleanTitle(member.title)}
                   </p>
-                  <div className="mt-6 pt-6 border-t border-slate-200 text-base leading-loose text-slate-600">
+                  <div className="mt-8 text-[0.9375rem] leading-relaxed text-slate-500">
                     {member.bio.split('\n\n').map((paragraph, idx) => (
                       <p key={idx} className={idx > 0 ? 'mt-4' : ''}>
                         {paragraph}
