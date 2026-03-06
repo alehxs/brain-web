@@ -3,7 +3,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata = {
   title: "Academic Assessments",
   description:
-    "Kirkpatrick-aligned assessment across Center sites: Reaction, Learning, Behavior, and Results, plus the Center’s evaluation process.",
+    "Kirkpatrick-aligned assessment across Center sites: Reaction, Learning, and Outcomes, plus the Center's evaluation process.",
 };
 
 export default function AcademicAssessmentsPage() {
@@ -12,32 +12,27 @@ export default function AcademicAssessmentsPage() {
       <PageHeader
         eyebrow="Impacts"
         title="Academic Assessments"
-        description={<>Each Center site collaborates with the Education/Outreach coordinator to evaluate
-            education plans and participant impact. Assessment data are gathered semi-annually,
-            rolled up annually, and reviewed across all participants. Evaluation follows the{" "}
-            <span className="font-semibold">Kirkpatrick Evaluation Model</span> to capture
-            outcomes at four levels.</>}
+        description="Each Center site evaluates education plans and participant impact semi-annually using the Kirkpatrick Evaluation Model across three levels: Reaction, Learning, and Outcomes."
       />
 
       {/* Four dimensions */}
       <section className="py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto max-w-2xl px-6 sm:px-8">
+          <div className="flex flex-col gap-3">
             <AssessCard
+              step="01"
               title="Reaction"
               blurb="What students thought and felt about the training."
             />
             <AssessCard
+              step="02"
               title="Learning"
               blurb="The resulting increase in knowledge or capability."
             />
             <AssessCard
-              title="Behavior"
-              blurb="The extent of behavior and capability improvement."
-            />
-            <AssessCard
-              title="Results"
-              blurb="Institutional impact resulting from trainee performance."
+              step="03"
+              title="Outcomes"
+              blurb="Behavior change, capability improvement, and institutional impact resulting from trainee performance."
             />
           </div>
 
@@ -68,28 +63,27 @@ export default function AcademicAssessmentsPage() {
   );
 }
 
-/** Simple, consistent assessment card with teal-accent icon */
-function AssessCard({ title, blurb }: { title: string; blurb: string }) {
+/** Kirkpatrick level card — stepped, editorial style */
+function AssessCard({ step, title, blurb }: { step: string; title: string; blurb: string }) {
   return (
-    <div className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full"
-           style={{ backgroundColor: "var(--deep-teal)" }}>
-        {/* Check icon (white) */}
-        <svg
-          className="h-6 w-6 text-white"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
+    <div
+      className="relative overflow-hidden rounded-lg px-6 py-5"
+      style={{
+        borderLeft: "3px solid var(--deep-teal)",
+        background: "linear-gradient(to right, color-mix(in srgb, var(--deep-teal) 6%, white), white)",
+      }}
+    >
+      {/* Content */}
+      <div className="relative">
+        <p
+          className="mb-1 text-[11px] font-bold uppercase tracking-widest"
+          style={{ color: "var(--deep-teal)" }}
         >
-          <path d="M20 6 9 17l-5-5" />
-        </svg>
+          Level {step}
+        </p>
+        <h3 className="text-base font-bold text-[var(--midnight-blue)]">{title}</h3>
+        <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{blurb}</p>
       </div>
-      <h3 className="text-lg font-semibold text-[var(--midnight-blue)]">{title}</h3>
-      <p className="mt-2 text-sm text-slate-900">{blurb}</p>
     </div>
   );
 }

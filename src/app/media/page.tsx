@@ -6,7 +6,7 @@ import PageHeader from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "Media",
   description:
-    "Photos, videos, and outreach materials from the The BRAIN Center.",
+    "Photos, videos, and outreach materials from the BRAIN Center.",
 };
 
 const mediaItems = [
