@@ -36,7 +36,7 @@ export const events: EventItem[] = [
     dateLabel: "Feb 6-8, 2026, 12:30 PM",
     location: "Houston, Texas",
     imageSrc: "/images/events/brain-event.jpg",
-    imageAlt: "An art-science performance and research study in collaboration with Anthony Brandt (creativity scholar and composer), Mumbai-born Steinway Young Artist Chelsea de Souza, and the amazing neuroengineering team at the IUCRC BRAIN CENTER (Lianne Sánchez Rodríguez Maxine Annel Pacheco Ramírez, Aime J. Aguilar-Herrera and Yoshua E. Lima-Carmona) to the 188th Anniversary Annual Meeting of the The Philosophical Society of Texas 'Exploring the Mysteries of the Brain'",
+    imageAlt: "An art-science performance and research study in collaboration with Anthony Brandt (creativity scholar and composer), Mumbai-born Steinway Young Artist Chelsea de Souza, and the amazing neuroengineering team at the IUCRC BRAIN CENTER (Lianne Sánchez Rodríguez Maxine Annel Pacheco Ramírez, Aime J. Aguilar-Herrera and Yoshua E. Lima-Carmona) to the 188th Anniversary Annual Meeting of the Philosophical Society of Texas 'Exploring the Mysteries of the Brain'",
     href: "#",
     external: false,
   },
