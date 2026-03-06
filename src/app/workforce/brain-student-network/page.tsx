@@ -1,4 +1,4 @@
-import Image from "next/image";
+import PageHeader from "@/app/components/PageHeader";
 import PortraitCard from "@/app/components/cards/PortraitCard";
 
 export const metadata = {
@@ -34,43 +34,24 @@ const OFFICERS = [
     role: "Secretary",
     affiliation: "University of Houston",
     href: "/people/lianne-sanchez-rodriguez",
-    src: "/images/people/lianne-sanchez-rodriguez.png"
+    src: "/images/people/lianne-sanchez-rodriguez.png",
   },
 ];
-
 
 export default function StudentNetworkPage() {
   return (
     <div className="bg-white">
-      {/* HERO — top 2/3 crop, no extra whitespace */}
-      <section className="relative border-b border-slate-200">
-        <div className="relative w-full overflow-hidden aspect-[1600/350]">
-          <Image
-            src="/images/brain-student-network.png"
-            alt="BRAIN Student Network group"
-            fill
-            priority
-            className="object-cover object-top"
-            sizes="100vw"
-          />
-        </div>
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-6">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue)]">
-            BRAIN Student Network
-          </h1>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Workforce"
+        title="BRAIN Student Network"
+        description="The BRAIN Student Network builds community among students across Center sites, supports student-led initiatives, and connects members with faculty, industry, and peers for professional development."
+      />
 
       {/* INTRO */}
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <div className="max-w-4xl">
-            <p className="text-sm sm:text-base text-slate-900">
-              The BRAIN Student Network builds community among students across Center sites,
-              supports student-led initiatives, and connects members with faculty, industry, and
-              peers for professional development.
-            </p>
-            <ul className="mt-5 list-disc list-inside space-y-2 marker:text-[var(--deep-teal)] text-sm sm:text-base text-slate-900">
+            <ul className="list-disc list-inside space-y-2 marker:text-[var(--deep-teal)] text-sm sm:text-base text-slate-900">
               <li>Foster collaboration and membership engagement across sites.</li>
               <li>Improve communication between colleges, labs, and BRAIN Center sites.</li>
               <li>Support student-led initiatives and research involvement.</li>
@@ -101,7 +82,6 @@ export default function StudentNetworkPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
