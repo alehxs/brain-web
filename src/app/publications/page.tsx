@@ -12,7 +12,7 @@ export default function PublicationsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
-        eyebrow="Research Output"
+        eyebrow="Impacts"
         title="Publications"
         description="IUCRC for Building Reliable Advances and Innovations in Neurotechnology (BRAIN) Publications, Inventions, and Patents."
       />
