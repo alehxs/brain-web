@@ -1,4 +1,4 @@
-// src/app/workforce/academic-assessments/page.tsx
+import PageHeader from "@/app/components/PageHeader";
 
 export const metadata = {
   title: "Academic Assessments",
@@ -9,21 +9,15 @@ export const metadata = {
 export default function AcademicAssessmentsPage() {
   return (
     <div className="bg-white">
-      {/* Hero */}
-      <section className="bg-[var(--light-slate)] border-b border-slate-200">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--midnight-blue)]">
-            Academic Assessments
-          </h1>
-          <p className="mt-4 max-w-4xl text-sm sm:text-base text-slate-900">
-            Each Center site collaborates with the Education/Outreach coordinator to evaluate
+      <PageHeader
+        eyebrow="Impacts"
+        title="Academic Assessments"
+        description={<>Each Center site collaborates with the Education/Outreach coordinator to evaluate
             education plans and participant impact. Assessment data are gathered semi-annually,
             rolled up annually, and reviewed across all participants. Evaluation follows the{" "}
             <span className="font-semibold">Kirkpatrick Evaluation Model</span> to capture
-            outcomes at four levels.
-          </p>
-        </div>
-      </section>
+            outcomes at four levels.</>}
+      />
 
       {/* Four dimensions */}
       <section className="py-10 sm:py-12 lg:py-14">
