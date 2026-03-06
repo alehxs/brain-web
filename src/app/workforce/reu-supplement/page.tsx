@@ -6,6 +6,7 @@ import { people } from "@/data/people";
 export const metadata: Metadata = {
   title: "REU Supplement",
   description: "Providing Research Experiences for Undergraduates through the NSF REU Supplement program.",
+  alternates: { canonical: "/workforce/reu-supplement" },
 };
 
 export default function ReuSupplementPage() {

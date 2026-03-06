@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Leadership",
   description:
     "Meet the leadership team driving innovation and guiding the BRAIN Center's research direction.",
+  alternates: { canonical: "/organization/leadership" },
 };
 
 type Person = {

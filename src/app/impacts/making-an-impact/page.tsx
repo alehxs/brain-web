@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Making An Impact",
   description:
     "How demographic change, chronic disease, and emerging neurotechnologies shape the BRAIN Center's broader impacts.",
+  alternates: { canonical: "/impacts/making-an-impact" },
 };
 
 export default function ImpactPage() {

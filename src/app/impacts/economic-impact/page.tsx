@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Economic Impact",
   description:
     "How BRAIN Center research improves national economic health by addressing disability, chronic disease, and neurotechnology innovation.",
+  alternates: { canonical: "/impacts/economic-impact" },
 };
 
 export default function EconomicImpactPage() {

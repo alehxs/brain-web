@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Facilities, Equipment & Software",
   description:
     "Center facilities, laboratories, and research thrusts that support the BRAIN Center mission.",
+  alternates: { canonical: "/research/facilities" },
 };
 
 /**

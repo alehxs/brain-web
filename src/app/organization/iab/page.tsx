@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Industry Advisory Board",
   description:
     "Meet the Industry Advisory Board leadership guiding the BRAIN Center's research direction and industry partnerships.",
+  alternates: { canonical: "/organization/iab" },
 };
 
 const iabMembers = [

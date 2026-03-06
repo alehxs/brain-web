@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Membership Benefits",
   description:
     "What members gain through the BRAIN Center's NSF IUCRC model: collaboration, influence, access, and workforce pipelines.",
+  alternates: { canonical: "/membership/benefits" },
 };
 
 const benefitGroups = [

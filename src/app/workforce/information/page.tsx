@@ -1,11 +1,13 @@
 // src/app/workforce/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Workforce Development",
   description:
     "How the BRAIN Center develops the next-generation neurotechnology workforce across K–12, undergraduate, graduate, and postdoctoral levels.",
+  alternates: { canonical: "/workforce/information" },
 };
 
 export default function WorkforcePage() {

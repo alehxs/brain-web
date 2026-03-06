@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { getAllFacultyProfileSlugs } from "@/lib/faculty-profile";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.nsfbrain.org";
+
+  const facultySlugs = await getAllFacultyProfileSlugs();
+  const facultyProfileUrls: MetadataRoute.Sitemap = facultySlugs.map((slug) => ({
+    url: `${base}/organization/faculty/${slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   return [
     // Homepage
@@ -64,5 +72,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/workforce/information`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${base}/workforce/reu-supplement`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${base}/workforce/training`, changeFrequency: "yearly", priority: 0.6 },
+
+    // Faculty profile pages (populated once feat/faculty-slug-pages is merged)
+    ...facultyProfileUrls,
   ];
 }

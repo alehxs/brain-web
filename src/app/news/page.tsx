@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "News",
   description:
     "Latest announcements, highlights, and stories from the BRAIN Center.",
+  alternates: { canonical: "/news" },
 };
 
 const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({

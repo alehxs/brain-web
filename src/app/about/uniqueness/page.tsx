@@ -4,6 +4,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Uniqueness & Differentiators",
   description: "Discover the key differentiators that make the BRAIN Center a leader in neurotechnology research.",
+  alternates: { canonical: "/about/uniqueness" },
 };
 
 // Simple Icon Component for the list

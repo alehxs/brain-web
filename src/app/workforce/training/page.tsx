@@ -1,11 +1,13 @@
 // src/app/workforce/training/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/app/components/PageHeader";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Training",
   description:
     "Medical Device Law, Regulation, and Ethics (IUCRC BRAIN Center Know-How Resource) — clear objectives, who it’s for, and expected outcomes.",
+  alternates: { canonical: "/workforce/training" },
 };
 
 export default function TrainingPage() {

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Donate",
   description:
     "Support neurotechnology research and innovation at the BRAIN Center through the University of Houston giving portal.",
+  alternates: { canonical: "/donate" },
 };
 
 export default function DonatePage() {

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Innovation Catalysts",
   description:
     "How BRAIN Center members act as catalysts—guiding, funding, and accelerating industry-relevant research through the NSF IUCRC model.",
+  alternates: { canonical: "/membership/catalysts" },
 };
 
 export default function CatalystsPage() {

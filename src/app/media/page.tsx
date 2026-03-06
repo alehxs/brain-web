@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Media",
   description:
     "Photos, videos, and outreach materials from the BRAIN Center.",
+  alternates: { canonical: "/media" },
 };
 
 const mediaItems = [

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Past Projects",
   description:
     "Archive of previously funded research projects at the BRAIN Center.",
+  alternates: { canonical: "/research/past-projects" },
 };
 
 export default function PastProjectsPage() {

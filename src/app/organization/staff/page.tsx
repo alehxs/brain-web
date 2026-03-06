@@ -11,6 +11,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Staff",
   description: "Meet the BRAIN Center staff supporting our mission and operations.",
+  alternates: { canonical: "/organization/staff" },
 };
 
 type BaseCardProps<E extends ElementType = "article"> = {

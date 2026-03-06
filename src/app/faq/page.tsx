@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Frequently asked questions about membership, projects, intellectual property, and Industry Advisory Board participation in the BRAIN Center.",
+  alternates: { canonical: "/faq" },
 };
 
 type FaqItemProps = {

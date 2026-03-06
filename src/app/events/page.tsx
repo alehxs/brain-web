@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Events",
   description:
     "Seminars, workshops, conferences, and upcoming activities from the BRAIN Center.",
+  alternates: { canonical: "/events" },
 };
 
 export default function EventsPage() {

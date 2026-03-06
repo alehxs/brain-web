@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Current Projects",
   description:
     "Current The BRAIN Center research projects and project leaders.",
+  alternates: { canonical: "/research/current-projects" },
 };
 
 export default function CurrentProjectsPage() {

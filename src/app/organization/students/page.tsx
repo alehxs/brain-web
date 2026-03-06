@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Students",
   description:
     "Meet the students driving innovation and conducting research at the BRAIN Center.",
+  alternates: { canonical: "/organization/students" },
 };
 
 const studentPeople = people

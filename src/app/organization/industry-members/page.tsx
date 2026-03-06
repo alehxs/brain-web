@@ -5,6 +5,7 @@ import PageHeader from "@/app/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Industry Members",
+  alternates: { canonical: "/organization/industry-members" },
 };
 
 const orderedTiers: MembershipTier[] = [

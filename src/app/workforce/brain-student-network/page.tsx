@@ -1,10 +1,12 @@
+import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 import PortraitCard from "@/app/components/cards/PortraitCard";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "BRAIN Student Network",
   description:
     "The BRAIN Student Network fosters collaboration, leadership, and professional development across the BRAIN Center sites.",
+  alternates: { canonical: "/workforce/brain-student-network" },
 };
 
 const OFFICERS = [

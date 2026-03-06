@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Intellectual Property",
   description:
     "Overview of the intellectual property and invention disclosure process for BRAIN Center investigators and member companies.",
+  alternates: { canonical: "/about/intellectual-property" },
 };
 
 type StepCardProps = {

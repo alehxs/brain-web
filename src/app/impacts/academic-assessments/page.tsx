@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Academic Assessments",
   description:
     "Kirkpatrick-aligned assessment across Center sites: Reaction, Learning, and Outcomes, plus the Center's evaluation process.",
+  alternates: { canonical: "/impacts/academic-assessments" },
 };
 
 export default function AcademicAssessmentsPage() {

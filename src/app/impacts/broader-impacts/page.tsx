@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Broader Impacts",
   description:
     "How the BRAIN Center advances education, innovation, and regulatory science through its broader impacts.",
+  alternates: { canonical: "/impacts/broader-impacts" },
 };
 
 export default function BroaderImpactsPage() {

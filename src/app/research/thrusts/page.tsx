@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Research Thrusts",
   description:
     "Explore the BRAIN Center research thrust areas and their associated faculty.",
+  alternates: { canonical: "/research/thrusts" },
 };
 
 export default function ResearchThrustsPage() {

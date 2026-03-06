@@ -6,6 +6,7 @@ import PageHeader from "@/app/components/PageHeader";
 export const metadata: Metadata = {
   title: "Publications",
   description: "Recent publications, inventions, and patents from the BRAIN Center.",
+  alternates: { canonical: "/publications" },
 };
 
 export default function PublicationsPage() {

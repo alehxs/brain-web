@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Careers",
   description:
     "Career opportunities at the BRAIN Center and partner institutions.",
+  alternates: { canonical: "/organization/careers" },
 };
 
 export default function CareersPage() {
