@@ -27,6 +27,7 @@ export default function NewsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
+        eyebrow="Press & Media"
         title="News"
         description="Recent announcements, highlights, and stories from the BRAIN Center."
       />

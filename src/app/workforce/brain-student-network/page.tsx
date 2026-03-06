@@ -44,7 +44,7 @@ export default function StudentNetworkPage() {
       <PageHeader
         eyebrow="Workforce"
         title="BRAIN Student Network"
-        description="The BRAIN Student Network builds community among students across Center sites, supports student-led initiatives, and connects members with faculty, industry, and peers for professional development."
+        description="The BRAIN Student Network connects students across Center sites, supports student-led initiatives, and creates pathways to faculty, industry, and peer engagement for professional development."
       />
 
       {/* INTRO */}

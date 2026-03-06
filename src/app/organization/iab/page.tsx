@@ -33,7 +33,7 @@ export default function IABPage() {
       <PageHeader
         eyebrow="Organization"
         title="Industry Advisory Board"
-        description="The Industry Advisory Board (IAB) provides strategic guidance, shapes research priorities, and ensures the BRAIN Center's work remains aligned with real-world industry needs and opportunities."
+        description="The Industry Advisory Board (IAB) provides strategic guidance, sets research priorities, and connects the BRAIN Center's work to industry needs across the neurotechnology sector."
       />
 
       <section className="py-10 sm:py-12 lg:py-14">

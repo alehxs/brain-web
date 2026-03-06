@@ -32,6 +32,7 @@ export default function MediaPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
+        eyebrow="Press & Media"
         title="BRAIN Media"
         description="Explore photos, videos, and outreach materials from the BRAIN Center."
       />

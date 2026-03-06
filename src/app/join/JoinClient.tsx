@@ -21,7 +21,7 @@ export default function JoinClient() {
           <div className="space-y-6 lg:sticky lg:top-24">
             <div>
               <span className="block text-xs font-bold uppercase tracking-widest text-[var(--deep-teal)] mb-4">
-                Partnership Opportunities
+                Partnerships
               </span>
               <h1 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-[var(--midnight-blue)]">
                 Join The BRAIN Center!

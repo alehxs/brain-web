@@ -54,7 +54,7 @@ export default function BenefitsPage() {
       <PageHeader
         eyebrow="Membership"
         title="Membership Benefits"
-        description="As a member of the BRAIN Center, you gain collaborative influence over a shared research portfolio, access to multi-institution resources and talent, and clear pathways to translate ideas toward practice through the NSF IUCRC model."
+        description="BRAIN Center members shape the research agenda, access multi-institution talent and resources, and gain structured pathways for technology transfer through the NSF IUCRC model."
       />
 
       <section className="py-10 sm:py-12 lg:py-14">

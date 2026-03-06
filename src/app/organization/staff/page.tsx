@@ -68,6 +68,7 @@ export default function StaffPage() {
       <PageHeader
         eyebrow="Organization"
         title="Staff"
+        description="Supporting the BRAIN Center's mission and day-to-day operations."
       />
 
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">

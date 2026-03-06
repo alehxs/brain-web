@@ -14,7 +14,7 @@ export default function PublicationsPage() {
       <PageHeader
         eyebrow="Impacts"
         title="Publications"
-        description="IUCRC for Building Reliable Advances and Innovations in Neurotechnology (BRAIN) Publications, Inventions, and Patents."
+        description="Peer-reviewed publications, invention disclosures, and patents produced through BRAIN Center research across member institutions."
       />
 
       {/* Publications List */}

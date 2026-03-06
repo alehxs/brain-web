@@ -14,6 +14,7 @@ export default function EventsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       <PageHeader
+        eyebrow="Outreach"
         title="Events"
         description="Past, present, and upcoming seminars, workshops, conferences, and BRAIN Center activities."
       />

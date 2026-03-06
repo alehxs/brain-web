@@ -23,7 +23,7 @@ export default function IucrcPage() {
       <PageHeader
         eyebrow="Supported By"
         title="Industry–University Cooperative Research Centers Program"
-        description="The BRAIN Center is supported by the NSF IUCRC Program, accelerating the impact of fundamental research through long-term collaboration between industry, universities, and government."
+        description="The BRAIN Center is funded through the NSF IUCRC Program, which structures long-term partnerships between universities, industry, and government to advance applied research."
       />
 
       {/* MISSION: Editorial Layout */}

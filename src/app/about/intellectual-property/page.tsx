@@ -36,7 +36,7 @@ export default function IntellectualPropertyPage() {
       <PageHeader
         eyebrow="Policies & Processes"
         title="Intellectual Property"
-        description="This page summarizes the invention disclosure and licensing process for BRAIN Center investigators and Industry Advisory Board (IAB) member companies."
+        description="An overview of the invention disclosure and licensing process for BRAIN Center investigators and Industry Advisory Board member companies."
       />
       <div className="mx-auto max-w-6xl px-6 sm:px-8 py-10 sm:py-12 lg:py-16">
         <div className="space-y-8">
