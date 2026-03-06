@@ -237,9 +237,9 @@ export const people: Person[] = [
     affiliation: ["UMH"],
   },
   {
-    name: "Lianne Shanchez Rodriguez",
+    name: "Lianne Sanchez Rodriguez",
     tags: ["Industry Liaison"],
-    src: "/people/students/lianne-shanchez-rodriguez.jpg",
+    src: "/people/students/lianne-sanchez-rodriguez.jpg",
     group: ["Staff"],
     affiliation: ["UH"],
   },
