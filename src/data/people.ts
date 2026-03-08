@@ -19,6 +19,7 @@ export type Person = {
   group: PersonGroup[];
   affiliation: Institution[];
   href?: string;
+  slugOverride?: string;
 };
 
 export const people: Person[] = [
