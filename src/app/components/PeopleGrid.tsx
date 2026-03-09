@@ -160,7 +160,7 @@ function FacultyCard({ person }: { person: Person }) {
         )}
       </Card.Media>
       <Card.Body>
-        <h3 className="text-sm font-bold text-slate-900 line-clamp-2">{person.name}</h3>
+        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[var(--deep-teal)] transition-colors line-clamp-2">{person.name}</h3>
         {person.tags[0] && (
           <p className="mt-1 text-xs text-slate-600 line-clamp-2">{person.tags[0]}</p>
         )}
@@ -177,7 +177,7 @@ function StudentCard({ person }: { person: Person }) {
   return (
     <Card
       href={person.href}
-      className="flex flex-col overflow-hidden bg-white h-full border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all"
+      className="group flex flex-col overflow-hidden bg-white h-full border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all"
     >
       <Card.Media ratio="4/5" className="bg-slate-100">
         {person.src ? (
