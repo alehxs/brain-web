@@ -54,7 +54,7 @@ export const people: Person[] = [
   {
     name: "Michelle LaPlaca",
     tags: ["Site Director"],
-    src: "/people/faculty/michelle-laplaca.jpg",
+    src: "/people/faculty/michelle-laplaca.webp",
     group: ["Faculty", "Leadership"],
     affiliation: ["GT"],
   },
