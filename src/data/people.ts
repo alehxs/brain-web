@@ -988,59 +988,61 @@ export const people: Person[] = [
   },
   {
     name: "Sydney Schaefer",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/sydney-schaefer.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Melita Belgrave",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/melita-belgrave.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Aaron T. Becker",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/aaron-t-becker.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
+    slugOverride: "aaron-becker",
   },
   {
     name: "Alba Roldán Romero",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/alba-roldn-romero.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
   },
   {
     name: "Simone Fani",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/simone-fani.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Adam Thrasher",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/adam-thrasher.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
   },
   {
     name: "Lena H. Ting",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/lena-h-ting.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
   {
     name: "Edward A. Roth",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/edward-a-roth.jpg",
     group: ["Faculty"],
     affiliation: [],
+    slugOverride: "edwardroth",
   },
   {
     name: "Gabriela Estrada",
@@ -1051,14 +1053,14 @@ export const people: Person[] = [
   },
   {
     name: "Aaron Young",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/aaron-young.png",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
   {
     name: "W. Hong Yeo",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/w-hong-yeo.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
@@ -1086,7 +1088,7 @@ export const people: Person[] = [
   },
   {
     name: "Krestin Radonovich",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/krestin-radonovich.jpg",
     group: ["Faculty"],
     affiliation: ["WVU"],
@@ -1100,7 +1102,7 @@ export const people: Person[] = [
   },
   {
     name: "Bradley Greger",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/bradley-greger.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1114,7 +1116,7 @@ export const people: Person[] = [
   },
   {
     name: "Beom-Chan Lee",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/beomchan-lee.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1135,21 +1137,21 @@ export const people: Person[] = [
   },
   {
     name: "Loren Rieth",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["WVU"],
   },
   {
     name: "Allie Karshenas",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["WVU"],
   },
   {
     name: "Sergiy Yakovenko",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["WVU"],
@@ -1216,6 +1218,7 @@ export const people: Person[] = [
     src: "/people/faculty/charles-layne.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
+    slugOverride: "chuck-layne",
   },
   {
     name: "Vahid Serpooshan",
@@ -1240,7 +1243,7 @@ export const people: Person[] = [
   },
   {
     name: "Christopher Buneo",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/christopher-buneo.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1261,7 +1264,7 @@ export const people: Person[] = [
   },
   {
     name: "David Barbado Murillo",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/david-barbado-murillo.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
@@ -1303,7 +1306,7 @@ export const people: Person[] = [
   },
   {
     name: "Enrique Barbieri",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/enrique-barbieri.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1324,7 +1327,7 @@ export const people: Person[] = [
   },
   {
     name: "Francisco C. Robles Hernandez",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/francisco-c-robles-hernandez.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1345,7 +1348,7 @@ export const people: Person[] = [
   },
   {
     name: "Gerardo Presbítero Espinosa",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/gerardo-presbtero-espinosa.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
@@ -1387,7 +1390,7 @@ export const people: Person[] = [
   },
   {
     name: "Hugo Gustavo González Hernández",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/hugo-gustavo-gonzlez-hernndez.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
@@ -1401,7 +1404,7 @@ export const people: Person[] = [
   },
   {
     name: "Hyunglae Lee",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/hyunglae-lee.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1422,14 +1425,14 @@ export const people: Person[] = [
   },
   {
     name: "Vince Calhoun",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
   {
     name: "Jeff Feng",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jeff-feng.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1443,14 +1446,14 @@ export const people: Person[] = [
   },
   {
     name: "Jennifer Blain Christen",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jennifer-blain-christen.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Jennifer Kitchen",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jennifer-kitchen.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1471,7 +1474,7 @@ export const people: Person[] = [
   },
   {
     name: "Jitendran Muthuswamy",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jitendran-muthuswamy.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1492,7 +1495,7 @@ export const people: Person[] = [
   },
   {
     name: "José Antonio Encinar Hidalgo",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jos-antonio-encinar-hidalgo.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
@@ -1520,7 +1523,7 @@ export const people: Person[] = [
   },
   {
     name: "Ki-Joon Back",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/kijoon-back.jpeg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1569,7 +1572,7 @@ export const people: Person[] = [
   },
   {
     name: "Mario Ortiz",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/mario-ortiz.jpg",
     group: ["Faculty"],
     affiliation: ["UMH"],
@@ -1583,7 +1586,7 @@ export const people: Person[] = [
   },
   {
     name: "Michael Goryll",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/michael-goryll.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1625,7 +1628,7 @@ export const people: Person[] = [
   },
   {
     name: "Rafael Sabido Solana",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/rafael-sabido-solana.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
@@ -1674,7 +1677,7 @@ export const people: Person[] = [
   },
   {
     name: "Rosalind Sadleir",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/rosalind-sadleir.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1695,7 +1698,7 @@ export const people: Person[] = [
   },
   {
     name: "Sarah Stabenfeldt",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/sarah-stabenfeldt.jpg",
     group: ["Faculty"],
     affiliation: ["ASU"],
@@ -1709,7 +1712,7 @@ export const people: Person[] = [
   },
   {
     name: "Stacey Gorniak",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/stacey-gorniak.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1723,7 +1726,7 @@ export const people: Person[] = [
   },
   {
     name: "Levi Wood",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["GT"],
@@ -1751,7 +1754,7 @@ export const people: Person[] = [
   },
   {
     name: "Annabelle Singer",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["GT"],
@@ -1772,7 +1775,7 @@ export const people: Person[] = [
   },
   {
     name: "Tomás Urbán Infantes",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/toms-urbn-infantes.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
@@ -1793,14 +1796,14 @@ export const people: Person[] = [
   },
   {
     name: "Vikram Kodibagkar",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Wei Shih",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/wei-shih.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1821,7 +1824,7 @@ export const people: Person[] = [
   },
   {
     name: "Xin Fu",
-    tags: ["Faculty"],
+    tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/xin-fu.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
@@ -1911,4 +1914,5 @@ export const people: Person[] = [
     group: [],
     affiliation: ["ASU"],
   },
+
 ];
