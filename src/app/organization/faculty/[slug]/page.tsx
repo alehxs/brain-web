@@ -306,28 +306,6 @@ export default async function FacultyProfilePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Back to faculty strip ─────────────────────────────────────────── */}
-      <div className="border-t border-slate-100 bg-[var(--light-slate)]">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 py-6">
-          <Link
-            href="/organization/faculty"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[var(--deep-teal)] hover:underline transition-colors"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Faculty
-          </Link>
-        </div>
-      </div>
-
     </div>
   );
 }
