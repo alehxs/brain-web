@@ -31,10 +31,16 @@ export type FacultyProfile = {
 
 export function getAllFacultyProfileSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
-  return fs
+  const fileSlugs = fs
     .readdirSync(CONTENT_DIR)
     .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"))
     .map((f) => f.replace(/\.(mdx|md)$/, ""));
+
+  // Only emit slugs that have a matching Person — keeps generateStaticParams honest
+  // and surfaces mismatches at build time rather than producing silent 404s.
+  return fileSlugs.filter((slug) =>
+    people.some((p) => (p.slugOverride ?? toSlug(p.name)) === slug)
+  );
 }
 
 export function getProfileBySlug(slug: string): FacultyProfile | null {
@@ -52,7 +58,7 @@ export function getProfileBySlug(slug: string): FacultyProfile | null {
 
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
-  const contentHtml = marked(content) as string;
+  const contentHtml = marked.parse(content, { async: false }) as string;
 
   return {
     person,
