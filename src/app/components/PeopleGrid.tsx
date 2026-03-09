@@ -4,15 +4,17 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Card from './cards/primitives/Card';
 import { type Person, type Institution, INSTITUTION_NAMES } from '@/data/people';
+import { toSlug } from '@/lib/slug';
 
 const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC'];
 
 type Props = {
   people: Person[];
   variant?: 'faculty' | 'student';
+  profileSlugs?: Set<string>;
 };
 
-export default function PeopleGrid({ people, variant = 'student' }: Props) {
+export default function PeopleGrid({ people, variant = 'student', profileSlugs }: Props) {
   const [activeFilter, setActiveFilter] = useState<'all' | Institution>('all');
   const [query, setQuery] = useState('');
 
@@ -125,7 +127,7 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {filtered.map((person) =>
             variant === 'faculty' ? (
-              <FacultyCard key={person.name} person={person} />
+              <FacultyCard key={person.name} person={person} profileSlugs={profileSlugs} />
             ) : (
               <StudentCard key={person.name} person={person} />
             )
@@ -136,10 +138,14 @@ export default function PeopleGrid({ people, variant = 'student' }: Props) {
   );
 }
 
-function FacultyCard({ person }: { person: Person }) {
+function FacultyCard({ person, profileSlugs }: { person: Person; profileSlugs?: Set<string> }) {
   const university = person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined;
+  const slug = person.slugOverride ?? toSlug(person.name);
+  const hasProfile = profileSlugs?.has(slug) ?? false;
+  // Prefer internal profile page; fall back to external href if set; otherwise non-linking card
+  const href = hasProfile ? `/organization/faculty/${slug}` : person.href;
   return (
-    <Card className="group">
+    <Card href={href} className="group">
       <Card.Media ratio="3/4" className="rounded-t-lg bg-slate-100">
         {person.src ? (
           <Image
@@ -158,7 +164,7 @@ function FacultyCard({ person }: { person: Person }) {
         )}
       </Card.Media>
       <Card.Body>
-        <h3 className="text-sm font-bold text-slate-900 line-clamp-2">{person.name}</h3>
+        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[var(--deep-teal)] transition-colors line-clamp-3">{person.name}</h3>
         {person.tags[0] && (
           <p className="mt-1 text-xs text-slate-600 line-clamp-2">{person.tags[0]}</p>
         )}
@@ -175,7 +181,7 @@ function StudentCard({ person }: { person: Person }) {
   return (
     <Card
       href={person.href}
-      className="flex flex-col overflow-hidden bg-white h-full border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all"
+      className="group flex flex-col overflow-hidden bg-white h-full border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all"
     >
       <Card.Media ratio="4/5" className="bg-slate-100">
         {person.src ? (
