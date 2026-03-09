@@ -3,7 +3,9 @@ import Image from "next/image";
 import Card from "../../components/cards/primitives/Card";
 import PageHeader from "@/app/components/PageHeader";
 
-import { people, INSTITUTION_NAMES } from "../../../data/people";
+import { people, type Person as RosterPerson, INSTITUTION_NAMES } from "../../../data/people";
+import { getAllFacultyProfileSlugs } from "@/lib/faculty-profile";
+import { toSlug } from "@/lib/slug";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -21,6 +23,14 @@ type Person = {
   href?: string;
 };
 
+const profileSlugs = new Set(getAllFacultyProfileSlugs());
+
+function resolveHref(person: RosterPerson): string | undefined {
+  const slug = person.slugOverride ?? toSlug(person.name);
+  if (profileSlugs.has(slug)) return `/organization/faculty/${slug}`;
+  return person.href;
+}
+
 const leadership: Person[] = people
   .filter((person) => person.group.includes("Leadership"))
   .map((person) => ({
@@ -29,7 +39,7 @@ const leadership: Person[] = people
     university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
     imageSrc: person.src,
     imageAlt: person.name,
-    href: person.href,
+    href: resolveHref(person),
   }));
 
 const coInvestigators: Person[] = people
@@ -43,7 +53,7 @@ const coInvestigators: Person[] = people
     university: person.affiliation[0] ? INSTITUTION_NAMES[person.affiliation[0]] : undefined,
     imageSrc: person.src,
     imageAlt: person.name,
-    href: person.href,
+    href: resolveHref(person),
   }));
 
 
