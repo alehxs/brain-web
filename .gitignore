@@ -43,3 +43,10 @@ scripts/
 
 # todo
 TODO.md
+
+# local design reference (not for version control)
+design-guide.md
+
+# local faculty MDX content + import data (not for version control)
+src/content/faculty/
+src/data/wp-import/
