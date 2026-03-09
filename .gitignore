@@ -47,6 +47,6 @@ TODO.md
 # local design reference (not for version control)
 design-guide.md
 
-# local faculty MDX content + import data (not for version control)
-src/content/faculty/
+# local import data (not for version control)
 src/data/wp-import/
+docs/faculty-link-audit.md
