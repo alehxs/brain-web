@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/app/components/PageHeader";
 import PeopleGrid from "@/app/components/PeopleGrid";
 import { people } from "@/data/people";
+import { getAllFacultyProfileSlugs } from "@/lib/faculty-profile";
 
 export const metadata: Metadata = {
   title: "Faculty",
@@ -15,11 +16,13 @@ const facultyPeople = people
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export default function FacultyPage() {
+  const profileSlugs = new Set(getAllFacultyProfileSlugs());
+
   return (
     <div className="bg-white">
       <PageHeader eyebrow="Organization" title="Faculty" description="Researchers and investigators driving neurotechnology innovation across BRAIN Center sites." />
       <section className="mx-auto max-w-6xl px-6 sm:px-8 pt-6 pb-12 sm:pb-16 lg:pb-20">
-        <PeopleGrid people={facultyPeople} variant="faculty" />
+        <PeopleGrid people={facultyPeople} variant="faculty" profileSlugs={profileSlugs} />
       </section>
     </div>
   );

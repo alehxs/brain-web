@@ -277,6 +277,12 @@ export default async function FacultyProfilePage({ params }: Props) {
                 <p className="text-xs font-bold uppercase tracking-widest text-[var(--deep-teal)] mb-6">
                   Biography
                 </p>
+                {/*
+                  Safe: contentHtml is produced at build time by marked.parse() from
+                  repository-committed MDX files — not user input. If this ever changes
+                  to pull content at request time from a CMS or user-supplied source,
+                  sanitize with DOMPurify before passing to dangerouslySetInnerHTML.
+                */}
                 <div
                   className="prose prose-slate prose-base max-w-prose [&_p]:leading-relaxed [&_p]:mb-5 [&_a]:text-[var(--deep-teal)] [&_a:hover]:underline"
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
