@@ -99,7 +99,7 @@ export const sites: Site[] = [
     abbreviation: "UMH",
     category: "International Affiliate Site",
     link: "https://www.umh.es",
-    logos: { full: "/partners/umh.png", small: "/logos/sites/umh.jpg" },
+    logos: { full: "/partners/umh.png", small: "/logos/sites/umh.png" },
     description: "International affiliate expanding our global reach in Spain.",
     coordinates: [-0.6983, 38.2699]
   },
@@ -109,7 +109,7 @@ export const sites: Site[] = [
     abbreviation: "TEC",
     category: "International Affiliate Site",
     link: "https://tec.mx/en",
-    logos: { full: "/partners/tec.png", small: "/logos/sites/tec.jpg" },
+    logos: { full: "/partners/tec.png", small: "/logos/sites/tec.png" },
     description: "Key Latin American partner for innovation and talent.",
     coordinates: [-100.3167, 25.6667]
   },
