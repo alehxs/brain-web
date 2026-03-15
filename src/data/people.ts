@@ -81,7 +81,7 @@ export const people: Person[] = [
   },
   {
     name: "Luca Pollonini",
-    tags: ["Assistant Professor"],
+    tags: ["Associate Professor"],
     src: "/people/faculty/luca-pollonini.jpg",
     group: ["Faculty", "Associate Professor"],
     affiliation: ["UH"],
