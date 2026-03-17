@@ -188,7 +188,7 @@ export default function IntellectualPropertyPage() {
               </div>
 
               {/* Content */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 max-w-3xl">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0 bg-[var(--light-slate)] text-[var(--deep-teal)]">
                     {step.icon}
