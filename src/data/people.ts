@@ -1189,14 +1189,14 @@ export const people: Person[] = [
   {
     name: "Sergiy Yakovenko",
     tags: ["Associate Professor", "Faculty"],
-    src: "",
+    src: "/people/faculty/sergiy-yakovenko.jpg",
     group: ["Faculty"],
     affiliation: ["WVU"],
   },
   {
     name: "Stephen Sprigle",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/stephen-sprigle.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1210,7 +1210,7 @@ export const people: Person[] = [
   {
     name: "Pavan Turaga",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/pavan-turaga.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
@@ -1224,14 +1224,14 @@ export const people: Person[] = [
   {
     name: "Yen Hsun Wu",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/yen-hsun-wu.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Stephen Helms Tillery",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/stephen-helms-tillery.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
@@ -1260,7 +1260,7 @@ export const people: Person[] = [
   {
     name: "Vahid Serpooshan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/vahid-serpooshan.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1414,7 +1414,7 @@ export const people: Person[] = [
   {
     name: "Paige Wilson",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/paige-wilson.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
   },
@@ -1435,7 +1435,7 @@ export const people: Person[] = [
   {
     name: "Yue Chen",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/yue-chen.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1462,8 +1462,8 @@ export const people: Person[] = [
   },
   {
     name: "Vince Calhoun",
-    tags: ["Associate Professor", "Faculty"],
-    src: "",
+    tags: ["Distinguished University Professor", "Faculty"],
+    src: "/people/faculty/vince-calhoun.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1498,7 +1498,7 @@ export const people: Person[] = [
   {
     name: "Minoru Shinohara",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/minoru-shinohara.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1575,7 +1575,7 @@ export const people: Person[] = [
   {
     name: "Nathalie Matychak",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/nathalie-matychak.webp",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1589,7 +1589,7 @@ export const people: Person[] = [
   {
     name: "Natalia Garcia Cervantes",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/natalia-garcia-cervantes.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
   },
@@ -1617,7 +1617,7 @@ export const people: Person[] = [
   {
     name: "Michael Borich",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/michael-borich.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1631,7 +1631,7 @@ export const people: Person[] = [
   {
     name: "Manuel Cebral-Loureda",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/manuel-cebral-loureda.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
   },
@@ -1687,14 +1687,14 @@ export const people: Person[] = [
   {
     name: "Nilanjan Banerjee",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/nilanjan-banerjee.jpg",
     group: ["Faculty"],
     affiliation: ["UMBC"],
   },
   {
     name: "Tulay Adali",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/adali-tulay.jpg",
     group: ["Faculty"],
     affiliation: ["UMBC"],
   },
@@ -1722,7 +1722,7 @@ export const people: Person[] = [
   {
     name: "Sankaraleengam Alagapan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/sankaraleengam-alagapan.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1771,7 +1771,7 @@ export const people: Person[] = [
   {
     name: "Omer Inan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/omer-inan.webp",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1799,7 +1799,7 @@ export const people: Person[] = [
   {
     name: "Tansu Celikel",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/tansu-celikel.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1834,7 +1834,7 @@ export const people: Person[] = [
   {
     name: "Vikram Kodibagkar",
     tags: ["Associate Professor", "Faculty"],
-    src: "",
+    src: "/people/faculty/vikram-kodibagkar.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
