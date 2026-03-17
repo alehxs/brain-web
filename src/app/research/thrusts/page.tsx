@@ -23,7 +23,7 @@ export default function ResearchThrustsPage() {
         {/* Thrust cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {researchThrusts.map((thrust) => (
-            <Card key={thrust.slug} href={thrust.href}>
+            <Card key={thrust.slug}>
               <Card.Media ratio="1/1">
                 <Image
                   src={thrust.imageSrc}

@@ -6,7 +6,7 @@ import Card from './cards/primitives/Card';
 import { type Person, type Institution, INSTITUTION_NAMES } from '@/data/people';
 import { toSlug } from '@/lib/slug';
 
-const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC'];
+const INSTITUTIONS: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC', 'UAB', 'NEU'];
 
 type Props = {
   people: Person[];

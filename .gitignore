@@ -41,6 +41,9 @@ yarn-error.log*
 next-env.d.ts
 scripts/
 
+# claude
+CLAUDE.md
+
 # todo
 TODO.md
 

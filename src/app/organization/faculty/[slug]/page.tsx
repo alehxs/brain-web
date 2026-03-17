@@ -300,7 +300,7 @@ export default async function FacultyProfilePage({ params }: Props) {
                   {frontmatter.researchInterests.map((interest) => (
                     <span
                       key={interest}
-                      className="px-3 py-1.5 rounded-full bg-teal-50 text-teal-900 text-sm leading-snug border border-teal-100 hover:bg-teal-100 transition-colors"
+                      className="px-3 py-1.5 rounded-full bg-teal-50 text-teal-900 text-sm leading-snug border border-teal-100"
                     >
                       {interest}
                     </span>

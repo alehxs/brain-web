@@ -1,4 +1,4 @@
-export type Institution = "UH" | "ASU" | "UMH" | "TEC" | "GT" | "UMBC" | "WVU";
+export type Institution = "UH" | "ASU" | "UMH" | "TEC" | "GT" | "UMBC" | "WVU" | "UAB" | "NEU";
 
 export const INSTITUTION_NAMES: Record<Institution, string> = {
   UH: "University of Houston",
@@ -8,6 +8,8 @@ export const INSTITUTION_NAMES: Record<Institution, string> = {
   GT: "Georgia Institute of Technology",
   UMBC: "University of Maryland, Baltimore County",
   WVU: "West Virginia University",
+  UAB: "University of Alabama at Birmingham",
+  NEU: "Northeastern University",
 };
 
 export type PersonGroup = "Leadership" | "Faculty" | "Staff" | "Student" | "Associate Professor" | "Professor";
@@ -73,6 +75,41 @@ export const people: Person[] = [
     affiliation: ["WVU"],
   },
   {
+    name: "Nicole Bentley",
+    tags: ["Site Director"],
+    src: "/people/faculty/nicole-bentley.jpg",
+    group: ["Faculty", "Leadership"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Eugene Tunik",
+    tags: ["Site Director"],
+    src: "/people/faculty/eugene-tunik.png",
+    group: ["Faculty", "Leadership"],
+    affiliation: ["NEU"],
+  },
+  {
+    name: "Jamie Tyler",
+    tags: ["Professor"],
+    src: "/people/faculty/jamie-tyler.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Rachel June Smith",
+    tags: ["Assistant Professor"],
+    src: "/people/faculty/rachel-june-smith.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Mark Bolding",
+    tags: ["Associate Professor"],
+    src: "/people/faculty/mark-bolding.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
+  },
+  {
     name: "David Mayerich",
     tags: ["Associate Professor"],
     src: "/people/faculty/david-mayerich.jpg",
@@ -115,7 +152,7 @@ export const people: Person[] = [
     affiliation: ["WVU"],
   },
   {
-    name: "Mauricio Ramírez",
+    name: "Mauricio Ramirez",
     tags: ["TEC Program Manager"],
     src: "/people/faculty/mauricio-adolfo-ramrez-moreno.jpeg",
     group: ["Staff"],
@@ -294,7 +331,7 @@ export const people: Person[] = [
     affiliation: ["ASU"],
   },
   {
-    name: "Niccolò Meniconi",
+    name: "Niccolo Meniconi",
     tags: ["ElecEng (ASU) Mentor: Dr. Pavan Turaga"],
     src: "/people/students/niccol-meniconi.png",
     group: ["Student"],
@@ -931,7 +968,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Jose Gonzalez-España",
+    name: "Jose Gonzalez-Espana",
     tags: ["ECE (UH) Mentor: Dr. Jose Contreras-vidal"],
     src: "/people/students/jose-gonzalezespaa.jpg",
     group: ["Student"],
@@ -1009,7 +1046,7 @@ export const people: Person[] = [
     slugOverride: "aaron-becker",
   },
   {
-    name: "Alba Roldán Romero",
+    name: "Alba Roldan Romero",
     tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/alba-roldn-romero.png",
     group: ["Faculty"],
@@ -1108,7 +1145,7 @@ export const people: Person[] = [
     affiliation: ["ASU"],
   },
   {
-    name: "Belinda del Carmen Carrión Chavarría",
+    name: "Belinda del Carmen Carrion Chavarria",
     tags: ["Faculty"],
     src: "/people/faculty/belinda-del-carmen-carrin-chavarra.jpg",
     group: ["Faculty"],
@@ -1129,9 +1166,9 @@ export const people: Person[] = [
     affiliation: ["GT"],
   },
   {
-    name: "Carla Caballero Sánchez",
+    name: "Carla Caballero Sanchez",
     tags: ["Faculty"],
-    src: "/people/faculty/carla-caballero-snchez.png",
+    src: "/people/faculty/carla-caballero-sanchez.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
   },
@@ -1152,14 +1189,14 @@ export const people: Person[] = [
   {
     name: "Sergiy Yakovenko",
     tags: ["Associate Professor", "Faculty"],
-    src: "",
+    src: "/people/faculty/sergiy-yakovenko.jpg",
     group: ["Faculty"],
     affiliation: ["WVU"],
   },
   {
     name: "Stephen Sprigle",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/stephen-sprigle.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1173,7 +1210,7 @@ export const people: Person[] = [
   {
     name: "Pavan Turaga",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/pavan-turaga.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
@@ -1187,14 +1224,14 @@ export const people: Person[] = [
   {
     name: "Yen Hsun Wu",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/yen-hsun-wu.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
   {
     name: "Stephen Helms Tillery",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/stephen-helms-tillery.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
@@ -1223,7 +1260,7 @@ export const people: Person[] = [
   {
     name: "Vahid Serpooshan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/vahid-serpooshan.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1298,7 +1335,7 @@ export const people: Person[] = [
     affiliation: ["UMH"],
   },
   {
-    name: "Eduardo Cervelló Gimeno",
+    name: "Eduardo Cervello Gimeno",
     tags: ["Faculty"],
     src: "/people/faculty/eduardo-cervell-gimeno.jpg",
     group: ["Faculty"],
@@ -1312,7 +1349,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Enrique Barrajón-Catalán",
+    name: "Enrique Barrajon-Catalan",
     tags: ["Faculty"],
     src: "/people/faculty/enrique-barrajncataln.jpg",
     group: ["Faculty"],
@@ -1333,7 +1370,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Francisco Javier Moreno Hernández",
+    name: "Francisco Javier Moreno Hernandez",
     tags: ["Faculty"],
     src: "/people/faculty/francisco-javier-moreno-hernndez.jpg",
     group: ["Faculty"],
@@ -1347,7 +1384,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Gerardo Presbítero Espinosa",
+    name: "Gerardo Presbitero Espinosa",
     tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/gerardo-presbtero-espinosa.jpg",
     group: ["Faculty"],
@@ -1377,7 +1414,7 @@ export const people: Person[] = [
   {
     name: "Paige Wilson",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/paige-wilson.jpg",
     group: ["Faculty"],
     affiliation: ["UH"],
   },
@@ -1389,7 +1426,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Hugo Gustavo González Hernández",
+    name: "Hugo Gustavo Gonzalez Hernandez",
     tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/hugo-gustavo-gonzlez-hernndez.jpg",
     group: ["Faculty"],
@@ -1398,7 +1435,7 @@ export const people: Person[] = [
   {
     name: "Yue Chen",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/yue-chen.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1425,8 +1462,8 @@ export const people: Person[] = [
   },
   {
     name: "Vince Calhoun",
-    tags: ["Associate Professor", "Faculty"],
-    src: "",
+    tags: ["Distinguished University Professor", "Faculty"],
+    src: "/people/faculty/vince-calhoun.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1461,7 +1498,7 @@ export const people: Person[] = [
   {
     name: "Minoru Shinohara",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/minoru-shinohara.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1494,7 +1531,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "José Antonio Encinar Hidalgo",
+    name: "Jose Antonio Encinar Hidalgo",
     tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/jos-antonio-encinar-hidalgo.png",
     group: ["Faculty"],
@@ -1529,7 +1566,7 @@ export const people: Person[] = [
     affiliation: ["UH"],
   },
   {
-    name: "Luz María Alonso Valerdi",
+    name: "Luz Maria Alonso Valerdi",
     tags: ["Faculty"],
     src: "/people/faculty/luz-mara-alonso-valerdi.jpg",
     group: ["Faculty"],
@@ -1538,7 +1575,7 @@ export const people: Person[] = [
   {
     name: "Nathalie Matychak",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/nathalie-matychak.webp",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1552,7 +1589,7 @@ export const people: Person[] = [
   {
     name: "Natalia Garcia Cervantes",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/natalia-garcia-cervantes.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
   },
@@ -1564,7 +1601,7 @@ export const people: Person[] = [
     affiliation: ["UMH"],
   },
   {
-    name: "María Herranz-López",
+    name: "Maria Herranz-Lopez",
     tags: ["Faculty"],
     src: "/people/faculty/mara-herranzlpez.jpg",
     group: ["Faculty"],
@@ -1580,7 +1617,7 @@ export const people: Person[] = [
   {
     name: "Michael Borich",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/michael-borich.jpg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1594,7 +1631,7 @@ export const people: Person[] = [
   {
     name: "Manuel Cebral-Loureda",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/manuel-cebral-loureda.jpg",
     group: ["Faculty"],
     affiliation: ["TEC"],
   },
@@ -1650,26 +1687,26 @@ export const people: Person[] = [
   {
     name: "Nilanjan Banerjee",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/nilanjan-banerjee.jpg",
     group: ["Faculty"],
     affiliation: ["UMBC"],
   },
   {
     name: "Tulay Adali",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/adali-tulay.jpg",
     group: ["Faculty"],
     affiliation: ["UMBC"],
   },
   {
-    name: "Raúl Reina",
+    name: "Raul Reina",
     tags: ["Faculty"],
     src: "/people/faculty/ral-reina.png",
     group: ["Faculty"],
     affiliation: ["UMH"],
   },
   {
-    name: "Ricardo Ambrocio Ramírez Mendoza",
+    name: "Ricardo Ambrocio Ramirez Mendoza",
     tags: ["Faculty"],
     src: "/people/faculty/ricardo-ambrocio-ramrez-mendoza.jpg",
     group: ["Faculty"],
@@ -1685,7 +1722,7 @@ export const people: Person[] = [
   {
     name: "Sankaraleengam Alagapan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/sankaraleengam-alagapan.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1734,7 +1771,7 @@ export const people: Person[] = [
   {
     name: "Omer Inan",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/omer-inan.webp",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1762,7 +1799,7 @@ export const people: Person[] = [
   {
     name: "Tansu Celikel",
     tags: ["Faculty"],
-    src: "",
+    src: "/people/faculty/tansu-celikel.jpeg",
     group: ["Faculty"],
     affiliation: ["GT"],
   },
@@ -1774,7 +1811,7 @@ export const people: Person[] = [
     affiliation: ["ASU"],
   },
   {
-    name: "Tomás Urbán Infantes",
+    name: "Tomas Urban Infantes",
     tags: ["Associate Professor", "Faculty"],
     src: "/people/faculty/toms-urbn-infantes.png",
     group: ["Faculty"],
@@ -1797,7 +1834,7 @@ export const people: Person[] = [
   {
     name: "Vikram Kodibagkar",
     tags: ["Associate Professor", "Faculty"],
-    src: "",
+    src: "/people/faculty/vikram-kodibagkar.png",
     group: ["Faculty"],
     affiliation: ["ASU"],
   },
@@ -1839,14 +1876,14 @@ export const people: Person[] = [
 
   // Added from WordPress backup - Universidad Miguel Hernandez de Elche
   {
-    name: "Carlos Albaladejo García",
+    name: "Carlos Albaladejo Garcia",
     tags: [],
     src: "",
     group: [],
     affiliation: ["UMH"],
   },
   {
-    name: "Fernando García Aguilar",
+    name: "Fernando Garcia Aguilar",
     tags: [],
     src: "",
     group: [],
@@ -1860,7 +1897,7 @@ export const people: Person[] = [
     affiliation: ["UMH"],
   },
   {
-    name: "Laura Carbonell Hernández",
+    name: "Laura Carbonell Hernandez",
     tags: [],
     src: "",
     group: [],
@@ -1899,7 +1936,7 @@ export const people: Person[] = [
 
   // Added from WordPress backup - Tecnológico de Monterrey
   {
-    name: "Mauricio Adolfo Ramírez Moreno",
+    name: "Mauricio Adolfo Ramirez Moreno",
     tags: [],
     src: "",
     group: [],

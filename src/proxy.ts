@@ -11,6 +11,7 @@ const SPAM_PATTERNS = [
   /^\/\d+$/, // numeric-only paths like /32699919
   /^\/ctg\//, // Korean e-commerce spam like /ctg/search/similarImageSearchResultView/
   /^\/sites\//, // legacy site pages (e.g. /sites/georgia-institute-of-technology)
+  /^\/blog(\/|$)/, // old blog from previous site — 410 to de-index from Google
   /^\/staff(s)?(\/|$)/, // old WordPress staff/staffs pages
   /^\/wp-/, // WordPress paths like /wp-content/, /wp-admin/
   /^\/xmlrpc\.php/, // WordPress XML-RPC endpoint
