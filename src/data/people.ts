@@ -1,4 +1,4 @@
-export type Institution = "UH" | "ASU" | "UMH" | "TEC" | "GT" | "UMBC" | "WVU";
+export type Institution = "UH" | "ASU" | "UMH" | "TEC" | "GT" | "UMBC" | "WVU" | "UAB" | "NEU";
 
 export const INSTITUTION_NAMES: Record<Institution, string> = {
   UH: "University of Houston",
@@ -8,6 +8,8 @@ export const INSTITUTION_NAMES: Record<Institution, string> = {
   GT: "Georgia Institute of Technology",
   UMBC: "University of Maryland, Baltimore County",
   WVU: "West Virginia University",
+  UAB: "University of Alabama at Birmingham",
+  NEU: "Northeastern University",
 };
 
 export type PersonGroup = "Leadership" | "Faculty" | "Staff" | "Student" | "Associate Professor" | "Professor";
@@ -71,6 +73,41 @@ export const people: Person[] = [
     src: "/people/faculty/petere-konrad.jpg",
     group: ["Faculty", "Leadership"],
     affiliation: ["WVU"],
+  },
+  {
+    name: "Nicole Bentley",
+    tags: ["Site Director"],
+    src: "/people/faculty/nicole-bentley.jpg",
+    group: ["Faculty", "Leadership"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Eugene Tunik",
+    tags: ["Site Director"],
+    src: "/people/faculty/eugene-tunik.png",
+    group: ["Faculty", "Leadership"],
+    affiliation: ["NEU"],
+  },
+  {
+    name: "Jamie Tyler",
+    tags: ["Professor"],
+    src: "/people/faculty/jamie-tyler.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Rachel June Smith",
+    tags: ["Assistant Professor"],
+    src: "/people/faculty/rachel-june-smith.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
+  },
+  {
+    name: "Mark Bolding",
+    tags: ["Associate Professor"],
+    src: "/people/faculty/mark-bolding.jpg",
+    group: ["Faculty"],
+    affiliation: ["UAB"],
   },
   {
     name: "David Mayerich",
