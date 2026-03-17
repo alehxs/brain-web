@@ -22,6 +22,7 @@ export default function UniquenessPage() {
       <PageHeader
         eyebrow="About"
         title="Uniqueness: Key Differentiators"
+        description="What sets the BRAIN Center apart — from clinical integration and regulatory partnerships to ethics, workforce development, and a globally connected research network."
       />
 
       {/* CONTENT BODY */}
