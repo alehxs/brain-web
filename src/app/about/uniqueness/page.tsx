@@ -95,7 +95,7 @@ export default function UniquenessPage() {
           {items.map((item, i) => (
             <div
               key={item.title}
-              className={`flex gap-6 pb-10 mb-10${i < items.length - 1 ? " border-b border-slate-100" : ""}`}
+              className={`flex gap-6${i < items.length - 1 ? " pb-10 mb-10 border-b border-slate-100" : ""}`}
             >
               <div className="shrink-0 w-10 h-10 rounded-xl bg-[var(--light-slate)] flex items-center justify-center">
                 {item.icon}
