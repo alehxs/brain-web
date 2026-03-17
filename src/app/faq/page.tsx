@@ -342,7 +342,7 @@ export default function QAPage() {
                 </h2>
               </div>
               <div aria-hidden="true" className="h-0.5 w-12 rounded-full mb-5 bg-[var(--deep-teal)]" />
-              <div className="text-sm sm:text-base leading-relaxed text-slate-600 space-y-3">
+              <div className="max-w-3xl text-sm sm:text-base leading-relaxed text-slate-600 space-y-3">
                 {item.body}
               </div>
             </div>
