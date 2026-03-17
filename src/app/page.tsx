@@ -13,9 +13,57 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "The BRAIN Center",
+  url: "https://www.nsfbrain.org",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.nsfbrain.org/?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+  hasPart: [
+    {
+      "@type": "SiteNavigationElement",
+      name: "Research",
+      url: "https://www.nsfbrain.org/research",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "Organization",
+      url: "https://www.nsfbrain.org/organization",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "BRAIN Sites",
+      url: "https://www.nsfbrain.org/sites",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "Impacts",
+      url: "https://www.nsfbrain.org/impacts",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "Membership",
+      url: "https://www.nsfbrain.org/membership",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "News & Events",
+      url: "https://www.nsfbrain.org/news",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <MissionSummary />
       <NewsWidget />
