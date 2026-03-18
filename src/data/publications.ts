@@ -1,4 +1,17 @@
-import { Publication } from "@/app/components/cards/PublicationCard";
+import { type Institution } from "@/data/people";
+
+export type PublicationType = "journal" | "conference" | "preprint" | "book-chapter";
+
+export interface Publication {
+  id: string;
+  title: string;
+  authors: string;
+  citation: string;
+  year: number;
+  type: PublicationType;
+  href?: string;
+  institution?: Institution[];
+}
 
 export const publications: Publication[] = [
   // ── UH (existing) ───────────────────────────────────────────────────────────

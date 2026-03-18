@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { type Institution, INSTITUTION_NAMES } from '@/data/people';
-import PublicationCard, { type Publication } from './cards/PublicationCard';
+import PublicationCard from './cards/PublicationCard';
+import { type Publication } from '@/data/publications';
 
 const INSTITUTION_ORDER: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH', 'TEC', 'UAB', 'NEU'];
 

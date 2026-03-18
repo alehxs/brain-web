@@ -1,18 +1,6 @@
 import Card from "./primitives/Card";
-import { type Institution, INSTITUTION_NAMES } from "@/data/people";
-
-export type PublicationType = "journal" | "conference" | "preprint" | "book-chapter";
-
-export interface Publication {
-  id: string;
-  title: string;
-  authors: string;
-  citation: string; // Journal, Volume, Year
-  year: number;
-  type: PublicationType;
-  href?: string; // DOI or PDF link — optional
-  institution?: Institution[];
-}
+import { INSTITUTION_NAMES } from "@/data/people";
+import { type Publication, type PublicationType } from "@/data/publications";
 
 const TYPE_LABELS: Record<PublicationType, string> = {
   journal: "Journal",
@@ -76,14 +64,14 @@ export default function PublicationCard({ publication }: { publication: Publicat
           </span>
           {hasLink ? (
             <span className="text-xs font-semibold text-[var(--deep-teal)] shrink-0 flex items-center gap-1">
-              DOI
+              View
               <svg className="w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 12 12" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.5 9.5l7-7M4 2.5h5.5V8" />
               </svg>
             </span>
           ) : (
             <span className="text-[10px] text-slate-400 shrink-0 italic">
-              No DOI available
+              Not available
             </span>
           )}
         </div>
