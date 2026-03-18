@@ -33,11 +33,9 @@ export function NewsWidget() {
                 key={`news-${item.slug}`}
                 title={item.title}
                 dateLabel={item.dateLabel}
-                summary={item.summary}
                 imageSrc={item.imageSrc}
                 imageAlt={item.imageAlt}
                 href={item.href}
-                external={!!item.href}
                 aspectRatio="16/9"
               />
             );

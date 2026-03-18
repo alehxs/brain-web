@@ -10,17 +10,17 @@ const INSTITUTION_ORDER: Institution[] = ['UH', 'ASU', 'GT', 'WVU', 'UMBC', 'UMH
 export default function FilteredPublicationList({ publications }: { publications: Publication[] }) {
   const [activeFilter, setActiveFilter] = useState<'all' | Institution>('all');
 
-  // Only show chips for institutions that actually have publications
-  const activeInstitutions = INSTITUTION_ORDER.filter((id) =>
-    publications.some((p) => p.institution?.includes(id))
+  const countByInstitution = publications.reduce<Partial<Record<Institution, number>>>(
+    (acc, p) => {
+      p.institution?.forEach((id) => {
+        acc[id] = (acc[id] ?? 0) + 1;
+      });
+      return acc;
+    },
+    {}
   );
 
-  const countByInstitution = Object.fromEntries(
-    activeInstitutions.map((id) => [
-      id,
-      publications.filter((p) => p.institution?.includes(id)).length,
-    ])
-  );
+  const activeInstitutions = INSTITUTION_ORDER.filter((id) => countByInstitution[id]);
 
   const filtered =
     activeFilter === 'all'

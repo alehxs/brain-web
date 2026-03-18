@@ -6,11 +6,9 @@ import Card from "./primitives/Card";
 export type NewsCardProps = {
   title: string;
   dateLabel: string;
-  summary: string;
   imageSrc: string;
   imageAlt: string;
   href?: string;
-  external?: boolean;
   as?: ElementType;
   aspectRatio?: "16/9" | "4/3" | "1/1" | "4/5";
 };
@@ -20,11 +18,9 @@ const FALLBACK_SRC = "/logos/brain.png";
 export function NewsCard({
   title,
   dateLabel,
-  summary: _summary,
   imageSrc,
   imageAlt,
   href,
-  external,
   as = "article",
   aspectRatio = "16/9",
 }: NewsCardProps) {
@@ -34,7 +30,7 @@ export function NewsCard({
     <Card
       as={as}
       href={href}
-      external={external}
+      external={!!href}
       className="h-full overflow-hidden border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <Card.Media ratio={aspectRatio} className={hasImage ? "bg-slate-100" : "bg-[var(--midnight-blue)]"}>

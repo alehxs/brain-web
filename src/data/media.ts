@@ -33,7 +33,7 @@ export const mediaItems: MediaItem[] = [
     external: true,
   },
   {
-    id: 4,
+    id: 3,
     title: "MyoStep Named 2025 Houston Innovation Awards Finalist",
     date: "2025-10-07",
     dateLabel: "Oct 7, 2025",

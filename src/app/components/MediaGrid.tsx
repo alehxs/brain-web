@@ -1,10 +1,10 @@
 // components/MediaGrid.tsx
 import MediaCard, { type MediaCardProps } from "./cards/MediaCard";
 
-export type MediaItem = MediaCardProps & { id: string | number };
+export type MediaGridItem = MediaCardProps & { id: string | number };
 
 type MediaGridProps = {
-  items: MediaItem[];
+  items: MediaGridItem[];
 };
 
 export function MediaGrid({ items }: MediaGridProps) {

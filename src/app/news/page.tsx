@@ -1,8 +1,6 @@
 // app/news/page.tsx
 import type { Metadata } from "next";
-import NewsGrid, {
-  type NewsGridItem,
-} from "../components/news/NewsGrid";
+import NewsGrid from "../components/news/NewsGrid";
 import { sortedNewsItems } from "@/data/news";
 import PageHeader from "../components/PageHeader";
 
@@ -13,17 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/news" },
 };
 
-const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
-  id: n.slug,
-  title: n.title,
-  dateLabel: n.dateLabel,
-  summary: n.summary,
-  imageSrc: n.imageSrc,
-  imageAlt: n.imageAlt,
-  href: n.href,
-  external: !!n.href,
-}));
-
 export default function NewsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
@@ -33,7 +20,7 @@ export default function NewsPage() {
         description="Recent announcements, highlights, and stories from the BRAIN Center."
       />
       <section className="mx-auto max-w-6xl px-6 sm:px-8 py-12 lg:py-16">
-        <NewsGrid items={newsForGrid} />
+        <NewsGrid items={sortedNewsItems} />
       </section>
     </div>
   );
