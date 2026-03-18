@@ -22,10 +22,11 @@ export default function FilteredPublicationList({ publications }: { publications
 
   const activeInstitutions = INSTITUTION_ORDER.filter((id) => countByInstitution[id]);
 
-  const filtered =
+  const filtered = (
     activeFilter === 'all'
       ? publications
-      : publications.filter((p) => p.institution?.includes(activeFilter));
+      : publications.filter((p) => p.institution?.includes(activeFilter))
+  ).slice().sort((a, b) => b.year - a.year);
 
   return (
     <div>
