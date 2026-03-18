@@ -5,6 +5,7 @@ import Card from "./primitives/Card";
 
 export type MediaCardProps = {
   title: string;
+  dateLabel?: string;
   imageSrc: string;
   imageAlt: string;
   href?: string;
@@ -15,6 +16,7 @@ export type MediaCardProps = {
 
 export function MediaCard({
   title,
+  dateLabel,
   imageSrc,
   imageAlt,
   href,
@@ -23,9 +25,13 @@ export function MediaCard({
   aspectRatio = "16/9",
 }: MediaCardProps) {
   return (
-    <Card as={as} href={href} external={external} className="h-full">
-      {/* Image on top */}
-      <Card.Media ratio={aspectRatio}>
+    <Card
+      as={as}
+      href={href}
+      external={external}
+      className="h-full overflow-hidden border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+    >
+      <Card.Media ratio={aspectRatio} className="bg-slate-100">
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -35,14 +41,26 @@ export function MediaCard({
         />
       </Card.Media>
 
-      {/* Compact text box below image */}
-      <Card.Body className="bg-white px-4 py-4 text-black">
+      <Card.Body className="flex flex-col flex-1 border-t border-slate-100 bg-white px-4 py-4 text-black">
+        {dateLabel && (
+          <p className="text-xs text-slate-600 font-medium leading-snug">
+            {dateLabel}
+          </p>
+        )}
         <Card.Title
           as="h3"
-          className="mt-1 text-base font-semibold leading-snug line-clamp-3"
+          className="mt-2 text-base font-semibold leading-snug text-[var(--midnight-blue)] line-clamp-2 mb-3"
         >
           {title}
         </Card.Title>
+
+        {href && (
+          <div className="mt-auto">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)] leading-snug">
+              Read more <span className="transition group-hover:translate-x-0.5">→</span>
+            </span>
+          </div>
+        )}
       </Card.Body>
     </Card>
   );

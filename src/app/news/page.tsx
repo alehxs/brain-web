@@ -20,8 +20,8 @@ const newsForGrid: NewsGridItem[] = sortedNewsItems.map((n) => ({
   summary: n.summary,
   imageSrc: n.imageSrc,
   imageAlt: n.imageAlt,
-  href: `/news/${n.slug}`,
-  external: false,
+  href: n.href,
+  external: !!n.href,
 }));
 
 export default function NewsPage() {

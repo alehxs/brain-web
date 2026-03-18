@@ -15,6 +15,8 @@ export type NewsCardProps = {
   aspectRatio?: "16/9" | "4/3" | "1/1" | "4/5";
 };
 
+const FALLBACK_SRC = "/logos/brain.png";
+
 export function NewsCard({
   title,
   dateLabel,
@@ -26,6 +28,8 @@ export function NewsCard({
   as = "article",
   aspectRatio = "16/9",
 }: NewsCardProps) {
+  const hasImage = imageSrc !== FALLBACK_SRC;
+
   return (
     <Card
       as={as}
@@ -33,13 +37,13 @@ export function NewsCard({
       external={external}
       className="h-full overflow-hidden border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
-      <Card.Media ratio={aspectRatio}>
+      <Card.Media ratio={aspectRatio} className={hasImage ? "bg-slate-100" : "bg-[var(--midnight-blue)]"}>
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
+          className={hasImage ? "object-cover" : "object-contain p-8 opacity-80"}
         />
       </Card.Media>
 
@@ -55,11 +59,13 @@ export function NewsCard({
           {title}
         </Card.Title>
 
-        <div className="mt-auto">
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)] leading-snug">
-            Read more <span className="transition group-hover:translate-x-0.5">→</span>
-          </span>
-        </div>
+        {href && (
+          <div className="mt-auto">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--deep-teal)] leading-snug">
+              Read more <span className="transition group-hover:translate-x-0.5">→</span>
+            </span>
+          </div>
+        )}
       </Card.Body>
     </Card>
   );

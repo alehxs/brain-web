@@ -9,35 +9,51 @@ export type NewsItem = {
   imageSrc: string;
   imageAlt: string;
   content: string;    // full article text
+  href?: string;      // external link override; falls back to /news/[slug]
 };
 
 export const newsItems: NewsItem[] = [
   {
-    slug: "myostep-innovation-award-finalist",
-    title: "MyoStep Named 2025 Houston Innovation Awards Startup of the Year Finalist",
-    date: "2025-11-07",
-    dateLabel: "Nov 7, 2025",
+    slug: "contreras-vidal-nai-senior-member",
+    title: "Contreras-Vidal Elected to National Academy of Inventors",
+    date: "2026-02-26",
+    dateLabel: "Feb 26, 2026",
     summary:
-      "MyoStep, a pediatric soft exoskeleton developed at the UH BRAIN Center, has been selected as a finalist for the 2025 Houston Innovation Startup of the Year Award.",
-    imageSrc: "/media/finalist.jpg",
-    imageAlt:
-      "Houston Innovation Awards 2025 Startup of the Year Finalist graphic featuring MyoStep soft exoskeleton",
+      "Dr. José Luis Contreras-Vidal, director of the NSF IUCRC BRAIN Center, has been elected as a Senior Member of the National Academy of Inventors.",
+    href: "https://www.uh.edu/news-events/stories/2026/february/02262026-nai-senior-members.php",
+    imageSrc: "/news/contreras-vidal-nai-senior-member.jpg",
+    imageAlt: "Dr. Contreras-Vidal elected as NAI Senior Member",
     content: `
-MyoStep, a pediatric soft exoskeleton for rehabilitation of gait, has been named a finalist for the 2025 Houston Innovation Startup of the Year Award.
+Dr. José Luis Contreras-Vidal, Hugh Roy and Lillie Cranz Cullen University Professor of Electrical and Computer Engineering and director of the NSF IUCRC BRAIN Center, has been elected as a Senior Member of the National Academy of Inventors (NAI).
 
-Developed at the University of Houston BRAIN Center in collaboration with TIRR Memorial Hermann, MyoStep is designed to support children with motor impairments during physical activity, academics, and daily living.
+Read the full story on the UH website: https://www.uh.edu/news-events/stories/2026/february/02262026-nai-senior-members.php
+    `,
+  },
+  {
+    slug: "nsf-uh-fda-reu-site",
+    title: "First NSF UH-FDA REU Site on Regulatory Science of Biomedical Devices",
+    date: "2024-10-10",
+    dateLabel: "Oct 10, 2024",
+    summary:
+      "The University of Houston has established the first NSF Research Experiences for Undergraduates site focused on regulatory science of biomedical devices, in partnership with the FDA.",
+    href: "https://www.uh.edu/news-events/stories/2024/october/10102024-reu-site-brain-center-fda.php",
+    imageSrc: "/news/nsf-uh-fda-reu-site.jpg",
+    imageAlt: "NSF UH-FDA REU Site on Regulatory Science of Biomedical Devices",
+    content: `
+The University of Houston BRAIN Center has launched the first NSF-funded Research Experiences for Undergraduates (REU) site focused on the regulatory science of biomedical devices, in collaboration with the U.S. Food and Drug Administration.
 
-[Add more detail, quotes, and links here...]
+Read the full story on the UH website: https://www.uh.edu/news-events/stories/2024/october/10102024-reu-site-brain-center-fda.php
     `,
   },
   {
     slug: "nsf-funds-two-more-universities",
     title: "NSF Funds Two More Universities to Join IUCRC BRAIN Center",
-    date: "2025-10-20",
-    dateLabel: "Oct 20, 2025",
+    date: "2023-10-09",
+    dateLabel: "Oct 9, 2023",
+    href: "https://www.uh.edu/news-events/stories/2023/august-2023/08232023-brain-center-expands-two-universities.php",
     summary:
       "The National Science Foundation has approved funding for West Virginia University and Georgia Institute of Technology to join the IUCRC BRAIN Center, expanding its national research network.",
-    imageSrc: "/media/nsf-funds-two-more-unis.jpg",
+    imageSrc: "/news/nsf-funds-two-more-universities.jpg",
     imageAlt:
       "Announcement graphic highlighting West Virginia University and Georgia Tech joining the BRAIN Center",
     content: `
@@ -55,7 +71,7 @@ This expansion broadens the Center's national footprint and brings new expertise
     dateLabel: "Sep 15, 2025",
     summary:
       "Faculty, students, and industry partners gathered for the 2025 BRAIN Center Annual Meeting to review project progress, select new research, and plan workforce initiatives.",
-    imageSrc: "/images/iab-test.jpg",
+    imageSrc: "/logos/brain.png",
     imageAlt: "Attendees networking and presenting posters at the BRAIN Center annual meeting",
     content: `
 The 2025 BRAIN Center Annual Meeting brought together investigators, students, and industry members for two days of talks, posters, and project reviews.
