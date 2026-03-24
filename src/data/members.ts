@@ -156,6 +156,14 @@ export const members: MemberOrg[] = [
     tier: "in-kind",
     alt: "MyActome logo",
   },
+  {
+    id: "saraca",
+    name: "Saraca",
+    logoSrc: "/logos/members/saraca.png",
+    website: "https://www.saracasolutions.com/",
+    tier: "in-kind",
+    alt: "Saraca logo",
+  },
 
   {
     id: "fda",
